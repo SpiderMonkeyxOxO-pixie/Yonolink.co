@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',  item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://yonolink.co/about' },
+  ],
+};
+---
+
+<BaseLayout
+  title="About YonoLink — India's All Yono Game Guide"
+  description="Learn about YonoLink — India's independent guide to all Yono games, promo codes and honest app reviews. We cover 54 apps across Rummy, Slots, Spin, Arcade and VIP categories."
+  schema={breadcrumbSchema}
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Hero intro -->
+    <div class="mb-14 text-center">
+      <h1 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-5">
+        Your Independent Guide to<br class="hidden sm:block" /> <span class="text-gold">All Yono Games</span>
+      </h1>
+      <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        YonoLink.co is India's dedicated information platform covering the full range of Yono real-cash gaming apps. We research and publish honest app reviews, verified promo codes, and practical guides to help players make informed decisions.
+      </p>
+    </div>
+
+    <!-- What We Do -->
+    <section class="mb-14">
+      <h2 class="font-display font-black text-2xl text-white mb-6">What We Do</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+        <div class="glass border border-white/5 rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center mb-4 text-yellow-400">
+            <Icon name="gamepad" class="w-5 h-5" />
+          </div>
+          <h3 class="font-bold text-white text-base mb-2">Game Reviews &amp; Guides</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            In-depth reviews of every major Yono app — covering gameplay, withdrawal speed, legitimacy, and platform stability.
+          </p>
+        </div>
+
+        <div class="glass border border-white/5 rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center mb-4 text-yellow-400">
+            <Icon name="gift" class="w-5 h-5" />
+          </div>
+          <h3 class="font-bold text-white text-base mb-2">Daily Promo Codes</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            We publish and verify promo codes up to three times per day so you always have the latest bonuses and offers before they expire.
+          </p>
+        </div>
+
+        <div class="glass border border-white/5 rounded-2xl p-6">
+          <div class="w-11 h-11 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center mb-4 text-yellow-400">
+            <Icon name="trophy" class="w-5 h-5" />
+          </div>
+          <h3 class="font-bold text-white text-base mb-2">Winning Strategies</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Practical tips and strategy guides to help you play smarter, manage your bankroll, and get more out of every session.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="mb-10">
+      <h2 class="font-display font-black text-2xl text-white mb-4">Our Mission</h2>
+      <p class="text-gray-400 text-base leading-relaxed">
+        Our mission is to be the most accurate, up-to-date, and unbiased information source for the Yono gaming community in India. We do not promote irresponsible play — we focus on transparency, so players can approach these platforms with clear expectations. Every piece of content on YonoLink.co is independently researched and fact-checked before it goes live.
+      </p>
+    </section>
+
+    <!-- Independence notice -->
+    <div class="glass border border-white/5 rounded-2xl p-6 mb-12 flex items-start gap-4">
+      <div class="shrink-0 mt-0.5 w-9 h-9 rounded-lg bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400">
+        <Icon name="warning" class="w-5 h-5" />
+      </div>
+      <div>
+        <p class="text-white font-bold text-sm mb-1">Independence Notice</p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          We are not affiliated with Yono or any gaming operator. <strong class="text-white">YonoLink.co is not affiliated with Yono SBI, State Bank of India, or any bank or financial institution.</strong> The "Yono" name on this site refers exclusively to third-party real-cash gaming apps, not any banking product or service. YonoLink.co is an independent information platform. All links to gaming apps are provided for informational purposes only. Real-cash gaming involves financial risk — play responsibly. This platform is strictly for users aged <strong class="text-white">18 and above</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+      <div class="glass border border-white/5 rounded-2xl p-6 text-center">
+        <p class="font-display font-black text-3xl text-gold mb-1">56+</p>
+        <p class="text-gray-400 text-sm">Apps Covered</p>
+      </div>
+
+      <div class="glass border border-white/5 rounded-2xl p-6 text-center">
+        <p class="font-display font-black text-3xl text-gold mb-1">3x</p>
+        <p class="text-gray-400 text-sm">Daily Code Updates</p>
+      </div>
+
+      <div class="glass border border-white/5 rounded-2xl p-6 text-center">
+        <p class="font-display font-black text-3xl text-gold mb-1">18+</p>
+        <p class="text-gray-400 text-sm">Only Platform</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

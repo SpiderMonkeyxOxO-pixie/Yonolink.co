@@ -1,0 +1,313 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const games = await getCollection('games');
+  return games.map(game => ({
+    params: { slug: game.data.slug },
+    props: { game },
+  }));
+}
+
+const { game } = Astro.props;
+const { title, description, category, rating, tags, image, playUrl, releaseDate } = game.data;
+
+// Related promos for this game (exact match OR "All Games")
+const allPromos = await getCollection('promos');
+const gamePromos = allPromos.filter(p => p.data.isActive && (p.data.game === title || p.data.game === 'All Games'));
+
+// Related games in same category (excluding self)
+const allGames = await getCollection('games');
+const relatedGames = allGames
+  .filter(g => g.data.category === category && g.data.slug !== game.data.slug)
+  .slice(0, 3);
+
+const stars = Math.round(rating);
+
+// "How to Play" copy per category
+const howToPlay: Record<string, { steps: string[]; tip: string }> = {
+  'Card': {
+    steps: [
+      'Join a table that matches your budget (₹1 to ₹1,000 entry)',
+      'Pick and discard cards each turn to form valid sequences and sets',
+      'Declare when you have a complete hand — all 13 cards arranged correctly',
+      'Lower card-point hands win when an opponent declares first',
+    ],
+    tip: 'Always form a pure sequence first — it is mandatory and cannot include a Joker.',
+  },
+  'Board': {
+    steps: [
+      'Enter a multiplayer lobby or create a private game with friends',
+      'Roll dice on your turn and move your pieces strategically',
+      'Block opponent pieces and cut them to send them back to start',
+      'Get all your pieces home first to win the match',
+    ],
+    tip: 'Keep multiple pieces in play rather than racing one piece all the way home.',
+  },
+  'Fantasy': {
+    steps: [
+      'Select an upcoming match from cricket, football or kabaddi',
+      'Build your team of 11 players within the given credit budget',
+      'Choose a Captain (2× points) and Vice-Captain (1.5× points) carefully',
+      'Submit your team before the match deadline and watch the points add up',
+    ],
+    tip: 'Check pitch reports and weather forecasts before picking batsmen vs bowlers.',
+  },
+  'Slots': {
+    steps: [
+      'Set your bet amount — start small to understand the game\'s pattern',
+      'Watch the action and decide when to bet higher or hold back',
+      'Cash out at a safe multiplier rather than waiting for a big one',
+      'Track 10–15 rounds to spot patterns before increasing your stake',
+    ],
+    tip: 'Set a daily loss limit before you start and never chase losses.',
+  },
+};
+
+const howTo = howToPlay[category] ?? howToPlay['Slots'];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'All Yono Games', item: 'https://yonolink.co/games' },
+    { '@type': 'ListItem', position: 3, name: title, item: `https://yonolink.co/games/${game.data.slug}` },
+  ],
+};
+
+const gameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: title,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Android, iOS, Web',
+  description,
+  url: `https://yonolink.co/games/${game.data.slug}`,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: rating,
+    bestRating: 5,
+    worstRating: 1,
+    ratingCount: 512,
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/InStock',
+  },
+};
+---
+
+<BaseLayout
+  title={`${title} – Review, How to Play & Promo Codes 2026`}
+  description={`${description} Complete guide on how to play ${title}, ratings, tips and working promo codes for 2026.`}
+  schema={[breadcrumbSchema, gameSchema]}
+>
+  <Header slot="header" />
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-yellow-400 transition-colors">Home</a>
+      <span>/</span>
+      <a href="/games" class="hover:text-yellow-400 transition-colors">Games</a>
+      <span>/</span>
+      <span class="text-gray-300">{title}</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+      <!-- Main content -->
+      <div class="lg:col-span-2 space-y-8">
+
+        <!-- Hero image -->
+        <div class="h-64 sm:h-80 bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl flex items-center justify-center overflow-hidden">
+          {image ? (
+            <img src={image} alt={title} class="w-full h-full object-cover" loading="eager" />
+          ) : (
+            <Icon name="gamepad" class="w-28 h-28 text-gray-600" />
+          )}
+        </div>
+
+        <!-- Title and meta -->
+        <div class="flex flex-wrap items-start gap-4">
+          <div class="flex-1 min-w-0">
+            <h1 class="text-3xl sm:text-4xl font-black text-white mb-2">{title}</h1>
+            <div class="flex items-center gap-3 flex-wrap">
+              <span class="bg-blue-500/20 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/20">{category}</span>
+              <div class="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg class={`w-4 h-4 ${i < stars ? 'text-yellow-400' : 'text-gray-700'}`} fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+                <span class="text-gray-400 text-sm ml-1.5">{rating}/5</span>
+              </div>
+            </div>
+          </div>
+          {playUrl && playUrl !== '#' && (
+            <a
+              href={playUrl}
+              class="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 font-black px-6 py-3 rounded-xl hover:opacity-90 transition-opacity shrink-0"
+            >
+              Play Now
+            </a>
+          )}
+        </div>
+
+        <!-- About section -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-3">About {title}</h2>
+          <p class="text-gray-400 leading-relaxed">{description}</p>
+        </div>
+
+        <!-- How to Play -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+          <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <Icon name="lightbulb" class="w-5 h-5 text-yellow-400" /> How to Play {title}
+          </h2>
+          <ol class="space-y-3 mb-4">
+            {howTo.steps.map((step, i) => (
+              <li class="flex gap-3 text-sm text-gray-400">
+                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-xs font-bold flex items-center justify-center">{i + 1}</span>
+                {step}
+              </li>
+            ))}
+          </ol>
+          <div class="bg-yellow-400/5 border border-yellow-400/20 rounded-xl p-3 flex gap-2 items-start">
+            <Icon name="star" class="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
+            <p class="text-xs text-gray-400"><strong class="text-yellow-400">Pro tip:</strong> {howTo.tip}</p>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <span class="bg-gray-800 hover:bg-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full transition-colors">#{tag}</span>
+          ))}
+        </div>
+
+        <!-- CTA box -->
+        <div class="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 rounded-2xl p-6 text-center">
+          <h3 class="text-xl font-black text-white mb-2">Ready to play {title}?</h3>
+          <p class="text-gray-400 text-sm mb-4">Grab your welcome bonus code before your first deposit — new users get a bonus on every Yono app.</p>
+          <div class="flex flex-col gap-2">
+            <a href="/promo-codes" class="inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl hover:opacity-90 transition-opacity">
+              Get Your Bonus Code
+            </a>
+            <a href={playUrl && playUrl !== '#' ? playUrl : '#'} class="inline-block bg-gray-800 border border-gray-700 text-white font-semibold px-8 py-2.5 rounded-xl hover:bg-gray-700 transition-colors text-sm">
+              Play {title}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+
+        <!-- Quick stats -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+          <h3 class="font-bold text-white mb-4">Game Info</h3>
+          <dl class="space-y-3 text-sm">
+            <div class="flex justify-between">
+              <dt class="text-gray-500">Category</dt>
+              <dd class="text-white font-medium">{category}</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-gray-500">Rating</dt>
+              <dd class="text-yellow-400 font-medium">{rating} / 5</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-gray-500">Platform</dt>
+              <dd class="text-white font-medium">Android, iOS, Web</dd>
+            </div>
+            <div class="flex justify-between">
+              <dt class="text-gray-500">Min. Deposit</dt>
+              <dd class="text-white font-medium">₹50</dd>
+            </div>
+            {releaseDate && (
+              <div class="flex justify-between">
+                <dt class="text-gray-500">Released</dt>
+                <dd class="text-white font-medium">{new Date(releaseDate).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })}</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        <!-- Promo codes -->
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+          <h3 class="font-bold text-white mb-4 flex items-center gap-2">
+            <Icon name="gift" class="w-4 h-4 text-yellow-400" /> {title} Promo Codes
+          </h3>
+          {gamePromos.length > 0 ? (
+            <div class="space-y-3">
+              {gamePromos.map(p => (
+                <div class="bg-gray-800 border border-gray-700 rounded-xl p-3">
+                  <div class="text-xs text-gray-400 mb-1">{p.data.discount}</div>
+                  <div class="flex items-center justify-between gap-2">
+                    <code class="text-yellow-400 font-mono font-bold text-sm tracking-wider">{p.data.code}</code>
+                    <button
+                      onclick={`navigator.clipboard.writeText('${p.data.code}'); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',2000);`}
+                      class="text-gray-400 hover:text-white text-xs px-2 py-0.5 rounded border border-gray-700 hover:border-gray-500 transition-colors"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              ))}
+              <a href="/promo-codes" class="block text-center text-yellow-400 hover:text-yellow-300 text-sm font-medium pt-1 transition-colors">
+                View all promo codes →
+              </a>
+            </div>
+          ) : (
+            <div class="text-sm text-gray-400">
+              <p class="mb-3">New users get a welcome bonus on first deposit.</p>
+              <a href="/promo-codes" class="block text-center bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 font-bold text-sm py-2.5 rounded-xl hover:bg-yellow-400/20 transition-colors">
+                Get Bonus Code →
+              </a>
+            </div>
+          )}
+        </div>
+
+        <!-- Related games -->
+        {relatedGames.length > 0 && (
+          <div class="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+            <h3 class="font-bold text-white mb-4">More {category} Games</h3>
+            <div class="space-y-3">
+              {relatedGames.map(g => (
+                <a href={`/games/${g.data.slug}`} class="flex items-center gap-3 group">
+                  <div class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center shrink-0">
+                    <Icon name="gamepad" class="w-5 h-5 text-gray-500 group-hover:text-yellow-400 transition-colors" />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="text-sm font-medium text-white group-hover:text-yellow-400 transition-colors truncate">{g.data.title}</div>
+                    <div class="flex items-center gap-1 mt-0.5">
+                      <svg class="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                      <span class="text-xs text-gray-500">{g.data.rating}</span>
+                    </div>
+                  </div>
+                  <Icon name="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-yellow-400 transition-colors shrink-0" />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Navigation -->
+        <a href="/games" class="flex items-center gap-2 justify-center text-gray-400 hover:text-white text-sm transition-colors pt-2">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+          Back to all Yono games
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>

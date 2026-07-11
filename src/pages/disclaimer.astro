@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',       item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'Disclaimer', item: 'https://yonolink.co/disclaimer' },
+  ],
+};
+---
+<BaseLayout title="Disclaimer — YonoLink Independent Gaming Guide" description="Disclaimer for YonoLink — an independent information site not affiliated with any gaming operator, Yono SBI or any bank. Read our full disclosure before using this site." schema={breadcrumbSchema}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mb-10">
+      <h1 class="font-display font-black text-3xl sm:text-4xl text-white mb-3">Disclaimer</h1>
+      <p class="text-gray-500 text-sm">Last updated: July 2026</p>
+    </div>
+    <div class="space-y-8 text-gray-400 text-sm leading-relaxed">
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">General Information Only</h2>
+        <p>The content published on YonoLink.co is intended for general informational and entertainment purposes only. Nothing on this website constitutes financial advice, investment advice, legal advice, or any other form of professional advice. The information provided — including app reviews, gameplay guides, promo code listings, and withdrawal tutorials — should not be relied upon as the sole basis for any financial or gaming decisions. You act on the information at your own risk.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">No Affiliation with Any Operator</h2>
+        <p>YonoLink.co is an independent information and affiliate website. We are not affiliated with, endorsed by, sponsored by, or in any way officially connected to Yono, YonoGames, or any gaming operator, platform, app developer, or related brand referenced on this site. <strong class="text-white">YonoLink.co is not affiliated with Yono SBI, State Bank of India, or any bank or financial institution.</strong> The name "Yono" as used on this site refers exclusively to third-party real-cash gaming apps, not to any banking product or service. All product names, trademarks, and logos mentioned belong to their respective owners. References to specific apps or platforms are for descriptive purposes only and do not imply any official partnership or endorsement.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Promo Code Accuracy</h2>
+        <p>We make every reasonable effort to list accurate and up-to-date promo codes, referral bonuses, and welcome offers. However, promo codes and promotional terms change frequently and without notice at the discretion of the respective platform operators. We cannot guarantee that any code listed on this site is currently valid, active, or will yield the described benefit. Always verify a promo code's terms, conditions, and expiry directly on the operator's official app or website before depositing funds or relying on an offer. We accept no liability for losses, missed bonuses, or disputes arising from the use of promo codes listed here.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Real Money Gaming Risk</h2>
+        <p>The apps and platforms discussed on this website involve real money wagering and carry inherent financial risk. You may lose some or all of the money you deposit. Gaming with real money should be treated as a form of entertainment, not as a source of income or a method of financial recovery. We strongly encourage responsible gaming practices — set strict deposit limits, play within your means, take regular breaks, and seek help if you feel your gaming habits are becoming problematic. If you or someone you know is struggling with problem gambling, please contact a licensed counsellor or a helpline in your country.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Affiliate Disclosure</h2>
+        <p>YonoLink.co participates in affiliate and referral programmes. This means that when you click certain links on this site and subsequently download an app, register an account, or make a deposit, we may receive a commission or referral fee from the operator at no additional cost to you. Our editorial content and opinions are our own and are not influenced by affiliate relationships. We only feature products and services we believe are relevant and of interest to our audience, but you should be aware of this financial relationship when reading our content.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Accuracy of Information</h2>
+        <p>We strive to keep all information on this site accurate, current, and complete. However, we make no representations or warranties of any kind, express or implied, regarding the accuracy, reliability, completeness, or suitability of the information for any particular purpose. App features, withdrawal limits, bonus structures, and platform availability can change at any time. We recommend independently verifying all material information directly with the relevant platform before making any decisions.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Age Restriction — 18+ Only</h2>
+        <p>This website and all content on it is intended exclusively for adults aged 18 years or older. Real-money gaming is strictly prohibited for minors. By accessing this site, you confirm that you are at least 18 years of age. We do not condone, facilitate, or support access to real-money gaming by individuals under the legal age. If you are a parent or guardian and believe a minor is accessing this content, please take appropriate steps to restrict their access.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Jurisdiction and Legal Compliance</h2>
+        <p>The legality of online real-money gaming varies significantly between states, territories, and jurisdictions within India and internationally. It is your sole responsibility to determine whether accessing and using any gaming app or platform is lawful in your specific location before participating. YonoLink.co does not promote the use of these platforms in any jurisdiction where such activity is prohibited by law. Nothing on this site should be interpreted as encouraging you to violate any applicable law or regulation.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">External Links</h2>
+        <p>This site contains links to third-party websites and applications. These links are provided for convenience and informational purposes only. We have no control over the content, availability, or practices of those external sites and accept no responsibility for them. The inclusion of any link does not imply our endorsement of that site or its content. You access external links at your own risk and subject to the terms and privacy policies of those sites.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Limitation of Liability</h2>
+        <p>To the fullest extent permitted by applicable law, YonoLink.co and its operators shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of, or inability to use, this website or any information contained herein — including but not limited to financial losses resulting from gaming activities, reliance on promo codes, or decisions made based on content published here.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Contact Us</h2>
+        <p>If you have questions about this disclaimer or any content on this site, please get in touch:</p>
+        <ul class="list-disc list-inside mt-3 space-y-2">
+          <li><span class="text-gray-300 font-semibold">Email:</span> Yonolinksupportcenter@gmail.com</li>
+          <li><span class="text-gray-300 font-semibold">Telegram:</span> <a href="https://t.me/Lakshymi" class="text-blue-400 hover:text-blue-300 underline underline-offset-2" target="_blank" rel="noopener noreferrer">t.me/Lakshymi</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

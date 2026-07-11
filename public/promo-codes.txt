@@ -1,0 +1,88 @@
+# YONO PROMO CODES — Edit this file to update daily codes (up to 3× per day)
+#
+# Format:  slug  AM-code | PM-code | Eve-code
+#
+# Put the AM code right after the slug (separated by a space).
+# Put PM and Eve codes after the | separators.
+# Leave a slot empty if the code has not been released yet.
+#
+# Examples:
+#   abc-rummy MORNING100 | AFTERNOON200 | EVENING300
+#   yono-rummy YONO2026 | |
+#   boss-rummy | PM_CODE |
+#   ind-rummy | | EVE99
+#
+# After editing, save this file and upload it to your server.
+# The site will show the new codes immediately — no rebuild needed.
+
+## RUMMY
+yono-rummy   | |
+abc-rummy    | |
+boss-rummy   | |
+game-rummy   | |
+gogo-rummy   | |
+hi-rummy     | |
+ind-rummy    | |
+inr-rummy    | |
+jaiho-rummy  | |
+joy-rummy    | |
+love-rummy   | |
+okrummy      | |
+rumble-rummy | |
+rummy-91     | |
+rummy77      | |
+rummy888     | |
+top-rummy    | |
+rummy-ludo   | |
+max-rummy    | |
+
+## SPIN
+spin-101     | |
+spin-777     | |
+spin-crush   | |
+spin-gold    | |
+spin-lucky   | |
+spin-winner  | |
+yes-spin     | |
+jaiho-spin   | |
+slot-spin    | |
+
+## SLOTS
+567-slots    | |
+ind-slots    | |
+saga-slots   | |
+share-slots  | |
+slots-winner | |
+yono-slots   | |
+jaiho-slot   | |
+
+## CASINO / 777
+777game      | |
+789-jackpot  | |
+hindi777     | |
+jahio-777    | |
+yn-777       | |
+yono-777     | |
+
+## ARCADE
+101z         | |
+jaiho-arcade | |
+jaiho-win    | |
+jaiho91      | |
+maha-games   | |
+yono-arcade  | |
+yono-games   | |
+
+## BET / CLUB
+bet-213      | |
+club-inr     | |
+ind-club     | |
+mbm-bet      | |
+
+## VIP
+neta-vip     | |
+yono-vip     | |
+
+## BINGO
+bingo-101    | |
+ind-bingo    | |

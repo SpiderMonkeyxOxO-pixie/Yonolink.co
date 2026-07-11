@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',         item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'Become Agent', item: 'https://yonolink.co/become-agent' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Become a Yonolink Agent — Join the Agent Network"
+  description="Apply to become an official Yonolink Agent. Access exclusive promotional codes, campaign rewards, performance incentives, and salary opportunities for qualified agents."
+  schema={breadcrumbSchema}
+>
+  <Header />
+
+  <main>
+    <!-- ── Hero ── -->
+    <section class="relative overflow-hidden hero-mesh py-16 sm:py-24 border-b border-white/5">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-[600px] h-[400px] bg-yellow-400/6 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-violet-600/5 rounded-full blur-[100px]"></div>
+        <div class="absolute inset-0 dot-grid opacity-[0.025]"></div>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center gap-2.5 glass-gold border border-yellow-400/20 text-yellow-400 text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-glow-gold">
+          <span class="relative flex h-2 w-2 shrink-0">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+          </span>
+          Applications Open — Live Network
+        </div>
+        <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-5">
+          Become a <span class="text-gold">Yonolink Agent</span>
+        </h1>
+        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+          Join the growing Yonolink Agent Network and become part of a rapidly expanding community across India.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Main Content ── -->
+    <section class="relative py-14 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+          <!-- ── Left: Info ── -->
+          <div>
+            <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-7">
+              Whether you manage social media pages, Telegram channels, online communities, or local promotional networks,
+              you can apply to become an official Yonolink Agent.
+            </p>
+
+            <!-- Benefits -->
+            <p class="text-white font-bold text-sm mb-4">Approved agents may be eligible to receive:</p>
+            <ul class="space-y-3 mb-7">
+              {[
+                'Exclusive promotional codes',
+                'Special vouchers and campaign rewards',
+                'Performance-based incentives',
+                'Salary opportunities for qualified agents',
+                'Access to selected Yonolink marketing campaigns',
+              ].map(benefit => (
+                <li class="flex items-start gap-3">
+                  <span class="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-yellow-400/15 border border-yellow-400/30 flex items-center justify-center">
+                    <Icon name="check" class="w-3 h-3 text-yellow-400" />
+                  </span>
+                  <span class="text-gray-300 text-sm">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p class="text-gray-600 text-xs leading-relaxed mb-8 border-l-2 border-white/10 pl-3">
+              Applications are reviewed individually, and eligibility for rewards, incentives, and salary opportunities
+              depends on meeting Yonolink's requirements and performance criteria.
+            </p>
+
+            <!-- Live counter card -->
+            <div class="glow-card-static glass-gold border border-yellow-400/15 rounded-2xl p-6">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+                </span>
+                <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Registered Agents</span>
+              </div>
+              <div id="agent-counter" class="font-display font-black text-4xl sm:text-5xl text-gold leading-none mb-2" data-target="3091826">
+                0
+              </div>
+              <p class="text-gray-500 text-xs">
+                This number updates continuously as new agents join the Yonolink Agent Network.
+              </p>
+            </div>
+          </div>
+
+          <!-- ── Right: Form ── -->
+          <div class="glow-card glass border border-white/5 rounded-3xl p-6 sm:p-8">
+            <h2 class="font-display font-black text-xl sm:text-2xl text-white mb-2">Apply as a Yonolink Agent</h2>
+            <p class="text-gray-500 text-sm mb-7">Fill out the form below to submit your application.</p>
+
+            <form id="agent-form" class="space-y-5" novalidate>
+              <!-- Message -->
+              <div>
+                <label for="agent-message" class="block text-sm font-bold text-gray-300 mb-2">Message</label>
+                <textarea
+                  id="agent-message"
+                  name="message"
+                  rows="3"
+                  placeholder="Tell us about your channels, audience size, or anything you'd like us to know..."
+                  required
+                  class="agent-input w-full glass border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Telegram Username -->
+              <div>
+                <label for="field-telegram" class="flex items-center gap-2 text-sm font-bold text-gray-300 mb-2">
+                  <span class="text-sky-400"><Icon name="telegram" class="w-4 h-4" /></span>
+                  Telegram Username
+                </label>
+                <div class="relative flex">
+                  <span class="flex items-center px-3 glass border border-r-0 border-white/10 rounded-l-xl text-gray-500 text-xs font-bold select-none">@</span>
+                  <input id="field-telegram" type="text" name="telegram" placeholder="Telegram username"
+                    class="agent-input flex-1 min-w-0 glass border border-white/10 rounded-r-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent" />
+                </div>
+              </div>
+
+              <!-- Telegram Channel -->
+              <div>
+                <label for="field-tg-channel" class="flex items-center gap-2 text-sm font-bold text-gray-300 mb-2">
+                  <span class="text-sky-400"><Icon name="telegram" class="w-4 h-4" /></span>
+                  Telegram Channel Link or Username
+                </label>
+                <div class="relative flex">
+                  <span class="flex items-center px-3 glass border border-r-0 border-white/10 rounded-l-xl text-gray-500 text-xs font-bold select-none">@</span>
+                  <input id="field-tg-channel" type="text" name="telegram_channel" placeholder="Channel link or @username"
+                    class="agent-input flex-1 min-w-0 glass border border-white/10 rounded-r-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent" />
+                </div>
+              </div>
+
+
+              <!-- Add another channel -->
+              <div>
+                <label class="block text-sm font-bold text-gray-300 mb-2">Other Channel / Page</label>
+                <div id="channels-container" class="space-y-3"></div>
+              </div>
+              <button
+                type="button"
+                id="add-channel-btn"
+                class="flex items-center gap-2 text-yellow-400 text-sm font-bold hover:text-yellow-300 transition-colors group"
+              >
+                <span class="w-6 h-6 rounded-full border border-yellow-400/40 flex items-center justify-center group-hover:border-yellow-400/70 transition-colors text-base leading-none">+</span>
+                Add Another Channel / Page
+              </button>
+
+              <!-- Submit -->
+              <div class="pt-2 space-y-3">
+                <button
+                  type="submit"
+                  id="agent-submit"
+                  class="btn-shimmer btn-glow w-full bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-base py-4 rounded-2xl flex items-center justify-center gap-2"
+                >
+                  <Icon name="arrow-right" class="w-5 h-5" />
+                  Send Application
+                </button>
+
+                <div class="flex items-center gap-3">
+                  <div class="flex-1 h-px bg-white/8"></div>
+                  <span class="text-gray-600 text-xs">or</span>
+                  <div class="flex-1 h-px bg-white/8"></div>
+                </div>
+
+                <a
+                  href="https://t.me/Lakshymi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full glass border border-sky-400/20 hover:border-sky-400/40 hover:bg-sky-400/5 text-sky-400 font-bold text-sm py-3.5 rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200"
+                >
+                  <Icon name="telegram" class="w-5 h-5" />
+                  Contact us directly via Telegram
+                </a>
+
+                <a
+                  href="https://t.me/YonolinkAgent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full glass border border-sky-400/15 hover:border-sky-400/35 hover:bg-sky-400/5 rounded-2xl flex items-start gap-3 px-4 py-3.5 transition-all duration-200 group"
+                >
+                  <Icon name="telegram" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                  <span class="text-left">
+                    <span class="block text-gray-400 text-xs leading-relaxed">Keep updated to the latest promo codes, events, gifts, vouchers via Telegram</span>
+                    <span class="block text-sky-400 font-bold text-sm mt-0.5 group-hover:text-sky-300 transition-colors">@YonolinkAgent</span>
+                  </span>
+                </a>
+              </div>
+
+              <!-- Success message -->
+              <div id="agent-success" class="hidden glass-gold border border-green-500/30 rounded-2xl p-5 text-center">
+                <div class="w-12 h-12 mx-auto rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center mb-3">
+                  <Icon name="check" class="w-6 h-6 text-green-400" />
+                </div>
+                <p class="text-white font-black text-base mb-1">Application Received!</p>
+                <p class="text-gray-400 text-sm">We'll review your application and get back to you via Telegram.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // ── Counter animation ──
+  const counterEl = document.getElementById('agent-counter');
+  if (counterEl) {
+    const target = parseInt(counterEl.dataset.target ?? '0', 10);
+    let current = 0;
+    const duration = 2400;
+    let start: number | null = null;
+    const ease = (t: number) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+
+    const fmt = (n: number) => n.toLocaleString('en-US');
+
+    const liveIncrement = () => {
+      current += Math.random() < 0.5 ? 1 : 2;
+      counterEl.textContent = fmt(current);
+      setTimeout(liveIncrement, 5000 + Math.random() * 7000);
+    };
+
+    const tick = (ts: number) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      current = Math.floor(ease(progress) * target);
+      counterEl.textContent = fmt(current);
+      if (progress < 1) requestAnimationFrame(tick);
+      else {
+        current = target;
+        counterEl.textContent = fmt(current);
+        setTimeout(liveIncrement, 5000 + Math.random() * 5000);
+      }
+    };
+
+    new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) { requestAnimationFrame(tick); }
+    }, { threshold: 0.3 }).observe(counterEl);
+  }
+
+  // ── Add channel ──
+  document.getElementById('add-channel-btn')?.addEventListener('click', () => {
+    const container = document.getElementById('channels-container');
+    const wrapper = document.createElement('div');
+    wrapper.className = 'relative';
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.name = 'channels[]';
+    input.placeholder = 'Telegram channel, Instagram page, or community URL';
+    input.className = 'agent-input w-full glass border border-white/10 rounded-xl px-4 py-3 pr-10 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent';
+    const rm = document.createElement('button');
+    rm.type = 'button';
+    rm.className = 'absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-red-400 transition-colors text-lg leading-none';
+    rm.textContent = '×';
+    rm.addEventListener('click', () => wrapper.remove());
+    wrapper.appendChild(input);
+    wrapper.appendChild(rm);
+    container?.appendChild(wrapper);
+    input.focus();
+  });
+
+  // ── Submit — build Telegram message and open chat ──
+  const form = document.getElementById('agent-form') as HTMLFormElement | null;
+  document.getElementById('agent-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const telegram = (form?.querySelector('[name="telegram"]') as HTMLInputElement)?.value.trim();
+    const channel  = (form?.querySelector('[name="telegram_channel"]') as HTMLInputElement)?.value.trim();
+    const message  = (form?.querySelector('[name="message"]') as HTMLTextAreaElement)?.value.trim();
+    const extras   = [...(form?.querySelectorAll('[name="channels[]"]') ?? [])]
+      .map(el => (el as HTMLInputElement).value.trim()).filter(Boolean);
+
+    if (!telegram) {
+      (form?.querySelector('[name="telegram"]') as HTMLInputElement)?.focus();
+      return;
+    }
+
+    // Build a pre-filled Telegram message
+    let text = `🤝 Yonolink Agent Application\n\n`;
+    text += `Telegram: @${telegram}\n`;
+    if (channel)  text += `Channel: ${channel}\n`;
+    if (extras.length) text += `Other: ${extras.join(', ')}\n`;
+    if (message)  text += `\nMessage: ${message}`;
+
+    const btn = document.getElementById('agent-submit');
+    if (btn) btn.setAttribute('disabled', 'true');
+
+    // Open Telegram with pre-filled text
+    const url = `https://t.me/Lakshymi?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+
+    // Show success state
+    setTimeout(() => {
+      form?.querySelectorAll('.agent-input, #add-channel-btn, #agent-submit').forEach(el => {
+        (el as HTMLElement).style.display = 'none';
+      });
+      document.getElementById('agent-success')?.classList.remove('hidden');
+    }, 400);
+  });
+</script>

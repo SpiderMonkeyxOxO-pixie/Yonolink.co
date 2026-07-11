@@ -1,0 +1,327 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import PromoCard from '../../components/PromoCard.astro';
+import Icon from '../../components/Icon.astro';
+import { getCollection } from 'astro:content';
+import { dailyCodes } from '../../data/daily-codes';
+import { apps, appsBySlug } from '../../data/apps';
+
+const allPromos = await getCollection('promos');
+const active = allPromos.filter(p => p.data.isActive);
+const promoGames = ['All Games', ...new Set(active.filter(p => p.data.game !== 'All Games').map(p => p.data.game))];
+const lastUpdated = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+const monthYear  = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+// Merge dailyCodes with app data — sorted A→Z by name
+const codeCards = dailyCodes
+  .map(dc => ({ ...dc, app: appsBySlug[dc.slug] }))
+  .filter(dc => dc.app)
+  .sort((a, b) => a.app.name.localeCompare(b.app.name));
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'Yono Promo Codes', item: 'https://yonolink.co/promo-codes' },
+  ],
+};
+
+const offersSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `Yono Daily Promo Codes ${monthYear}`,
+  url: 'https://yonolink.co/promo-codes',
+  numberOfItems: codeCards.length,
+  itemListElement: codeCards.map((c, i) => ({
+    '@type': 'ListItem', position: i + 1, name: c.app.name,
+    url: `https://yonolink.co/app/${c.slug}`,
+  })),
+};
+---
+
+<BaseLayout
+  title={`Yono Promo Codes ${monthYear} — Daily AM PM Eve Codes`}
+  description={`Daily Yono promo codes updated 3× a day — morning, afternoon and evening. Copy the latest code for ${codeCards.length} Yono apps instantly. Free bonus up to ₹100.`}
+  schema={[breadcrumbSchema, offersSchema]}
+>
+  <Header slot="header" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-yellow-400 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-gray-300">Promo Codes</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse inline-block"></span>
+        Live — Updated {lastUpdated}
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black text-white mb-3">
+        Yono Daily Promo Codes — All Apps
+      </h1>
+      <p class="text-gray-400 text-base max-w-3xl">
+        Codes below are entered manually up to three times a day — morning, afternoon, and evening — as each platform releases them. Tap <strong class="text-white">Copy</strong> to copy a code to your clipboard.
+      </p>
+    </div>
+
+    <!-- Search + sort bar -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+      <div class="relative flex-1">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+        </svg>
+        <input
+          id="code-search"
+          type="search"
+          placeholder="Search app name…"
+          class="w-full bg-gray-900 border border-gray-700 rounded-xl pl-9 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400/60 transition-colors"
+        />
+      </div>
+      <div id="search-count" class="shrink-0 self-center text-sm text-gray-500">
+        {codeCards.length} apps
+      </div>
+    </div>
+
+    <!-- ── DAILY CODES GRID ─────────────────────────────────────────────── -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-16" id="daily-grid">
+      {codeCards.map(({ slug, am, pm, eve, app }) => (
+        <div
+          class="daily-card bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden flex flex-col"
+          data-slug={slug}
+          data-am={am}
+          data-pm={pm}
+          data-eve={eve}
+          data-name={app.name.toLowerCase()}
+        >
+          <!-- App header -->
+          <div class="flex items-center gap-2.5 p-3 border-b border-gray-800">
+            <div class="w-9 h-9 rounded-xl overflow-hidden bg-gray-800 shrink-0 border border-gray-700">
+              <img src={app.logo} alt={app.name} class="w-full h-full object-contain p-0.5" loading="lazy" />
+            </div>
+            <span class="text-xs font-bold text-white leading-tight line-clamp-2">{app.name}</span>
+          </div>
+
+          <!-- Tabs: AM / PM / Eve -->
+          <div class="flex border-b border-gray-800">
+            {(['am','pm','eve'] as const).map((slot, i) => (
+              <button
+                class={`daily-tab flex-1 py-1.5 text-xs font-bold transition-colors ${i === 0 ? 'bg-yellow-400 text-gray-950' : 'text-gray-500 hover:text-gray-300'}`}
+                data-slot={slot}
+              >
+                {slot === 'am' ? 'AM' : slot === 'pm' ? 'PM' : 'Eve'}
+              </button>
+            ))}
+          </div>
+
+          <!-- Code area -->
+          <div class="p-3 flex-1 flex flex-col gap-2">
+            <span class="daily-time-label text-xs text-gray-600">Morning</span>
+            <div class="flex items-center gap-1.5 min-h-[28px]">
+              <div class="flex-1 min-w-0">
+                <span class="daily-code-text text-xs font-mono font-bold text-yellow-400 break-all leading-snug hidden"></span>
+                <span class="daily-no-code text-xs text-gray-600 italic">Not released yet</span>
+              </div>
+              <button
+                class="daily-copy-btn shrink-0 text-xs font-bold border px-2 py-1 rounded-lg transition-colors bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed"
+                disabled
+              >Copy</button>
+            </div>
+          </div>
+
+          <!-- Download button -->
+          <a
+            href={`/app/${slug}`}
+            class="block mx-3 mb-3 text-center text-xs font-black py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 hover:opacity-90 transition-opacity"
+          >
+            Download
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- ── TIPS + SEO ──────────────────────────────────────────────────── -->
+    <div class="border-t border-gray-800 pt-12">
+
+      <!-- Tips -->
+      <div class="bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 rounded-2xl p-6 mb-10">
+        <h3 class="font-bold text-white mb-5 flex items-center gap-2">
+          <Icon name="sparkles" class="w-5 h-5 text-yellow-400" /> Tips to Maximize Your Bonuses
+        </h3>
+        <ul class="space-y-3 text-sm text-gray-400">
+          {[
+            'Register, bind your phone number and claim your welcome bonus for each platform',
+            'Use the First Deposit Bonus to get up to +200 extra bonus credits',
+            'Share your referral link on social media to earn referral bonus',
+            'Claim the Lucky Gullak at the right tentative time each day',
+            'Use the Discount Card for 7 or 30 days to receive extra rewards daily',
+            'Upgrade your VIP level — higher VIP level means higher rewards',
+            'Participate in any Quizzes & Events inside the app',
+            'Always claim the promo code every AM | PM and EVE before it expires',
+          ].map((tip, i) => (
+            <li class="flex items-start gap-2.5">
+              <span class="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-yellow-400/15 border border-yellow-400/30 flex items-center justify-center text-yellow-400 font-black text-[10px] leading-none">
+                {i + 1}
+              </span>
+              <span>{tip}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- SEO -->
+      <div class="max-w-3xl border-t border-gray-800 pt-10">
+        <h2 class="text-xl font-black text-white mb-4">About Yono Promo Codes</h2>
+        <div class="space-y-3 text-gray-400 text-sm leading-relaxed">
+          <p>
+            <strong class="text-white">Yono promo codes</strong> are discount codes that credit bonus cash, free chips, or cashback to your Yono account instantly. They work across all Yono apps — from Rummy and Slots to Arcade, Spin, and VIP platforms.
+          </p>
+          <p>
+            Daily codes on this page are updated manually up to three times each day as platforms release them. Game bonus codes are verified weekly and expired codes are removed promptly.
+          </p>
+          <p>
+            For game-specific details, visit our <a href="/games" class="text-yellow-400 hover:underline">All Yono Games</a> page or browse all <a href="/app" class="text-yellow-400 hover:underline">55 Yono apps</a>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  // ── Search ───────────────────────────────────────────────────────────────
+  const searchInput  = document.getElementById('code-search') as HTMLInputElement;
+  const searchCount  = document.getElementById('search-count') as HTMLElement;
+
+  searchInput?.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim();
+    const allCards = document.querySelectorAll<HTMLElement>('.daily-card');
+    let visible = 0;
+    allCards.forEach(card => {
+      const name = card.dataset.name ?? '';
+      const show = !q || name.includes(q);
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (searchCount) searchCount.textContent = `${visible} app${visible !== 1 ? 's' : ''}`;
+  });
+
+  // ── Daily code cards ──────────────────────────────────────────────────────
+  const TIME_LABELS: Record<string, string> = { am: 'Morning', pm: 'Afternoon', eve: 'Evening' };
+
+  function initCard(card: HTMLElement) {
+    const codes: Record<string, string> = {
+      am:  card.dataset.am  ?? '',
+      pm:  card.dataset.pm  ?? '',
+      eve: card.dataset.eve ?? '',
+    };
+
+    const tabs      = card.querySelectorAll<HTMLButtonElement>('.daily-tab');
+    const codeText  = card.querySelector<HTMLElement>('.daily-code-text');
+    const noCode    = card.querySelector<HTMLElement>('.daily-no-code');
+    const copyBtn   = card.querySelector<HTMLButtonElement>('.daily-copy-btn');
+    const timeLabel = card.querySelector<HTMLElement>('.daily-time-label');
+
+    function showSlot(slot: string) {
+      const code = codes[slot] ?? '';
+      if (timeLabel) timeLabel.textContent = TIME_LABELS[slot] ?? slot;
+      if (code) {
+        codeText?.classList.remove('hidden');
+        noCode?.classList.add('hidden');
+        if (codeText) codeText.textContent = code;
+        if (copyBtn) {
+          copyBtn.disabled = false;
+          copyBtn.className = 'daily-copy-btn shrink-0 text-xs font-bold border px-2 py-1 rounded-lg transition-colors bg-yellow-400/10 border-yellow-400/30 text-yellow-400 hover:bg-yellow-400/20 cursor-pointer';
+        }
+      } else {
+        codeText?.classList.add('hidden');
+        noCode?.classList.remove('hidden');
+        if (copyBtn) {
+          copyBtn.disabled = true;
+          copyBtn.className = 'daily-copy-btn shrink-0 text-xs font-bold border px-2 py-1 rounded-lg transition-colors bg-gray-800 border-gray-700 text-gray-500 cursor-not-allowed';
+        }
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-yellow-400', 'text-gray-950');
+          t.classList.add('text-gray-500');
+        });
+        tab.classList.add('bg-yellow-400', 'text-gray-950');
+        tab.classList.remove('text-gray-500');
+        showSlot(tab.dataset.slot ?? 'am');
+      });
+    });
+
+    copyBtn?.addEventListener('click', () => {
+      const code = codeText?.textContent ?? '';
+      if (!code || copyBtn.disabled) return;
+      navigator.clipboard.writeText(code).then(() => {
+        copyBtn.textContent = 'Copied!';
+        copyBtn.className = 'daily-copy-btn shrink-0 text-xs font-bold border px-2 py-1 rounded-lg transition-colors bg-green-500/20 border-green-500/30 text-green-400 cursor-pointer';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy';
+          copyBtn.className = 'daily-copy-btn shrink-0 text-xs font-bold border px-2 py-1 rounded-lg transition-colors bg-yellow-400/10 border-yellow-400/30 text-yellow-400 hover:bg-yellow-400/20 cursor-pointer';
+        }, 1500);
+      });
+    });
+
+    showSlot('am');
+  }
+
+  // ── Fetch codes from /promo-codes.txt on every page load ─────────────────
+  // Edit public/promo-codes.txt and upload — no rebuild needed.
+  // Format per line:  slug  AM-code | PM-code | Eve-code
+  (async () => {
+    const allCards = document.querySelectorAll<HTMLElement>('.daily-card');
+
+    try {
+      const res  = await fetch('/promo-codes.txt');
+      const text = await res.text();
+
+      // Build slug → codes map
+      const map: Record<string, { am: string; pm: string; eve: string }> = {};
+      for (const line of text.split('\n')) {
+        const t = line.trim();
+        if (!t || t.startsWith('#')) continue;
+        // Split on first pipe to separate "slug AM-code" from "PM | Eve"
+        const pipeIdx   = t.indexOf('|');
+        const firstSeg  = pipeIdx >= 0 ? t.slice(0, pipeIdx) : t;
+        const afterFirst = pipeIdx >= 0 ? t.slice(pipeIdx + 1) : '';
+        const tokens    = firstSeg.trim().split(/\s+/);
+        const slug      = tokens[0] ?? '';
+        const am        = tokens.slice(1).join(' ').trim();
+        const [pm = '', eve = ''] = afterFirst.split('|').map((s: string) => s.trim());
+        if (slug) map[slug] = { am, pm, eve };
+      }
+
+      // Apply codes to cards
+      allCards.forEach(card => {
+        const slug = card.dataset.slug ?? '';
+        const c    = map[slug];
+        if (c) {
+          card.dataset.am  = c.am;
+          card.dataset.pm  = c.pm;
+          card.dataset.eve = c.eve;
+        }
+        initCard(card);
+      });
+    } catch {
+      // Fetch failed — init cards with empty codes
+      allCards.forEach(card => initCard(card));
+    }
+  })();
+
+</script>

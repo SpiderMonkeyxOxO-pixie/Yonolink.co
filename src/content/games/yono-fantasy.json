@@ -1,0 +1,12 @@
+{
+  "title": "Yono Fantasy",
+  "slug": "yono-fantasy",
+  "description": "Create your dream cricket and football team, pick the right players and win real cash on Yono Fantasy.",
+  "category": "Fantasy Sports",
+  "image": "/logos/yono-games.webp",
+  "rating": 4.6,
+  "tags": ["fantasy cricket", "fantasy football", "sports", "yono"],
+  "featured": true,
+  "releaseDate": "2024-02-20",
+  "playUrl": "#"
+}

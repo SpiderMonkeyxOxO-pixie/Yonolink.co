@@ -1,0 +1,12 @@
+{
+  "title": "Yono Cricket",
+  "slug": "yono-cricket",
+  "description": "Experience real cricket action on Yono! Play T20, ODI and Test formats, build your team and compete in daily and weekly tournaments for big cash wins.",
+  "category": "Fantasy Sports",
+  "image": "/logos/maha-games.webp",
+  "rating": 4.5,
+  "tags": ["cricket", "fantasy cricket", "t20", "yono", "sports"],
+  "featured": true,
+  "releaseDate": "2024-03-15",
+  "playUrl": "#"
+}

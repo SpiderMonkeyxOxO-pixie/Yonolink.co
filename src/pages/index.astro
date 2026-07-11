@@ -1,0 +1,1101 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import GameCard from '../components/GameCard.astro';
+import { getCollection } from 'astro:content';
+import { apps } from '../data/apps';
+
+const allPromos = await getCollection('promos');
+const allPosts  = await getCollection('blog');
+
+const activePromos   = allPromos.filter(p => p.data.isActive).slice(0, 3);
+const featuredPosts  = allPosts.filter(p => p.data.featured).slice(0, 3);
+
+// Featured game gallery — 4 flagship apps shown with full card metadata
+const featuredGameSlugs = ['yono-rummy', 'yono-games', 'max-rummy', 'yono-777'];
+const featuredNewSlugs  = new Set(['max-rummy']);
+
+// Top apps — manually curated, in display order
+const topAppSlugs = [
+  'yono-rummy', 'yono-games', 'yono-arcade', 'yono-777',
+  'yono-slots', 'max-rummy', 'rumble-rummy', 'top-rummy',
+];
+import { appsBySlug } from '../data/apps';
+const topApps = topAppSlugs.map(s => appsBySlug[s]).filter(Boolean);
+const featuredGames = featuredGameSlugs.map(s => appsBySlug[s]).filter(Boolean);
+
+// Per-category card backgrounds for featured & listing cards
+const catCardBg: Record<string, { grad: string; glow: string }> = {
+  Rummy:  { grad: 'from-blue-900/70 via-blue-950/40 to-gray-900',    glow: 'bg-blue-500/25'   },
+  Slots:  { grad: 'from-purple-900/70 via-purple-950/40 to-gray-900',glow: 'bg-purple-500/25' },
+  Spin:   { grad: 'from-pink-900/70 via-pink-950/40 to-gray-900',    glow: 'bg-pink-500/25'   },
+  Arcade: { grad: 'from-green-900/70 via-green-950/40 to-gray-900',  glow: 'bg-green-500/25'  },
+  VIP:    { grad: 'from-yellow-900/70 via-yellow-950/40 to-gray-900',glow: 'bg-yellow-500/25' },
+};
+
+// Category meta
+const catMeta: Record<string, { color: string; border: string; desc: string; icon: string }> = {
+  Rummy:  { color: 'from-blue-600/20 to-blue-500/5',    border: 'border-blue-500/20',   desc: '13-card rummy for real cash',    icon: 'gamepad'  },
+  Spin:   { color: 'from-pink-600/20 to-pink-500/5',    border: 'border-pink-500/20',   desc: 'Lucky spin wheels & prizes',     icon: 'sparkles' },
+  Slots:  { color: 'from-purple-600/20 to-purple-500/5',border: 'border-purple-500/20', desc: 'Slots, 777 & jackpot games',     icon: 'sparkles' },
+  Arcade: { color: 'from-green-600/20 to-green-500/5',  border: 'border-green-500/20',  desc: 'Arcade & multi-game platforms',  icon: 'gamepad'  },
+  VIP:    { color: 'from-amber-500/20 to-amber-400/5',  border: 'border-amber-400/20',  desc: 'Premium VIP platforms',          icon: 'sparkles' },
+};
+
+const categories = [...new Set(apps.map(a => a.category))];
+
+const seoTitle   = `All Yono Game — Download ${apps.length} Apps & Promo Codes 2026`;
+const monthYear  = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+const seoDesc    = `Your complete guide to all Yono game — ${apps.length} apps including Rummy, Slots, Spin, Arcade and VIP. Verified promo codes, download links and expert tips. Updated ${monthYear}.`;
+
+const faqs = [
+  {
+    q: 'What is All Yono Game?',
+    a: 'All Yono Game refers to the complete collection of real-cash gaming apps available in the Yono platform ecosystem — including Rummy, Slots, Spin, Arcade, and VIP apps. YonoLink.co covers all Yono games in one place.',
+  },
+  {
+    q: 'How many games are available on Yono?',
+    a: 'The Yono gaming ecosystem currently covers 52 apps across 5 categories: Rummy, Slots, Spin, Arcade, and VIP. New apps are added regularly.',
+  },
+  {
+    q: 'Which All Yono Game is best for winning real money?',
+    a: 'Yono Rummy, Boss Rummy, and Top Rummy are the most skill-based and offer the highest consistent payouts. For casual play, Spin 777 and Slot Spin offer easy wins. Visit our Promo Codes page to claim your welcome bonus before your first deposit.',
+  },
+  {
+    q: 'Are Yono promo codes free to use?',
+    a: 'Yes — all promo codes listed on YonoLink.co are completely free. Copy the code, open your Yono app, go to Wallet → Promo Codes, paste it and tap Apply. The bonus is credited instantly to your account.',
+  },
+  {
+    q: 'How do I download Yono games on Android?',
+    a: 'Each Yono game is a standalone APK download. Visit the app\'s download page on YonoLink.co, tap "Download Free", allow Unknown Sources in your Android settings, and install the APK. No Play Store required.',
+  },
+  {
+    q: 'Is all Yono game safe and legal in India?',
+    a: 'Yono skill-based games like Rummy are classified as legal in most Indian states. All apps use 256-bit SSL encryption and RBI-approved payment gateways. Always check the laws of your specific state before playing for real cash.',
+  },
+  {
+    q: 'What is the minimum deposit to start playing Yono games?',
+    a: 'All Yono apps have a minimum deposit of ₹100. New users can claim a welcome bonus on their first deposit — visit our Promo Codes page to get the current code before you deposit.',
+  },
+  {
+    q: 'Can I play multiple Yono games on the same account?',
+    a: 'Each Yono app is a separate platform requiring its own account. A welcome bonus is available on each new app you register on — check our Promo Codes page for the current codes before registering.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'All Yono Game — Complete App List 2026',
+  url: 'https://yonolink.co/games',
+  numberOfItems: apps.length,
+  itemListElement: apps.slice(0, 10).map((a, i) => ({
+    '@type': 'ListItem', position: i + 1, name: a.name,
+    url: `https://yonolink.co/app/${a.slug}`,
+  })),
+};
+---
+
+<BaseLayout title={seoTitle} description={seoDesc} schema={[faqSchema, itemListSchema]}>
+  <Header slot="header" />
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+  <section class="relative min-h-[88vh] flex items-center overflow-hidden hero-mesh py-16 sm:py-24">
+    <!-- Hero background image -->
+    <div class="absolute inset-0 pointer-events-none">
+      <img src="/herobg.jpg" alt="" class="w-full h-full object-cover object-center opacity-20" aria-hidden="true" />
+      <!-- Dark overlay so text stays readable -->
+      <div class="absolute inset-0 bg-[#05070A]/60"></div>
+    </div>
+    <!-- Animated background blobs -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute -top-48 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-yellow-400/8 rounded-full blur-[120px] animate-float-slow"></div>
+      <div class="absolute top-1/3 -left-48 w-[500px] h-[500px] bg-violet-600/7 rounded-full blur-[100px] animate-float-d1"></div>
+      <div class="absolute top-1/4 -right-40 w-[400px] h-[400px] bg-orange-500/6 rounded-full blur-[90px] animate-float-d2"></div>
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-yellow-400/4 rounded-full blur-[80px]"></div>
+      <!-- Dot grid overlay -->
+      <div class="absolute inset-0 dot-grid opacity-[0.035]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+
+      <!-- Live badge -->
+      <div class="inline-flex items-center gap-2.5 glass-gold border border-yellow-400/20 text-yellow-400 text-xs sm:text-sm font-bold px-5 py-2 rounded-full mb-8 shadow-glow-gold">
+        <span class="relative flex h-2 w-2 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+        </span>
+        India's #1 Guide to All Yono Game
+      </div>
+
+      <!-- Headline -->
+      <h1 class="font-display font-black leading-[1.05] tracking-tight mb-6">
+        <span class="block text-4xl sm:text-5xl lg:text-6xl text-white mb-0.5">All <span class="text-gold">Yono Game</span></span>
+        <span class="block text-xl sm:text-2xl lg:text-3xl text-gray-400 font-bold mt-2">Download, Play &amp; Win Real Cash</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        Complete guide to all <strong class="text-white font-bold">{apps.length}</strong> Yono games —
+        Rummy, Slots, Spin, Arcade &amp; more. Verified promo codes and expert tips. Updated July 2026.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 sm:mb-16">
+        <a
+          href="/games"
+          class="btn-shimmer btn-glow w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-base px-8 py-4 rounded-2xl"
+        >
+          <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/>
+          </svg>
+          Browse All {apps.length} Apps
+          <span class="text-xs bg-gray-950/20 rounded-full px-2.5 py-0.5 font-bold">Free</span>
+        </a>
+        <a
+          href="/promo-codes"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 glass border border-yellow-400/20 hover:border-yellow-400/40 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all duration-200 group"
+        >
+          <Icon name="gift" class="w-5 h-5 text-yellow-400 group-hover:animate-float shrink-0" />
+          Get Free Promo Codes
+        </a>
+      </div>
+
+      <!-- Stats — glass cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-xl mx-auto">
+        {[
+          { value: apps.length + '+', label: 'Game Apps'       },
+          { value: categories.length.toString(), label: 'Categories' },
+          { value: '₹500',            label: 'Max Bonus'       },
+          { value: '100%',            label: 'Free Download'   },
+        ].map(s => (
+          <div class="glow-card glow-card-static glass border border-white/5 rounded-2xl px-3 py-4 text-center">
+            <div class="text-2xl sm:text-3xl font-black text-gold mb-1">{s.value}</div>
+            <div class="text-gray-500 text-xs font-medium">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CATEGORY CAROUSEL ────────────────────────────────────────────────── -->
+  <section class="py-8 sm:py-12 border-b border-white/5 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
+      <h2 class="font-display font-black text-xl sm:text-3xl text-white mb-1">Browse All Yono Game by Category</h2>
+      <p class="text-gray-500 text-sm">{categories.length} categories — tap any to explore every app</p>
+    </div>
+
+    <div class="relative overflow-hidden">
+      <!-- Fade edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#05070A] to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#05070A] to-transparent z-10 pointer-events-none"></div>
+
+      <div class="cat-slider flex gap-4 py-3" style="width: max-content">
+        {[...categories, ...categories].map(cat => {
+          const meta = catMeta[cat] ?? catMeta['Slots'];
+          const count = apps.filter(a => a.category === cat).length;
+          return (
+            <a
+              href="/games"
+              class={`glow-card cat-glow flex items-center gap-3 bg-gradient-to-br ${meta.color} rounded-2xl px-5 py-3.5 hover:scale-[1.03] transition-transform shrink-0 group`}
+            >
+              <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                <Icon name={meta.icon} class="w-4 h-4 text-white" />
+              </div>
+              <div>
+                <div class="text-white font-bold text-sm leading-tight">{cat}</div>
+                <div class="text-gray-400 text-xs">{count} apps</div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .cat-slider { animation: cat-slide 24s linear infinite; }
+    .cat-slider:hover { animation-play-state: paused; }
+    @keyframes cat-slide {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── Running glow border on category cards ── */
+    @property --cat-a {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes cat-glow-run {
+      to { --cat-a: 360deg; }
+    }
+    .cat-glow {
+      box-shadow: 0 0 16px rgba(250,204,21,0.10), 0 4px 24px rgba(0,0,0,0.5);
+    }
+    .cat-glow::before {
+      background: conic-gradient(
+        from var(--cat-a),
+        transparent 0deg,
+        rgba(250,204,21,0.95) 28deg,
+        rgba(249,115,22,0.80) 52deg,
+        rgba(168,85,247,0.60) 78deg,
+        transparent 108deg
+      ) !important;
+      background-size: 100% 100% !important;
+      padding: 1.5px !important;
+      opacity: 1 !important;
+      animation: cat-glow-run 2.5s linear infinite !important;
+    }
+    .cat-glow:hover {
+      box-shadow: 0 0 28px rgba(250,204,21,0.22), 0 8px 40px rgba(0,0,0,0.6);
+    }
+    .cat-glow:hover::before {
+      animation-duration: 1.4s !important;
+    }
+  </style>
+
+  <!-- ── FEATURED GAMES GALLERY ──────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="flex items-center justify-between mb-6 sm:mb-8">
+      <div>
+        <h2 class="font-display font-black text-xl sm:text-3xl text-white">Featured Yono Games</h2>
+        <p class="text-gray-500 mt-1 text-sm">Flagship apps — highest rated, most downloaded</p>
+      </div>
+      <a href="/games" class="shrink-0 text-sm font-bold text-gold hover:underline transition-colors">
+        View All →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+      {featuredGames.map(app => (
+        <GameCard
+          title={app.name}
+          slug={app.slug}
+          description={app.tagline}
+          category={app.category}
+          rating={app.rating}
+          tags={app.tags}
+          image={app.logo}
+          featured={featuredNewSlugs.has(app.slug)}
+          href={`/app/${app.slug}`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- ── TOP RATED APPS ────────────────────────────────────────────────────── -->
+  <section class="border-y border-white/5 py-10 sm:py-16" style="background: linear-gradient(180deg, #0D1117 0%, #05070A 100%)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-start sm:items-center justify-between mb-6 sm:mb-8 gap-3">
+        <div>
+          <h2 class="font-display font-black text-xl sm:text-3xl text-white leading-tight">Top Rated Yono Game Apps</h2>
+          <p class="text-gray-500 mt-1 text-sm sm:text-base">Highest rated across all categories — July 2026</p>
+        </div>
+        <a href="/app" class="shrink-0 text-sm font-bold text-gold hover:underline whitespace-nowrap">
+          View All →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3">
+        {topApps.map(app => (
+          <a href={`/app/${app.slug}`} class="glow-card group glass border border-white/5 rounded-xl sm:rounded-2xl p-2 sm:p-3 text-center hover:border-yellow-400/20 transition-all">
+            <div class="w-10 h-10 sm:w-14 sm:h-14 mx-auto rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-1.5 sm:mb-2 group-hover:border-yellow-400/20 transition-colors">
+              <img src={app.logo} alt={app.name} class="w-full h-full object-contain p-0.5" loading="lazy" />
+            </div>
+            <div class="text-[10px] sm:text-xs font-bold text-white group-hover:text-gold transition-colors leading-tight line-clamp-2 mb-1">{app.name}</div>
+            <div class="flex items-center justify-center gap-0.5">
+              <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="text-[10px] sm:text-xs text-gray-400">{app.rating}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/app" class="text-sm font-bold text-gold hover:underline">View All {apps.length} Apps →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ──────────────────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="text-center mb-6 sm:mb-10">
+      <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-2">How to Start Playing All Yono Game</h2>
+      <p class="text-gray-500">Get started in 3 steps — takes less than 5 minutes</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      {[
+        {
+          step: '01',
+          title: 'Choose Your Yono Game',
+          desc: 'Browse all Yono apps by category — Rummy, Slots, Spin, Arcade or VIP. Each app page has a full review, features list, and download guide.',
+          cta: 'Browse Games',
+          href: '/games',
+          color: 'text-blue-400',
+          border: 'border-blue-500/25',
+          glow: 'bg-blue-500/10',
+          badgeBg: 'bg-blue-500/10',
+        },
+        {
+          step: '02',
+          title: 'Download and Register',
+          desc: 'Download the APK, install it on your Android device, and register with your mobile number. Takes less than 3 minutes to get started.',
+          cta: 'Download Apps',
+          href: '/app',
+          color: 'text-yellow-400',
+          border: 'border-yellow-400/25',
+          glow: 'bg-yellow-400/10',
+          badgeBg: 'bg-yellow-400/10',
+        },
+        {
+          step: '03',
+          title: 'Claim the Promo Code & Win',
+          desc: 'Grab the latest promo code from our daily codes page, enter it in the Wallet section, make your first deposit, and start playing for real cash prizes.',
+          cta: 'Get Promo Code',
+          href: '/promo-codes',
+          color: 'text-emerald-400',
+          border: 'border-emerald-500/25',
+          glow: 'bg-emerald-500/10',
+          badgeBg: 'bg-emerald-500/10',
+        },
+      ].map(item => (
+        <div class={`glow-card glass border ${item.border} rounded-2xl p-6 relative overflow-hidden`}>
+          <!-- Big step number watermark -->
+          <div class={`font-display font-black text-8xl opacity-[0.06] absolute -top-4 -right-3 ${item.color} select-none`}>{item.step}</div>
+          <!-- Subtle glow spot -->
+          <div class={`absolute -top-8 -left-8 w-32 h-32 ${item.glow} rounded-full blur-2xl pointer-events-none`}></div>
+
+          <span class={`relative inline-flex items-center text-xs font-bold px-3 py-1 rounded-full border ${item.border} ${item.badgeBg} ${item.color} mb-5`}>
+            Step {item.step}
+          </span>
+          <h3 class="relative font-black text-white text-lg mb-2">{item.title}</h3>
+          <p class="relative text-gray-500 text-sm leading-relaxed mb-5">{item.desc}</p>
+          <a href={item.href} class={`relative inline-flex items-center gap-1.5 text-sm font-bold ${item.color} hover:underline`}>
+            {item.cta} <Icon name="arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── TIPS TO MAXIMIZE BONUSES ─────────────────────────────────────────── -->
+  <section class="border-y border-white/5 py-10 sm:py-16" style="background: linear-gradient(180deg, #0D1117 0%, #05070A 100%)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-xs font-bold px-4 py-1.5 rounded-full mb-4">
+          <Icon name="trophy" class="w-3.5 h-3.5" />
+          Pro Tips
+        </div>
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-2">
+          Tips to <span class="text-gold">Maximize Your Bonuses</span>
+        </h2>
+        <p class="text-gray-500 text-sm max-w-xl mx-auto">Follow these steps to get the most out of every Yono app — more rewards, more cash.</p>
+      </div>
+
+      <!-- Tips grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          {
+            num: '01',
+            icon: 'check',
+            title: 'Register & Claim Welcome Bonus',
+            desc: 'Register on each platform, bind your phone number and claim the welcome bonus available on first sign-up.',
+            color: 'text-blue-400',
+            glow: 'bg-blue-500/10 border-blue-500/20',
+          },
+          {
+            num: '02',
+            icon: 'banknotes',
+            title: 'First Deposit Bonus',
+            desc: 'Use the first deposit bonus to get up to +200 extra bonus credits on top of your initial deposit amount.',
+            color: 'text-green-400',
+            glow: 'bg-green-500/10 border-green-500/20',
+          },
+          {
+            num: '03',
+            icon: 'arrow-right',
+            title: 'Share Your Referral Link',
+            desc: 'Share your referral link on social media and Telegram channels to earn referral bonus for every friend who joins.',
+            color: 'text-pink-400',
+            glow: 'bg-pink-500/10 border-pink-500/20',
+          },
+          {
+            num: '04',
+            icon: 'gift',
+            title: 'Claim the Lucky Gullak',
+            desc: 'Check the tentative Lucky Gullak timing on your app and claim it at the right moment for bonus coins.',
+            color: 'text-yellow-400',
+            glow: 'bg-yellow-500/10 border-yellow-500/20',
+          },
+          {
+            num: '05',
+            icon: 'currency',
+            title: 'Use Your Discount Card',
+            desc: 'Activate the Discount Card for 7 or 30 days to receive additional daily rewards every single day.',
+            color: 'text-purple-400',
+            glow: 'bg-purple-500/10 border-purple-500/20',
+          },
+          {
+            num: '06',
+            icon: 'sparkles',
+            title: 'Upgrade Your VIP Level',
+            desc: 'The higher your VIP level, the bigger your daily rewards, cashback rates, and exclusive perks.',
+            color: 'text-amber-400',
+            glow: 'bg-amber-500/10 border-amber-500/20',
+          },
+          {
+            num: '07',
+            icon: 'trophy',
+            title: 'Join Quizzes & Events',
+            desc: 'Participate in any in-app quizzes, tournaments, and seasonal events to earn extra bonus prizes.',
+            color: 'text-orange-400',
+            glow: 'bg-orange-500/10 border-orange-500/20',
+          },
+          {
+            num: '08',
+            icon: 'gift',
+            title: 'Claim Every Promo Code',
+            desc: 'Always claim the latest promo code every AM, PM and EVE before they expire — codes refresh 3× daily.',
+            color: 'text-gold',
+            glow: 'bg-yellow-400/10 border-yellow-400/20',
+          },
+        ].map(tip => (
+          <div class={`glow-card-static glass border ${tip.glow} rounded-2xl p-5 flex flex-col gap-3`}>
+            <!-- Number + icon row -->
+            <div class="flex items-center justify-between">
+              <span class={`font-display font-black text-3xl leading-none ${tip.color} opacity-25`}>{tip.num}</span>
+              <div class={`w-9 h-9 rounded-xl ${tip.glow} border flex items-center justify-center ${tip.color}`}>
+                <Icon name={tip.icon} class="w-4 h-4" />
+              </div>
+            </div>
+            <!-- Text -->
+            <div>
+              <p class={`font-bold text-sm text-white mb-1`}>{tip.title}</p>
+              <p class="text-gray-500 text-xs leading-relaxed">{tip.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bottom CTA strip -->
+      <div class="mt-8 glass border border-yellow-400/15 rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <Icon name="gift" class="w-5 h-5 text-yellow-400 shrink-0" />
+          <p class="text-gray-400 text-sm">
+            <span class="text-white font-bold">Ready to start?</span> — Grab your promo code now before it expires.
+          </p>
+        </div>
+        <a
+          href="/promo-codes"
+          class="btn-shimmer btn-glow shrink-0 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-sm px-6 py-2.5 rounded-xl flex items-center gap-2"
+        >
+          <Icon name="gift" class="w-4 h-4" />
+          Get Promo Codes
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TABBED CONTENT SECTION ───────────────────────────────────────────── -->
+  <section class="border-y border-white/5 py-10 sm:py-16" style="background: linear-gradient(180deg, #0D1117 0%, #05070A 100%)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-6 sm:mb-8">
+        <h2 class="font-display font-black text-xl sm:text-3xl text-white mb-1">Latest Updates</h2>
+        <p class="text-gray-500 text-sm">Promo codes, new games, guides — everything in one place</p>
+      </div>
+
+      <!-- Tab buttons -->
+      <div class="flex gap-2 flex-wrap justify-center mb-8" id="tab-buttons">
+        {[
+          { id: 'promos',   label: 'Promo Codes', icon: 'gift'      },
+          { id: 'games',    label: 'New Games',   icon: 'gamepad'   },
+          { id: 'guides',   label: 'Guides',      icon: 'newspaper' },
+          { id: 'trending', label: 'Trending',    icon: 'sparkles'  },
+        ].map((tab, i) => (
+          <button
+            data-tab={tab.id}
+            class={`tab-btn flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all ${i === 0 ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 shadow-glow-gold' : 'glass border border-white/5 text-gray-400 hover:text-white hover:border-white/10'}`}
+          >
+            <Icon name={tab.icon} class="w-4 h-4" />
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Tab panel: Promo Codes -->
+      <div id="panel-promos" class="tab-panel">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          {activePromos.map(promo => (
+            <div class="glow-card glass-gold border border-yellow-400/20 rounded-2xl p-5 text-center">
+              <div class="text-white font-black text-base mb-3">{promo.data.game}</div>
+              <code class="code-pill text-xl tracking-widest block mb-4">{promo.data.code}</code>
+              <button
+                onclick={`navigator.clipboard.writeText('${promo.data.code}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Code'},1500)})`}
+                class="btn-shimmer btn-glow w-full bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-sm py-2.5 rounded-xl"
+              >
+                Copy Code
+              </button>
+            </div>
+          ))}
+        </div>
+        <div class="text-center">
+          <a href="/promo-codes" class="btn-shimmer btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl">
+            <Icon name="gift" class="w-5 h-5" /> View All Promo Codes
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab panel: New Games -->
+      <div id="panel-games" class="tab-panel hidden">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+          {apps.slice(0, 6).map(app => (
+            <a href={`/app/${app.slug}`} class="glow-card group glass border border-white/5 rounded-xl p-3 text-center hover:border-yellow-400/20 transition-all">
+              <div class="w-14 h-14 mx-auto rounded-xl overflow-hidden bg-white/5 border border-white/10 mb-2 group-hover:border-yellow-400/20 transition-colors">
+                <img src={app.logo} alt={app.name} class="w-full h-full object-contain p-0.5" loading="lazy" />
+              </div>
+              <div class="text-xs font-bold text-white group-hover:text-gold transition-colors leading-tight mb-1 line-clamp-2">{app.name}</div>
+              <span class="text-[10px] bg-white/5 text-gray-400 px-2 py-0.5 rounded-full">{app.category}</span>
+            </a>
+          ))}
+        </div>
+        <div class="text-center">
+          <a href="/games" class="btn-shimmer btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl">
+            <Icon name="gamepad" class="w-5 h-5" /> View All {apps.length} Games
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab panel: Guides -->
+      <div id="panel-guides" class="tab-panel hidden">
+        {featuredPosts.length > 0 ? (
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
+            {featuredPosts.map(post => (
+              <a href={`/blog/${post.slug}`} class="glow-card group glass border border-white/5 rounded-2xl p-5 hover:border-violet-500/20 transition-all">
+                <span class="text-[10px] font-bold text-violet-400 bg-violet-500/12 border border-violet-500/20 px-2.5 py-0.5 rounded-full">{post.data.tags?.[0] ?? 'Guide'}</span>
+                <h3 class="text-white font-black text-sm mt-3 mb-2 group-hover:text-gold transition-colors leading-snug line-clamp-2">{post.data.title}</h3>
+                <p class="text-gray-500 text-xs leading-relaxed line-clamp-2">{post.data.description}</p>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="text-center text-gray-500 py-8">Guides coming soon — check back shortly.</p>
+        )}
+        <div class="text-center">
+          <a href="/blog" class="btn-shimmer btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl">
+            <Icon name="newspaper" class="w-5 h-5" /> All Guides &amp; Tips
+          </a>
+        </div>
+      </div>
+
+      <!-- Tab panel: Trending -->
+      <div id="panel-trending" class="tab-panel hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 max-w-2xl mx-auto">
+          {[
+            { rank: 1, name: 'Yono Rummy',   badge: '4.7★',  note: 'Most Downloaded'  },
+            { rank: 2, name: 'Yono 777',      badge: '4.6★',  note: 'Top Slots App'    },
+            { rank: 3, name: 'Spin Winner',   badge: '4.6★',  note: 'Top Spin App'     },
+            { rank: 4, name: 'Top Rummy',     badge: '4.5★',  note: 'Rising Fast'      },
+            { rank: 5, name: 'Max Rummy',     badge: '4.5★',  note: 'New & Popular'    },
+            { rank: 6, name: 'Rumble Rummy',  badge: '4.5★',  note: 'Community Pick'   },
+          ].map(item => (
+            <div class="glow-card flex items-center gap-4 glass border border-white/5 rounded-xl px-4 py-3 hover:border-yellow-400/15">
+              <span class="font-black text-xl text-yellow-400/25 w-8 shrink-0 tabular-nums">#{item.rank}</span>
+              <div class="flex-1 min-w-0">
+                <div class="text-white font-bold text-sm truncate">{item.name}</div>
+                <div class="text-gray-500 text-xs">{item.note}</div>
+              </div>
+              <span class="hot-badge shrink-0 text-xs px-2.5 py-1 rounded-full">{item.badge}</span>
+            </div>
+          ))}
+        </div>
+        <div class="text-center">
+          <a href="/games" class="btn-shimmer btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl">
+            <Icon name="sparkles" class="w-5 h-5" /> See All Trending Apps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const tabBtns = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+    const tabPanels = document.querySelectorAll<HTMLElement>('.tab-panel');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab!;
+        tabBtns.forEach(b => {
+          b.classList.remove('bg-gradient-to-r', 'from-yellow-400', 'to-orange-500', 'text-gray-950', 'shadow-glow-gold');
+          b.classList.add('glass', 'border', 'border-white/5', 'text-gray-400');
+        });
+        btn.classList.add('bg-gradient-to-r', 'from-yellow-400', 'to-orange-500', 'text-gray-950', 'shadow-glow-gold');
+        btn.classList.remove('glass', 'border', 'border-white/5', 'text-gray-400');
+        tabPanels.forEach(p => {
+          p.id === `panel-${target}` ? p.classList.remove('hidden') : p.classList.add('hidden');
+        });
+      });
+    });
+  </script>
+
+  <!-- ── ALL YONO GAME — ABOUT ──────────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
+
+      <!-- Informational content -->
+      <div>
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-5">What is All Yono Game?</h2>
+        <div class="space-y-4 text-gray-400 text-sm leading-relaxed">
+          <p>
+            <strong class="text-white">All Yono Game</strong> is the collective term for the entire ecosystem of real-cash gaming apps built on the Yono platform. As of July 2026, the platform covers <strong class="text-white">55 apps across 8 categories</strong> — making it one of India's largest online skill gaming ecosystems.
+          </p>
+          <p>
+            The most popular category is <strong class="text-white">Yono Rummy</strong>, with 18 dedicated apps including Yono Rummy, Boss Rummy, Top Rummy, and Game Rummy. Each app offers 13-card rummy in Points, Deals and Pool formats with daily prize pools starting from ₹1 lakh.
+          </p>
+          <p>
+            Beyond card games, the <strong class="text-white">all Yono game</strong> portfolio covers spin wheels (9 apps), classic slots (7 apps), arcade games (7 apps), 777 casino (6 apps), betting clubs (4 apps), VIP lounges (2 apps), and online bingo (2 apps) — ensuring every type of player finds their game.
+          </p>
+          <p>
+            All apps are available as <strong class="text-white">free Android APK downloads</strong>. New users on every app can claim a welcome bonus on their first deposit — visit the <a href="/promo-codes" class="text-yellow-400 hover:underline font-semibold">Promo Codes page</a> for the current code.
+          </p>
+        </div>
+        <a href="/app" class="inline-flex items-center gap-2 mt-6 text-yellow-400 font-semibold hover:underline text-sm">
+          Browse all 55 Yono apps <Icon name="arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
+
+      <!-- Quick reference table -->
+      <div class="glow-card glass border border-white/5 rounded-2xl overflow-hidden">
+        <div class="px-4 sm:px-6 py-4 border-b border-white/5">
+          <h3 class="font-black text-white">All Yono Game — Quick Reference</h3>
+        </div>
+        <div class="divide-y divide-white/5">
+          {[
+            { label: 'Total Apps',    value: '56 apps'                 },
+            { label: 'Categories',    value: '8 categories'            },
+            { label: 'Top App',       value: 'Yono Rummy — 4.7★'      },
+            { label: 'Welcome Bonus', value: '₹30–₹500 (new users)'   },
+            { label: 'Min. Deposit',  value: '₹100'                    },
+            { label: 'Platform',      value: 'android'                 },
+            { label: 'Withdrawal',    value: 'UPI, instant'            },
+            { label: 'Legal Status',  value: 'Skill-based'             },
+          ].map(row => (
+            <div class="flex justify-between items-center px-4 sm:px-6 py-3 text-sm gap-3">
+              <span class="text-gray-500 shrink-0">{row.label}</span>
+              {row.value === 'android' ? (
+                <span class="flex items-center gap-1.5 text-green-400 font-medium">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.523 15.341a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m-9.546 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0M2.895 8.04l-1.6-2.77a.374.374 0 0 1 .648-.375l1.619 2.804A10.77 10.77 0 0 1 7.5 6.554a10.77 10.77 0 0 1 4.5-.978c1.586 0 3.09.34 4.438.946l1.619-2.804a.374.374 0 0 1 .648.374l-1.6 2.77A10.513 10.513 0 0 1 22.5 16.5H1.5a10.513 10.513 0 0 1 1.395-8.46"/>
+                  </svg>
+                  Android
+                </span>
+              ) : (
+                <span class="text-white font-medium text-right">{row.value}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── WHY YONOLINK ───────────────────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+    <div class="text-center mb-10">
+      <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-2">Why Use YonoLink.co for All Yono Game?</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">India's most complete independent resource for the Yono gaming ecosystem</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {[
+        { icon: 'check',       title: 'Verified Promo Codes',   desc: 'Every code is manually tested before publishing. Dead codes are removed immediately — no wasted copy-pastes.',       color: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/20' },
+        { icon: 'sparkles',    title: 'All 56 Apps Covered',    desc: 'We track every single Yono app across all 8 categories. If it\'s in the Yono ecosystem, it\'s on YonoLink.co.',       color: 'text-blue-400',   bg: 'bg-blue-400/10 border-blue-400/20'   },
+        { icon: 'newspaper',   title: 'Daily Code Updates',     desc: 'Promo codes are updated up to 3× per day — morning, afternoon, and evening — as platforms release them.',            color: 'text-green-400',  bg: 'bg-green-400/10 border-green-400/20' },
+        { icon: 'lightbulb',   title: 'Expert Game Guides',     desc: 'Strategy guides, tips, and reviews written for real players — not marketing copy. Learn to play and win more.',      color: 'text-purple-400', bg: 'bg-purple-400/10 border-purple-400/20'},
+        { icon: 'gift',        title: 'Welcome Bonus Offers',    desc: 'New users on every Yono app get a welcome bonus on their first deposit. Grab the code from our Promo Codes page before you register.',  color: 'text-orange-400', bg: 'bg-orange-400/10 border-orange-400/20'},
+        { icon: 'arrow-right', title: 'Free APK Downloads',     desc: 'All 56 Yono apps are free to download as Android APKs — no Play Store required. Install in under 2 minutes.',       color: 'text-teal-400',   bg: 'bg-teal-400/10 border-teal-400/20'   },
+      ].map(item => (
+        <div class={`glow-card glass border rounded-2xl p-6 hover:border-white/10 transition-all group`} style={`border-color: rgba(255,255,255,0.05)`}>
+          <div class={`w-11 h-11 rounded-xl border flex items-center justify-center mb-4 ${item.bg} group-hover:scale-110 transition-transform duration-300`}>
+            <Icon name={item.icon} class={`w-5 h-5 ${item.color}`} />
+          </div>
+          <h3 class="font-black text-white mb-2">{item.title}</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ── BECOME AN AGENT ──────────────────────────────────────────────────── -->
+  <section id="become-agent" class="relative overflow-hidden border-y border-white/5 py-14 sm:py-24">
+    <!-- Background -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 left-1/4 w-[600px] h-[400px] bg-yellow-400/5 rounded-full blur-[100px] animate-float-slow"></div>
+      <div class="absolute bottom-0 right-1/4 w-[400px] h-[300px] bg-violet-600/5 rounded-full blur-[80px] animate-float-d2"></div>
+      <div class="absolute inset-0 dot-grid opacity-[0.025]"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <!-- ── Left: Info ── -->
+        <div>
+          <!-- Live badge -->
+          <div class="inline-flex items-center gap-2.5 glass-gold border border-yellow-400/20 text-yellow-400 text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-glow-gold">
+            <span class="relative flex h-2 w-2 shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+            </span>
+            Live Network
+          </div>
+
+          <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-5">
+            Become a<br/><span class="text-gold">Yonolink Agent</span>
+          </h2>
+
+          <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-7">
+            Join the growing <strong class="text-white">Yonolink Agent Network</strong> and become part of a rapidly expanding community across India.
+            Whether you manage social media pages, Telegram channels, online communities, or local promotional networks,
+            you can apply to become an official Yonolink Agent.
+          </p>
+
+          <!-- Benefits -->
+          <p class="text-white font-bold text-sm mb-4">Approved agents may be eligible to receive:</p>
+          <ul class="space-y-3 mb-7">
+            {[
+              'Exclusive promotional codes',
+              'Special vouchers and campaign rewards',
+              'Performance-based incentives',
+              'Salary opportunities for qualified agents',
+              'Access to selected Yonolink marketing campaigns',
+            ].map(benefit => (
+              <li class="flex items-start gap-3">
+                <span class="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-yellow-400/15 border border-yellow-400/30 flex items-center justify-center">
+                  <Icon name="check" class="w-3 h-3 text-yellow-400" />
+                </span>
+                <span class="text-gray-300 text-sm">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+
+          <p class="text-gray-600 text-xs leading-relaxed mb-8 border-l-2 border-white/10 pl-3">
+            Applications are reviewed individually, and eligibility for rewards, incentives, and salary opportunities
+            depends on meeting Yonolink's requirements and performance criteria.
+          </p>
+
+          <!-- Live counter card -->
+          <div class="glow-card-static glass-gold border border-yellow-400/15 rounded-2xl p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
+              </span>
+              <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Registered Agents</span>
+            </div>
+            <div id="agent-counter" class="font-display font-black text-4xl sm:text-5xl text-gold leading-none mb-2" data-target="3091826">
+              0
+            </div>
+            <p class="text-gray-500 text-xs">
+              This number updates continuously as new agents join the Yonolink Agent Network.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── Right: Form ── -->
+        <div class="glow-card glass border border-white/5 rounded-3xl p-6 sm:p-8">
+          <h3 class="font-display font-black text-xl sm:text-2xl text-white mb-2">Apply as a Yonolink Agent</h3>
+          <p class="text-gray-500 text-sm mb-7">Fill out the form below to submit your application.</p>
+
+          <form id="agent-form" class="space-y-5" novalidate>
+            <!-- Message -->
+            <div>
+              <label for="agent-message" class="block text-sm font-bold text-gray-300 mb-2">Message</label>
+              <textarea
+                id="agent-message"
+                name="message"
+                rows="3"
+                placeholder="Tell us about your channels, audience size, or anything you'd like us to know..."
+                required
+                class="agent-input w-full glass border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Telegram Username -->
+            <div>
+              <label for="h-telegram" class="flex items-center gap-2 text-sm font-bold text-gray-300 mb-2">
+                <span class="text-sky-400"><Icon name="telegram" class="w-4 h-4" /></span>
+                Telegram Username
+              </label>
+              <div class="relative flex">
+                <span class="flex items-center px-3 glass border border-r-0 border-white/10 rounded-l-xl text-gray-500 text-xs font-bold select-none">@</span>
+                <input id="h-telegram" type="text" name="telegram" placeholder="Telegram username"
+                  class="agent-input flex-1 min-w-0 glass border border-white/10 rounded-r-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent" />
+              </div>
+            </div>
+
+            <!-- Telegram Channel -->
+            <div>
+              <label for="h-tg-channel" class="flex items-center gap-2 text-sm font-bold text-gray-300 mb-2">
+                <span class="text-sky-400"><Icon name="telegram" class="w-4 h-4" /></span>
+                Telegram Channel Link or Username
+              </label>
+              <div class="relative flex">
+                <span class="flex items-center px-3 glass border border-r-0 border-white/10 rounded-l-xl text-gray-500 text-xs font-bold select-none">@</span>
+                <input id="h-tg-channel" type="text" name="telegram_channel" placeholder="Channel link or @username"
+                  class="agent-input flex-1 min-w-0 glass border border-white/10 rounded-r-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent" />
+              </div>
+            </div>
+
+
+            <!-- Add another channel -->
+            <div>
+              <label class="block text-sm font-bold text-gray-300 mb-2">Other Channel / Page</label>
+              <div id="channels-container" class="space-y-3"></div>
+            </div>
+            <button
+              type="button"
+              id="add-channel-btn"
+              class="flex items-center gap-2 text-yellow-400 text-sm font-bold hover:text-yellow-300 transition-colors group"
+            >
+              <span class="w-6 h-6 rounded-full border border-yellow-400/40 flex items-center justify-center group-hover:border-yellow-400/70 transition-colors text-base leading-none">+</span>
+              Add Another Channel / Page
+            </button>
+
+            <!-- Submit -->
+            <div class="pt-2 space-y-3">
+              <button
+                type="submit"
+                id="agent-submit"
+                class="btn-shimmer btn-glow w-full bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-base py-4 rounded-2xl flex items-center justify-center gap-2"
+              >
+                <Icon name="arrow-right" class="w-5 h-5" />
+                Send Application
+              </button>
+
+              <div class="flex items-center gap-3">
+                <div class="flex-1 h-px bg-white/8"></div>
+                <span class="text-gray-600 text-xs">or</span>
+                <div class="flex-1 h-px bg-white/8"></div>
+              </div>
+
+              <a
+                href="https://t.me/Lakshymi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full glass border border-sky-400/20 hover:border-sky-400/40 hover:bg-sky-400/5 text-sky-400 font-bold text-sm py-3.5 rounded-2xl flex items-center justify-center gap-2.5 transition-all duration-200"
+              >
+                <Icon name="telegram" class="w-5 h-5" />
+                Contact us directly via Telegram
+              </a>
+
+              <a
+                href="https://t.me/YonolinkAgent"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full glass border border-sky-400/15 hover:border-sky-400/35 hover:bg-sky-400/5 rounded-2xl flex items-start gap-3 px-4 py-3.5 transition-all duration-200 group"
+              >
+                <Icon name="telegram" class="w-5 h-5 text-sky-400 shrink-0 mt-0.5" />
+                <span class="text-left">
+                  <span class="block text-gray-400 text-xs leading-relaxed">Keep updated to the latest promo codes, events, gifts, vouchers via Telegram</span>
+                  <span class="block text-sky-400 font-bold text-sm mt-0.5 group-hover:text-sky-300 transition-colors">@YonolinkAgent</span>
+                </span>
+              </a>
+            </div>
+
+            <!-- Success message (hidden by default) -->
+            <div id="agent-success" class="hidden glass-gold border border-green-500/30 rounded-2xl p-5 text-center">
+              <div class="w-12 h-12 mx-auto rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center mb-3">
+                <Icon name="check" class="w-6 h-6 text-green-400" />
+              </div>
+              <p class="text-white font-black text-base mb-1">Application Received!</p>
+              <p class="text-gray-400 text-sm">We'll review your application and get back to you via Telegram.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ── Agent counter animation ──
+    const counterEl = document.getElementById('agent-counter');
+    if (counterEl) {
+      const target = parseInt(counterEl.dataset.target ?? '0', 10);
+      let current = 0;
+      const duration = 2400;
+      let start: number | null = null;
+      const fmt = (n: number) => n.toLocaleString('en-US');
+      const easeOutExpo = (t: number) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+
+      const liveIncrement = () => {
+        current += Math.random() < 0.5 ? 1 : 2;
+        counterEl.textContent = fmt(current);
+        setTimeout(liveIncrement, 5000 + Math.random() * 7000);
+      };
+
+      const tick = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        current = Math.floor(easeOutExpo(progress) * target);
+        counterEl.textContent = fmt(current);
+        if (progress < 1) requestAnimationFrame(tick);
+        else {
+          current = target;
+          counterEl.textContent = fmt(current);
+          setTimeout(liveIncrement, 5000 + Math.random() * 5000);
+        }
+      };
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          requestAnimationFrame(tick);
+          observer.disconnect();
+        }
+      }, { threshold: 0.3 });
+
+      observer.observe(counterEl);
+    }
+
+    // ── Add another channel ──
+    const addBtn = document.getElementById('add-channel-btn');
+    const container = document.getElementById('channels-container');
+    let channelCount = 1;
+
+    addBtn?.addEventListener('click', () => {
+      channelCount++;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'relative';
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = 'channels[]';
+      input.placeholder = 'Telegram channel, Instagram page, or community URL';
+      input.className = 'agent-input w-full glass border border-white/10 rounded-xl px-4 py-3 pr-10 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-yellow-400/40 focus:bg-yellow-400/5 transition-all duration-200 bg-transparent';
+
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-red-400 transition-colors text-lg leading-none';
+      removeBtn.textContent = '×';
+      removeBtn.addEventListener('click', () => wrapper.remove());
+
+      wrapper.appendChild(input);
+      wrapper.appendChild(removeBtn);
+      container?.appendChild(wrapper);
+      input.focus();
+    });
+
+    // ── Form submission — builds Telegram message and opens chat ──
+    const form = document.getElementById('agent-form') as HTMLFormElement | null;
+    const successEl = document.getElementById('agent-success');
+    const submitBtn = document.getElementById('agent-submit');
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const telegram = (form.querySelector('[name="telegram"]') as HTMLInputElement)?.value.trim();
+      const channel  = (form.querySelector('[name="tg-channel"]') as HTMLInputElement)?.value.trim();
+      const message  = (form.querySelector('[name="message"]') as HTMLTextAreaElement)?.value.trim();
+      const extras   = [...(form.querySelectorAll('[name="channels[]"]') ?? [])]
+        .map(el => (el as HTMLInputElement).value.trim()).filter(Boolean);
+
+      if (!telegram) {
+        (form.querySelector('[name="telegram"]') as HTMLInputElement)?.focus();
+        return;
+      }
+
+      let text = `🤝 Yonolink Agent Application\n\n`;
+      text += `Telegram: @${telegram}\n`;
+      if (channel) text += `Channel: ${channel}\n`;
+      if (extras.length) text += `Other: ${extras.join(', ')}\n`;
+      if (message) text += `\nMessage: ${message}`;
+
+      if (submitBtn) submitBtn.setAttribute('disabled', 'true');
+      window.open(`https://t.me/Lakshymi?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+
+      setTimeout(() => {
+        form.querySelectorAll('.agent-input, #add-channel-btn, #agent-submit').forEach(el => {
+          (el as HTMLElement).style.display = 'none';
+        });
+        successEl?.classList.remove('hidden');
+      }, 400);
+    });
+  </script>
+
+  <!-- ── FAQ ───────────────────────────────────────────────────────────────── -->
+  <section class="border-t border-white/5 py-10 sm:py-16" style="background: linear-gradient(180deg, #05070A 0%, #0D1117 50%, #05070A 100%)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-2">All Yono Game — FAQ</h2>
+        <p class="text-gray-500">Common questions about the Yono gaming platform answered</p>
+      </div>
+
+      <div class="space-y-2">
+        {faqs.map(faq => (
+          <details class="glow-card glass border border-white/5 rounded-2xl overflow-hidden group hover:border-white/10 transition-colors">
+            <summary class="px-4 sm:px-6 py-4 font-bold text-white cursor-pointer hover:text-gold transition-colors list-none flex items-center justify-between gap-3 text-sm sm:text-base">
+              <span>{faq.q}</span>
+              <svg class="w-5 h-5 text-gray-600 shrink-0 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-4 sm:px-6 pb-5 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────────────────────────────────────────── -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 text-center">
+    <div class="relative glow-card-static glass-gold border border-yellow-400/20 rounded-3xl p-6 sm:p-12 overflow-hidden">
+      <!-- Background glow blobs -->
+      <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none animate-float-slow"></div>
+      <div class="absolute -bottom-16 -right-8 w-48 h-48 bg-orange-500/8 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Dot grid -->
+      <div class="absolute inset-0 dot-grid opacity-[0.03] pointer-events-none"></div>
+
+      <div class="relative">
+        <div class="hot-badge inline-flex items-center gap-2 mb-5 text-sm px-4 py-2 rounded-full animate-pulse-glow">
+          Welcome Bonus Available Now
+        </div>
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-white mb-3">Ready to Play All Yono Game?</h2>
+        <p class="text-gray-400 text-sm sm:text-base mb-8 max-w-xl mx-auto">
+          Download any of the 56 Yono apps and claim up to <strong class="text-gold">₹500 welcome bonus</strong> on your first deposit — get the code from our Promo Codes page before you register.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/app" class="btn-shimmer btn-glow w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-4 rounded-2xl text-base">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+            Download Yono Apps Free
+          </a>
+          <a href="/promo-codes" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 glass border border-yellow-400/20 hover:border-yellow-400/40 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-200">
+            <Icon name="gift" class="w-5 h-5 text-yellow-400" />
+            View All Promo Codes
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

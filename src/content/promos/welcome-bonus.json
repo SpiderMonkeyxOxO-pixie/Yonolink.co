@@ -1,0 +1,10 @@
+{
+  "title": "New User Welcome Bonus",
+  "code": "YONO500",
+  "game": "All Games",
+  "discount": "₹100 Welcome Bonus",
+  "description": "Sign up on Yono and get ₹100 bonus credited instantly on your first deposit. Valid for all new users.",
+  "expiryDate": "2026-12-31",
+  "isActive": false,
+  "category": "welcome"
+}

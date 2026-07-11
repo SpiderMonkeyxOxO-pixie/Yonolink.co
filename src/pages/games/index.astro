@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import GameCard from '../../components/GameCard.astro';
+import Icon from '../../components/Icon.astro';
+import { apps } from '../../data/apps';
+
+const categories = [...new Set(apps.map(a => a.category))];
+const monthYear  = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'All Yono Games', item: 'https://yonolink.co/games' },
+  ],
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'All Yono Game — Complete List',
+  url: 'https://yonolink.co/games',
+  numberOfItems: apps.length,
+  itemListElement: apps.map((a, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: a.name,
+    url: `https://yonolink.co/app/${a.slug}`,
+  })),
+};
+---
+
+<BaseLayout
+  title={`All Yono Game — ${apps.length} Apps & Games Complete List 2026`}
+  description={`Complete list of all ${apps.length} Yono games and apps — Rummy, Slots, Spin, Arcade and VIP. Ratings, reviews and promo codes. Updated ${monthYear}.`}
+  schema={[breadcrumbSchema, itemListSchema]}
+>
+  <Header slot="header" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-1.5">
+      <a href="/" class="hover:text-yellow-400 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-gray-300">All Yono Games</span>
+    </nav>
+
+    <!-- Page header -->
+    <div class="mb-10">
+      <div class="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 text-yellow-400 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+        <Icon name="gamepad" class="w-4 h-4" /> {apps.length} Apps Available
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black text-white mb-3">
+        All Yono Game — Complete List 2026
+      </h1>
+      <p class="text-gray-400 text-lg max-w-3xl">
+        Every Yono game app in one place — with ratings, categories, and direct download links. Browse by category and find your game. Updated regularly.
+      </p>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+      {[
+        { value: apps.length.toString(), label: 'Total Games' },
+        { value: categories.length.toString(), label: 'Categories' },
+        { value: '₹100', label: 'Welcome Bonus' },
+        { value: '100%', label: 'Real Cash' },
+      ].map(s => (
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 text-center">
+          <div class="text-2xl font-black text-yellow-400">{s.value}</div>
+          <div class="text-gray-500 text-xs mt-1">{s.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Category filter -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      <button
+        class="category-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-yellow-400 text-gray-950"
+        data-category="all"
+      >
+        All Games ({apps.length})
+      </button>
+      {categories.map(cat => (
+        <button
+          class="category-btn px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-800 text-gray-300 hover:bg-gray-700"
+          data-category={cat}
+        >
+          {cat} ({apps.filter(a => a.category === cat).length})
+        </button>
+      ))}
+    </div>
+
+    <!-- Games grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 mb-14" id="games-grid">
+      {apps.map(app => (
+        <div class="game-item" data-category={app.category}>
+          <GameCard
+            title={app.name}
+            slug={app.slug}
+            description={app.description}
+            category={app.category}
+            rating={app.rating}
+            tags={[app.category]}
+            image={app.logo}
+            featured={app.rating >= 4.6}
+            href={`/app/${app.slug}`}
+          />
+        </div>
+      ))}
+    </div>
+
+    <!-- SEO content -->
+    <div class="max-w-3xl border-t border-gray-800 pt-12">
+      <h2 class="text-2xl font-black text-white mb-4">About All Yono Game</h2>
+      <div class="space-y-3 text-gray-400 text-sm leading-relaxed">
+        <p>
+          The <strong class="text-white">all Yono game</strong> collection covers {apps.length} apps across {categories.length} categories — from 13-card rummy and teen patti to 777 casino slots, lucky spin wheels, arcade games, bingo halls, and VIP platforms.
+        </p>
+        <p>
+          Every app is available as a free Android APK download. Use our verified <a href="/promo-codes" class="text-yellow-400 hover:underline">Yono promo codes</a> to claim a welcome bonus on your first deposit on any game.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const btns = document.querySelectorAll<HTMLButtonElement>('.category-btn');
+  const items = document.querySelectorAll<HTMLElement>('.game-item');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => {
+        b.classList.remove('bg-yellow-400', 'text-gray-950');
+        b.classList.add('bg-gray-800', 'text-gray-300');
+      });
+      btn.classList.add('bg-yellow-400', 'text-gray-950');
+      btn.classList.remove('bg-gray-800', 'text-gray-300');
+
+      const cat = btn.dataset.category;
+      items.forEach(item => {
+        item.style.display = (cat === 'all' || item.dataset.category === cat) ? '' : 'none';
+      });
+    });
+  });
+</script>

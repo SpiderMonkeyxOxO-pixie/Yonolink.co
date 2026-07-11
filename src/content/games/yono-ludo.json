@@ -1,0 +1,12 @@
+{
+  "title": "Yono Ludo",
+  "slug": "yono-ludo",
+  "description": "The most popular board game goes digital! Play Yono Ludo with friends, win tournaments and real cash rewards.",
+  "category": "Board Games",
+  "image": "/logos/rummy-ludo.webp",
+  "rating": 4.3,
+  "tags": ["ludo", "board game", "multiplayer", "yono"],
+  "featured": true,
+  "releaseDate": "2024-02-10",
+  "playUrl": "#"
+}

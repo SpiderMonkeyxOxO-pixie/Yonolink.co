@@ -1,0 +1,76 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  pubDate: string;
+  author: string;
+  tags: string[];
+  image?: string;
+  featured?: boolean;
+}
+
+const { title, description, slug, pubDate, author, tags, image, featured } = Astro.props;
+const date = new Date(pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+const tag = tags[0] ?? 'guide';
+---
+
+<a
+  href={`/blog/${slug}`}
+  class="glow-card group flex flex-col bg-[#0D1117] overflow-hidden border border-white/5"
+>
+  <!-- Image / placeholder -->
+  <div class="relative aspect-[16/9] bg-gradient-to-br from-violet-950 via-gray-900 to-[#05070A] flex items-center justify-center overflow-hidden">
+    <!-- Glow -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="w-32 h-32 bg-violet-500/20 rounded-full blur-3xl scale-75 group-hover:scale-110 group-hover:opacity-100 opacity-60 transition-all duration-500"></div>
+    </div>
+    <!-- Dot grid -->
+    <div class="absolute inset-0 dot-grid opacity-[0.05]"></div>
+    <!-- Accent bottom line -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent"></div>
+
+    {image ? (
+      <img
+        src={image}
+        alt={title}
+        class="absolute inset-0 w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-500"
+      />
+    ) : (
+      <Icon name="newspaper" class="relative z-10 w-10 h-10 sm:w-14 sm:h-14 text-violet-400/50 group-hover:text-violet-400/80 transition-colors duration-300" />
+    )}
+
+    {featured && (
+      <span class="absolute top-2.5 left-2.5 text-[9px] font-black px-2.5 py-1 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 animate-pulse-glow z-10">
+        FEATURED
+      </span>
+    )}
+  </div>
+
+  <!-- Body -->
+  <div class="flex-1 flex flex-col p-3 sm:p-5 bg-gradient-to-b from-[#0D1117] to-[#05070A]">
+
+    <!-- Tag chip -->
+    <span class="inline-flex w-fit items-center text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-violet-500/12 text-violet-400 border border-violet-500/20 mb-2.5">
+      #{tag}
+    </span>
+
+    <!-- Title -->
+    <h3 class="font-black text-white group-hover:text-gold transition-colors text-xs sm:text-sm leading-snug mb-2 line-clamp-3 flex-1">
+      {title}
+    </h3>
+
+    <!-- Description — hidden on mobile -->
+    <p class="hidden sm:block text-gray-500 text-xs leading-relaxed line-clamp-2 mb-3">
+      {description}
+    </p>
+
+    <!-- Meta footer -->
+    <div class="flex items-center justify-between text-[10px] text-gray-600 border-t border-white/5 pt-2.5 mt-auto">
+      <span class="font-medium truncate text-gray-500">{author}</span>
+      <span class="shrink-0 ml-2">{date}</span>
+    </div>
+  </div>
+</a>

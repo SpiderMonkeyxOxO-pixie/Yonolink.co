@@ -1,0 +1,113 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  slug: string;
+  description: string;
+  category: string;
+  rating: number;
+  tags: string[];
+  image?: string;
+  featured?: boolean;
+  href?: string;
+}
+
+const { title, slug, description, category, rating, tags, image, featured, href } = Astro.props;
+const cardHref = href ?? `/games/${slug}`;
+const stars = Math.round(rating);
+
+const catBg: Record<string, { grad: string; glow: string; badge: string; accent: string }> = {
+  Rummy:  { grad: 'from-blue-950 via-blue-900/50 to-[#05070A]',     glow: 'bg-blue-500/30',    badge: 'bg-blue-500/15 text-blue-300 border border-blue-500/25',     accent: '#3B82F6' },
+  Slots:  { grad: 'from-violet-950 via-violet-900/50 to-[#05070A]', glow: 'bg-violet-500/30',  badge: 'bg-violet-500/15 text-violet-300 border border-violet-500/25', accent: '#8B5CF6' },
+  Spin:   { grad: 'from-pink-950 via-pink-900/50 to-[#05070A]',     glow: 'bg-pink-500/30',    badge: 'bg-pink-500/15 text-pink-300 border border-pink-500/25',       accent: '#EC4899' },
+  Arcade: { grad: 'from-emerald-950 via-emerald-900/50 to-[#05070A]',glow:'bg-emerald-500/30', badge: 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/25',accent:'#10B981'},
+  VIP:    { grad: 'from-yellow-950 via-yellow-900/50 to-[#05070A]', glow: 'bg-yellow-500/30',  badge: 'bg-yellow-500/15 text-yellow-300 border border-yellow-500/25', accent: '#FACC15'},
+};
+const bg = catBg[category] ?? {
+  grad: 'from-gray-900 via-gray-900/50 to-[#05070A]',
+  glow: 'bg-gray-500/20',
+  badge: 'bg-gray-700 text-gray-300 border border-gray-600',
+  accent: '#6B7280',
+};
+---
+
+<a
+  href={cardHref}
+  class="glow-card glow-card-always group flex flex-col bg-[#0D1117] overflow-hidden border border-white/5"
+>
+  <!-- ── Image area ── -->
+  <div class={`relative h-36 sm:h-44 bg-gradient-to-b ${bg.grad} flex items-center justify-center overflow-hidden`}>
+
+    <!-- Radial glow — scales in on hover -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div class={`w-40 h-40 ${bg.glow} rounded-full blur-3xl scale-75 opacity-60 group-hover:scale-110 group-hover:opacity-100 transition-all duration-500`}></div>
+    </div>
+
+    <!-- Dot grid texture -->
+    <div class="absolute inset-0 dot-grid opacity-[0.055]"></div>
+
+    <!-- Accent line at bottom of image -->
+    <div class="absolute bottom-0 left-0 right-0 h-px" style={`background: linear-gradient(90deg, transparent, ${bg.accent}55, transparent)`}></div>
+
+    <!-- Logo -->
+    {image ? (
+      <img
+        src={image}
+        alt={title}
+        class="relative z-10 w-16 h-16 sm:w-24 sm:h-24 object-contain drop-shadow-2xl group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-400"
+        loading="lazy"
+      />
+    ) : (
+      <Icon name="gamepad" class="relative z-10 w-14 h-14 text-gray-600" />
+    )}
+
+    <!-- HOT badge -->
+    {featured && (
+      <span class="absolute top-2.5 right-2.5 z-20 hot-badge rounded-full px-2.5 py-1 text-[9px] animate-pulse-glow">
+        HOT
+      </span>
+    )}
+
+    <!-- Category badge -->
+    <span class={`absolute top-2.5 left-2.5 z-20 text-[10px] font-bold px-2.5 py-0.5 rounded-full ${bg.badge}`}>
+      {category}
+    </span>
+  </div>
+
+  <!-- ── Card body (glass) ── -->
+  <div class="flex-1 flex flex-col p-3 sm:p-4 bg-gradient-to-b from-[#0D1117] to-[#05070A]">
+
+    <!-- Title -->
+    <h3 class="font-black text-white group-hover:text-gold transition-colors text-sm sm:text-base leading-tight mb-2 line-clamp-1">
+      {title}
+    </h3>
+
+    <!-- Stars -->
+    <div class="flex items-center gap-0.5 mb-3">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg
+          class={`w-3 h-3 transition-colors duration-200 ${i < stars ? 'text-yellow-400' : 'text-gray-800'}`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+      <span class="text-gray-500 text-[11px] ml-1.5 font-medium">{rating}</span>
+    </div>
+
+    <!-- Spacer -->
+    <div class="flex-1"></div>
+
+    <!-- Download button -->
+    <button
+      class="btn-shimmer btn-download-pulse w-full mt-3 py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-xs sm:text-sm tracking-wide shadow-glow-gold group-hover:shadow-glow-gold-lg transition-shadow flex items-center justify-center gap-1.5"
+    >
+      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+      </svg>
+      Download Free
+    </button>
+  </div>
+</a>

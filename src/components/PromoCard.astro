@@ -1,0 +1,77 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  title: string;
+  code: string;
+  game: string;
+  discount: string;
+  description: string;
+  expiryDate: string;
+  isActive: boolean;
+  category: string;
+}
+
+const { title, code, game, discount, description, expiryDate, isActive, category } = Astro.props;
+
+const expiry = new Date(expiryDate);
+const daysLeft = Math.ceil((expiry.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+const isExpiringSoon = daysLeft <= 7;
+
+const categoryIconNames: Record<string, string> = {
+  welcome: 'sparkles',
+  cashback: 'banknotes',
+  'free-chips': 'currency',
+  referral: 'users',
+  tournament: 'trophy',
+  general: 'gift',
+};
+const iconName = categoryIconNames[category] || 'gift';
+---
+
+<div class={`relative bg-gray-900 border rounded-2xl p-6 ${isActive ? 'border-gray-800 hover:border-yellow-400/40' : 'border-gray-800 opacity-60'} transition-all`}>
+  {isExpiringSoon && isActive && (
+    <div class="absolute top-3 right-3 bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
+      Expires Soon!
+    </div>
+  )}
+
+  <div class="flex items-start gap-4">
+    <div class="w-11 h-11 rounded-xl bg-yellow-400/10 flex items-center justify-center text-yellow-400 shrink-0">
+      <Icon name={iconName} class="w-5 h-5" />
+    </div>
+    <div class="flex-1 min-w-0">
+      <h3 class="font-bold text-white text-lg mb-1">{title}</h3>
+      <p class="text-yellow-400 font-semibold text-sm mb-1">{discount}</p>
+      <p class="text-gray-500 text-xs mb-3">For: {game}</p>
+      <p class="text-gray-400 text-sm mb-4">{description}</p>
+
+      <!-- Code copy box -->
+      <div class="flex items-center gap-2">
+        <div class="flex-1 bg-gray-800 border border-dashed border-gray-600 rounded-lg px-4 py-2.5 flex items-center justify-between">
+          <code class="text-yellow-400 font-mono font-bold text-sm tracking-widest">{code}</code>
+          {isActive && (
+            <button
+              data-code={code}
+              onclick={`
+                navigator.clipboard.writeText('${code}');
+                const btn = this;
+                const orig = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.classList.add('text-green-400');
+                setTimeout(() => { btn.textContent = orig; btn.classList.remove('text-green-400'); }, 2000);
+              `}
+              class="text-gray-400 hover:text-white text-xs font-medium transition-colors ml-2 shrink-0"
+            >
+              Copy
+            </button>
+          )}
+        </div>
+      </div>
+
+      <p class="text-gray-600 text-xs mt-2">
+        {isActive ? `Valid until ${expiry.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}` : 'Expired'}
+      </p>
+    </div>
+  </div>
+</div>

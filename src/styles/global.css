@@ -1,0 +1,252 @@
+/* ═══════════════════════════════════════════════════════════
+   YONOLINK.CO — PREMIUM DESIGN SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── BACKGROUNDS ─────────────────────────────────────────── */
+
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -15%, rgba(250,204,21,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at -5% 65%,  rgba(249,115,22,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 55% at 108% 75%, rgba(139,92,246,0.09) 0%, transparent 60%);
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ── GLASSMORPHISM ───────────────────────────────────────── */
+
+.glass {
+  background: rgba(255,255,255,0.025);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.glass-gold {
+  background: rgba(250,204,21,0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(250,204,21,0.15);
+}
+
+.glass-dark {
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ── GRADIENT BORDERS (animated on hover) ────────────────── */
+
+.glow-card {
+  position: relative;
+  isolation: isolate;
+  border-radius: 16px;
+  transition: transform 0.3s cubic-bezier(0.34,1.4,0.64,1), box-shadow 0.3s ease;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(250,204,21,0.5), rgba(139,92,246,0.3), rgba(249,115,22,0.4), rgba(250,204,21,0.2));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+  animation: border-spin 3s linear infinite;
+}
+
+.glow-card:hover {
+  transform: translateY(-4px) scale(1.006);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.65), 0 0 40px rgba(250,204,21,0.05);
+}
+
+@keyframes border-spin {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* Static glow-card variant — always shows border */
+.glow-card-static::before { opacity: 0.6; }
+
+/* Always-spinning border — used on app grid cards */
+.glow-card-always::before {
+  opacity: 0.7;
+  animation: border-spin 3s linear infinite;
+}
+.glow-card-always:hover::before { opacity: 1; }
+
+/* Pulsing download button */
+@keyframes btn-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(250,204,21,0.45), 0 4px 14px rgba(249,115,22,0.25); }
+  50%       { box-shadow: 0 0 0 7px rgba(250,204,21,0),  0 4px 22px rgba(249,115,22,0.40); }
+}
+.btn-download-pulse {
+  animation: btn-pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── GRADIENT TEXT ───────────────────────────────────────── */
+
+.text-gold {
+  background: linear-gradient(135deg, #FACC15 0%, #F97316 40%, #FACC15 85%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 5s linear infinite;
+}
+
+.text-aurora {
+  background: linear-gradient(135deg, #FACC15, #F97316, #EC4899, #8B5CF6, #FACC15);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 6s linear infinite;
+}
+
+.text-silver {
+  background: linear-gradient(135deg, #E2E8F0, #94A3B8, #E2E8F0);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes text-shimmer {
+  0%   { background-position: 0%   center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── SHIMMER BUTTON ──────────────────────────────────────── */
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 55%;
+  height: 300%;
+  background: linear-gradient(110deg, transparent, rgba(255,255,255,0.28), transparent);
+  animation: btn-slide 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes btn-slide {
+  0%   { left: -55%; }
+  100% { left: 160%;  }
+}
+
+.btn-glow {
+  box-shadow: 0 0 24px rgba(250,204,21,0.35), 0 4px 20px rgba(249,115,22,0.2);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 40px rgba(250,204,21,0.55), 0 8px 32px rgba(249,115,22,0.3);
+  transform: translateY(-1px);
+}
+
+/* ── ANIMATIONS ──────────────────────────────────────────── */
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-8px);  }
+}
+@keyframes float-y-sm {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-4px); }
+}
+@keyframes pulse-glow-gold {
+  0%, 100% { box-shadow: 0 0 10px rgba(250,204,21,0.35); }
+  50%       { box-shadow: 0 0 24px rgba(250,204,21,0.7), 0 0 48px rgba(250,204,21,0.18); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-float      { animation: float-y      3.5s ease-in-out infinite; }
+.animate-float-slow { animation: float-y      5.5s ease-in-out infinite; }
+.animate-float-d1   { animation: float-y      3.5s ease-in-out 0.8s  infinite; }
+.animate-float-d2   { animation: float-y-sm   4s   ease-in-out 1.5s  infinite; }
+.animate-pulse-glow { animation: pulse-glow-gold 2.2s ease-in-out infinite; }
+.animate-spin-slow  { animation: spin-slow    12s  linear      infinite; }
+
+/* ── SECTION DIVIDERS ────────────────────────────────────── */
+
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(250,204,21,0.3) 25%,
+    rgba(139,92,246,0.25) 75%,
+    transparent 100%);
+}
+
+/* ── PROMO CODE STYLE ────────────────────────────────────── */
+
+.code-pill {
+  font-family: 'Courier New', 'JetBrains Mono', monospace;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  background: linear-gradient(135deg, rgba(250,204,21,0.12), rgba(249,115,22,0.08));
+  border: 1px solid rgba(250,204,21,0.22);
+  color: #FACC15;
+  text-shadow: 0 0 12px rgba(250,204,21,0.4);
+}
+
+/* ── HOT BADGE ───────────────────────────────────────────── */
+
+.hot-badge {
+  background: linear-gradient(135deg, #FACC15, #F97316);
+  color: #0A0A0A;
+  font-weight: 900;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: pulse-glow-gold 2s ease-in-out infinite;
+}
+
+/* ── SCROLLBAR ───────────────────────────────────────────── */
+
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0D1117; }
+::-webkit-scrollbar-thumb { background: rgba(250,204,21,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(250,204,21,0.5); }
+
+/* ── SELECTION ───────────────────────────────────────────── */
+
+::selection {
+  background: rgba(250,204,21,0.25);
+  color: #ffffff;
+}
+
+/* ── SMOOTH SCROLL ───────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* ── REDUCED MOTION — honour OS accessibility preference ──── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

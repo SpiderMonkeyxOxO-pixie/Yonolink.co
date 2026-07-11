@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',    item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://yonolink.co/contact' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Contact YonoLink — Enquiries & Agent Applications"
+  description="Get in touch with the YonoLink team — for general enquiries, agent applications, promo code feedback and content partnerships. We respond via email and Telegram."
+  schema={breadcrumbSchema}
+>
+  <Header />
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Heading -->
+    <div class="mb-12">
+      <h1 class="font-display font-black text-3xl sm:text-4xl text-white mb-4">Contact Us</h1>
+      <p class="text-gray-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+        Have a question, feedback, or partnership enquiry? Reach us through any of the channels below. For agent applications, please see the dedicated link at the bottom of this page.
+      </p>
+    </div>
+
+    <!-- Contact cards (side by side) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+
+      <!-- Email -->
+      <div class="glass border border-white/5 rounded-2xl p-6">
+        <div class="w-11 h-11 rounded-xl bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center mb-4 text-yellow-400">
+          <Icon name="arrow-right" class="w-5 h-5" />
+        </div>
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Email Us</p>
+        <a
+          href="mailto:Yonolinksupportcenter@gmail.com"
+          class="block text-white font-bold text-sm break-all hover:text-yellow-400 transition-colors mb-3"
+        >
+          Yonolinksupportcenter@gmail.com
+        </a>
+        <p class="text-gray-500 text-xs">We respond within 24–48 hours.</p>
+      </div>
+
+      <!-- Telegram direct -->
+      <div class="glass border border-white/5 rounded-2xl p-6">
+        <div class="w-11 h-11 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center mb-4 text-sky-400">
+          <Icon name="telegram" class="w-5 h-5" />
+        </div>
+        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Message on Telegram</p>
+        <a
+          href="https://t.me/Lakshymi"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block text-white font-bold text-sm hover:text-sky-400 transition-colors mb-3"
+        >
+          @Lakshymi
+        </a>
+        <p class="text-gray-500 text-xs">Fastest response — usually within a few hours.</p>
+      </div>
+
+    </div>
+
+    <!-- Telegram channel card (full width) -->
+    <div class="glass border border-white/5 rounded-2xl p-6 mb-10 flex flex-col sm:flex-row sm:items-center gap-5">
+      <div class="shrink-0 w-12 h-12 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center text-sky-400">
+        <Icon name="telegram" class="w-6 h-6" />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-white font-bold text-sm mb-1">Join our Telegram Channel</p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Get daily promo codes, events, and updates delivered directly to your Telegram.
+        </p>
+      </div>
+      <a
+        href="https://t.me/YonolinkAgent"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center gap-2 bg-sky-500/15 hover:bg-sky-500/25 border border-sky-400/30 hover:border-sky-400/50 text-sky-400 font-bold text-sm px-5 py-3 rounded-xl transition-all duration-200 whitespace-nowrap"
+      >
+        <Icon name="telegram" class="w-4 h-4" />
+        Join @YonolinkAgent
+      </a>
+    </div>
+
+    <!-- Agent applications note -->
+    <div class="glass border border-white/5 rounded-2xl p-6 mb-6 flex items-start gap-4">
+      <div class="shrink-0 mt-0.5 w-9 h-9 rounded-lg bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400">
+        <Icon name="users" class="w-5 h-5" />
+      </div>
+      <div>
+        <p class="text-white font-bold text-sm mb-1">Agent Applications</p>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          To apply as a Yonolink Agent and access exclusive codes, campaign rewards, and incentives, visit our
+          <a href="/become-agent" class="text-yellow-400 hover:text-yellow-300 font-bold transition-colors">Be an Agent</a> page.
+        </p>
+      </div>
+    </div>
+
+    <!-- Response time notice -->
+    <div class="flex items-start gap-3">
+      <div class="shrink-0 mt-0.5 text-yellow-400">
+        <Icon name="warning" class="w-4 h-4" />
+      </div>
+      <p class="text-gray-500 text-xs leading-relaxed">
+        Response times may vary during peak periods. For the fastest reply, use Telegram. This site is operated for users aged 18 and above only.
+      </p>
+    </div>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

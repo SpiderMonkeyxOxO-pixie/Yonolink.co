@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home',               item: 'https://yonolink.co' },
+    { '@type': 'ListItem', position: 2, name: 'Gambling Awareness', item: 'https://yonolink.co/gambling-awareness' },
+  ],
+};
+---
+<BaseLayout title="Gambling Awareness — Play Responsibly on Yono Games" description="Responsible gambling guidance for Yono game players — understand the risks, set personal limits and access support resources. Play within your means and stay in control." schema={breadcrumbSchema}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mb-10">
+      <h1 class="font-display font-black text-3xl sm:text-4xl text-white mb-3">Gambling Awareness</h1>
+      <p class="text-gray-500 text-sm">Last updated: July 2026</p>
+    </div>
+
+    <div class="glass border border-yellow-400/20 rounded-2xl p-6 mb-10 flex items-start gap-4">
+      <div class="text-yellow-400 mt-1 shrink-0">
+        <Icon name="warning" class="w-6 h-6" />
+      </div>
+      <div class="text-sm leading-relaxed">
+        <p class="text-yellow-300 font-bold mb-1">Important Notice</p>
+        <p class="text-gray-300">Real-money gaming carries significant financial risk. You may lose money. This site is strictly for adults aged 18 and above. If gambling is negatively affecting your life or finances, please seek help immediately using the resources listed on this page.</p>
+      </div>
+    </div>
+
+    <div class="space-y-8 text-gray-400 text-sm leading-relaxed">
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Play Responsibly</h2>
+        <p>Real-money gaming on Yono apps and similar platforms carries genuine financial risk. There is no guaranteed way to profit, and the odds are structured so that, over time, players are more likely to lose money than to gain it. Treat gaming as a form of entertainment — like any other leisure activity with a cost — not as a source of income or a way to resolve financial problems. Only ever play with money you can genuinely afford to lose, and never chase losses by depositing more in the hope of recovering what you have already spent.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Know the Signs of Problem Gambling</h2>
+        <p class="mb-4">Problem gambling can develop gradually. Recognising the warning signs early is the most effective way to address it. Common signs include:</p>
+        <ul class="space-y-2 list-none">
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span>Chasing losses — continuing to play or depositing more money to try to win back what you have lost.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span>Borrowing money, selling possessions, or using bill money in order to play.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span>Neglecting work, studies, family responsibilities, or health because of gaming.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span>Feeling unable to stop or reduce your play, even when you want to.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span>Lying to family or friends about how much time or money you spend on gaming.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span>Feeling anxious, irritable, or depressed when not playing, or when trying to cut back.</span></li>
+        </ul>
+        <p class="mt-4">If any of these apply to you, please reach out to the support resources listed below.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Set Your Limits</h2>
+        <p class="mb-4">The most effective protection against problem gambling is setting firm personal limits before you start playing — not after. Before every gaming session, decide on and commit to three limits:</p>
+        <ul class="space-y-2 list-none">
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Deposit limit:</span> the maximum amount you will add to your account in this session.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Loss limit:</span> the amount at which you will stop playing for the day, regardless of the temptation to continue.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Time limit:</span> the maximum time you will spend playing in a single session.</span></li>
+        </ul>
+        <p class="mt-4">Once you reach any of these limits, stop immediately. Do not make exceptions. Many Yono apps allow you to set deposit and time limits directly in the app's settings — use these features proactively.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Who Can Play</h2>
+        <p>Participation in real-money gaming is strictly restricted to adults aged 18 years and above. It is your responsibility to ensure you meet the age requirement in your jurisdiction. Beyond age, you must also verify that real-money online gaming is legally permitted in your state. Certain Indian states impose specific restrictions or outright bans on skill-based gaming for stakes:</p>
+        <ul class="space-y-2 list-none mt-4">
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Andhra Pradesh (AP):</span> the AP Gaming Act prohibits most forms of real-money online gaming. Residents should not participate.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Telangana:</span> the Telangana Gaming Act restricts online gaming for stakes. Residents should not participate.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Tamil Nadu:</span> legislation restricting online gaming has been introduced; residents should verify current law before participating.</span></li>
+        </ul>
+        <p class="mt-4">Regulations change. Always verify the current legal position in your state before depositing money on any platform.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Self-Exclusion</h2>
+        <p>If you feel your gaming is getting out of control, self-exclusion is one of the most effective steps you can take. Most Yono apps and real-money gaming platforms include a self-exclusion option in their account Settings or responsible gaming section. Self-exclusion allows you to suspend or permanently close your account for a set period, preventing you from depositing or playing during that time. We strongly encourage players who are struggling to use this feature immediately — do not wait until a problem becomes severe. If you cannot find the self-exclusion option, contact the app's customer support and request account closure directly.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Get Help</h2>
+        <p class="mb-4">If you or someone you know is experiencing difficulties related to gambling, professional help is available in India. All of the following services are confidential:</p>
+        <ul class="space-y-2 list-none">
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">iCall (TISS):</span> 9152987821 — free counselling helpline operated by the Tata Institute of Social Sciences.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">Vandrevala Foundation:</span> 1860-2662-345 — 24/7 mental health helpline with counsellors available in multiple Indian languages.</span></li>
+          <li class="flex items-start gap-2"><span class="text-yellow-400 mt-1">—</span><span><span class="text-gray-300 font-semibold">iGaming &amp; Gambling Help Resources:</span> your state's health department website may list local counselling services and addiction support centres.</span></li>
+        </ul>
+        <p class="mt-4">Reaching out is a sign of strength, not weakness. Help is available and recovery is possible.</p>
+      </div>
+
+      <div>
+        <h2 class="text-white font-bold text-lg mb-3">Our Commitment</h2>
+        <p>YonoLink.co is committed to promoting safe and responsible gaming across everything we publish. We include responsible gaming reminders throughout the site, link to this page wherever relevant, and will not promote any gaming app that we believe targets vulnerable users or minors. We do not publish content that glamourises excessive gambling or misrepresents the financial outcomes of real-money gaming. If you have suggestions for how we can further support safer gaming on this site, please contact us at <a href="mailto:Yonolinksupportcenter@gmail.com" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">Yonolinksupportcenter@gmail.com</a>.</p>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

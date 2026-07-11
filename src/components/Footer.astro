@@ -1,0 +1,113 @@
+---
+import Icon from './Icon.astro';
+const year = new Date().getFullYear();
+
+const legalLinks = [
+  { label: 'Privacy Policy',      href: '/privacy-policy'      },
+  { label: 'Disclaimer',          href: '/disclaimer'           },
+  { label: 'About Us',            href: '/about'                },
+  { label: 'Contact Us',          href: '/contact'              },
+  { label: 'Editorial Policy',    href: '/editorial-policy'     },
+  { label: 'Gambling Awareness',  href: '/gambling-awareness'   },
+];
+---
+
+<!-- Main footer -->
+<footer class="bg-[#05070A] border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
+
+    <!-- Top grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
+
+      <!-- Brand col -->
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-2.5 mb-5 w-fit group">
+          <div class="relative">
+            <div class="absolute inset-0 bg-yellow-400/30 rounded-xl blur-md group-hover:blur-lg group-hover:bg-yellow-400/50 transition-all duration-300"></div>
+            <img src="/logo.png" alt="YonoLink" class="relative w-10 h-10 rounded-xl object-cover" />
+          </div>
+          <span class="text-xl font-black tracking-tight">
+            <span class="text-gold">Yono</span><span class="text-white">Link</span><span class="text-gray-600">.co</span>
+          </span>
+        </a>
+
+        <p class="text-gray-500 text-sm leading-relaxed mb-6 max-w-sm">
+          Your #1 independent source for all Yono games — verified promo codes, honest game reviews, and expert winning guides.
+        </p>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          {[
+            { text: '18+', icon: null },
+            { text: 'Secure', icon: 'lock' },
+            { text: 'Verified', icon: 'check' },
+          ].map(badge => (
+            <span class="inline-flex items-center gap-1 text-xs glass border border-white/8 text-gray-400 px-2.5 py-1 rounded-full font-medium">
+              {badge.icon && <Icon name={badge.icon} class="w-3 h-3" />}
+              {badge.text}
+            </span>
+          ))}
+        </div>
+
+        <!-- Social links -->
+        <div class="flex items-center gap-2.5">
+          {[
+            { label: 'Telegram',   href: 'https://t.me/YonolinkAgent', icon: `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>` },
+            { label: 'Instagram',  href: '#', icon: `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>` },
+            { label: 'Twitter/X',  href: '#', icon: `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>` },
+            { label: 'YouTube',    href: '#', icon: `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>` },
+          ].map(social => (
+            <a href={social.href} aria-label={social.label} target="_blank" rel="noopener noreferrer"
+              class="w-9 h-9 glass border border-white/8 hover:border-yellow-400/30 hover:text-yellow-400 text-gray-500 rounded-xl flex items-center justify-center transition-all duration-200"
+              set:html={social.icon}
+            />
+          ))}
+        </div>
+      </div>
+
+      <!-- Legal & Info -->
+      <div>
+        <h3 class="text-white font-black text-xs uppercase tracking-widest mb-5 text-gold">Quick Links</h3>
+        <ul class="space-y-3">
+          {legalLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-gray-500 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <span class="w-1 h-1 rounded-full bg-gray-700 group-hover:bg-yellow-400 transition-colors shrink-0"></span>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Gradient divider -->
+    <div class="divider-gradient mb-8"></div>
+
+    <!-- Responsible gaming strip -->
+    <div class="glass border border-white/5 rounded-2xl px-5 py-4 mb-6 flex flex-col sm:flex-row items-start gap-3 text-xs text-gray-500">
+      <Icon name="warning" class="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
+      <p>
+        <strong class="text-gray-400">Responsible Gaming:</strong> Gambling involves financial risk. Only play with money you can afford to lose. If you think you have a gambling problem, please seek help.
+        This site is strictly for users aged <strong class="text-gray-400">18 and above</strong>.
+      </p>
+    </div>
+
+    <!-- Disclaimer + copyright -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-700">
+      <p>
+        © {year} <span class="text-gray-500 font-medium">YonoLink.co</span> — All rights reserved. Independent information site. Not affiliated with Yono or any gaming operator.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="/privacy-policy"    class="hover:text-gray-500 transition-colors">Privacy Policy</a>
+        <a href="/disclaimer"        class="hover:text-gray-500 transition-colors">Disclaimer</a>
+        <a href="/about"             class="hover:text-gray-500 transition-colors">About Us</a>
+        <a href="/contact"           class="hover:text-gray-500 transition-colors">Contact Us</a>
+        <a href="/editorial-policy"  class="hover:text-gray-500 transition-colors">Editorial Policy</a>
+        <a href="/gambling-awareness" class="hover:text-gray-500 transition-colors">Gambling Awareness</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

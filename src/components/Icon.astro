@@ -1,0 +1,177 @@
+---
+interface Props {
+  name: string;
+  class?: string;
+}
+
+const { name, class: className = 'w-5 h-5' } = Astro.props;
+
+// Duotone icon system: background layer (0.2 opacity) + foreground detail (full opacity)
+// viewBox 0 0 24 24 — fill="currentColor" throughout, no stroke
+const icons: Record<string, string> = {
+
+  // ── Gift / Bonus ───────────────────────────────────────────────────────────
+  gift: `
+    <path opacity="0.2" fill="currentColor" d="M3.5 11.5v9A1.5 1.5 0 0 0 5 22h14a1.5 1.5 0 0 0 1.5-1.5v-9h-17Z"/>
+    <path fill="currentColor" d="M21 7.5H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Z"/>
+    <path fill="currentColor" opacity="0.7" d="M11 7.5h2V22h-2z"/>
+    <path fill="currentColor" d="M11 9C9.8 6 8 3.2 6.2 2.7 5 2.3 4.3 3.2 4.8 4.6 5.3 6 7.8 7.7 11 9Z"/>
+    <path fill="currentColor" d="M13 9c1.2-3 3-5.8 4.8-6.3 1.2-.4 1.9.5 1.4 1.9-.5 1.4-3 3.1-6.2 4.4Z"/>
+  `,
+
+  // ── Game Controller ────────────────────────────────────────────────────────
+  gamepad: `
+    <path opacity="0.2" fill="currentColor" d="M7 8.5a4.5 4.5 0 0 0-4.5 4.5v1c0 2.8 1.8 5.5 4.5 5.5 1.5 0 2.8-.8 3.6-2l.4-.5h6l.4.5c.8 1.2 2.1 2 3.6 2 2.7 0 4.5-2.7 4.5-5.5V13A4.5 4.5 0 0 0 21 8.5H7Z"/>
+    <path fill="currentColor" d="M8 12H6.5v-1.5a.5.5 0 0 0-1 0V12H4a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V13H8a.5.5 0 0 0 0-1Z"/>
+    <circle fill="currentColor" cx="16" cy="11.5" r="1.1"/>
+    <circle fill="currentColor" cx="19" cy="13.5" r="1.1"/>
+    <circle fill="currentColor" opacity="0.5" cx="17.5" cy="15.5" r="0.8"/>
+    <path fill="currentColor" opacity="0.5" d="M8.5 7.5A3.5 3.5 0 0 1 12 5a3.5 3.5 0 0 1 3.5 2.5H8.5Z"/>
+  `,
+
+  // ── Newspaper / Article ────────────────────────────────────────────────────
+  newspaper: `
+    <path opacity="0.2" fill="currentColor" d="M4 4a1 1 0 0 0-1 1v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a1 1 0 0 0-1-1H4Z"/>
+    <path fill="currentColor" d="M7 8h10a.75.75 0 0 0 0-1.5H7A.75.75 0 0 0 7 8Z"/>
+    <path fill="currentColor" opacity="0.7" d="M7 11.5h10a.75.75 0 0 0 0-1.5H7a.75.75 0 0 0 0 1.5Z"/>
+    <rect fill="currentColor" x="7" y="13.5" width="5" height="4" rx="0.75"/>
+    <path fill="currentColor" opacity="0.6" d="M14 14.5h3a.75.75 0 0 0 0-1.5h-3a.75.75 0 0 0 0 1.5ZM14 17h3a.75.75 0 0 0 0-1.5h-3A.75.75 0 0 0 14 17Z"/>
+    <rect fill="currentColor" opacity="0.4" x="3" y="4" width="18" height="3" rx="0.75"/>
+  `,
+
+  // ── Star ───────────────────────────────────────────────────────────────────
+  star: `
+    <path opacity="0.15" fill="currentColor" d="M12 2l2.6 7.4H22l-6.3 4.6 2.4 7.3L12 17l-6.1 4.3 2.4-7.3L2 9.4h7.4L12 2Z"/>
+    <path fill="currentColor" d="M12 3.2l2.2 6.3.2.5h6.6l-5.3 3.9-.5.3.2.6 2 6.2-5.1-3.6-.5-.4-.5.4-5.1 3.6 2-6.2.2-.6-.5-.3-5.3-3.9h6.6l.2-.5L12 3.2Z"/>
+  `,
+
+  // ── Sparkles / AI / Premium ────────────────────────────────────────────────
+  sparkles: `
+    <path opacity="0.2" fill="currentColor" d="M10.5 3.5 12 7.5l4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5 1.5-4Z"/>
+    <path fill="currentColor" d="M10.5 2 12.1 6.4l4.4 1.6-4.4 1.6L10.5 14 8.9 9.6 4.5 8l4.4-1.6L10.5 2Z"/>
+    <path fill="currentColor" opacity="0.7" d="M18.5 12.5l1.1 2.9 2.9 1.1-2.9 1.1-1.1 2.9-1.1-2.9-2.9-1.1 2.9-1.1 1.1-2.9Z"/>
+    <path fill="currentColor" opacity="0.45" d="M6 16l.8 2.2 2.2.8-2.2.8L6 22l-.8-2.2L3 19l2.2-.8L6 16Z"/>
+  `,
+
+  // ── Banknotes / Cash ───────────────────────────────────────────────────────
+  banknotes: `
+    <rect opacity="0.2" fill="currentColor" x="2" y="7" width="20" height="13" rx="2"/>
+    <rect fill="currentColor" opacity="0.5" x="4" y="4" width="18" height="13" rx="2"/>
+    <rect fill="currentColor" x="2" y="7" width="20" height="11" rx="1.5"/>
+    <circle fill="currentColor" opacity="0.3" cx="12" cy="12.5" r="4.5"/>
+    <path fill="currentColor" d="M12 9.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+    <path fill="currentColor" opacity="0.6" d="M3.5 8.75h1.25a.75.75 0 0 0 0-1.5H3.5a.75.75 0 0 0 0 1.5ZM19.25 8.75H20.5a.75.75 0 0 0 0-1.5h-1.25a.75.75 0 0 0 0 1.5ZM3.5 17.25h1.25a.75.75 0 0 0 0-1.5H3.5a.75.75 0 0 0 0 1.5ZM19.25 17.25H20.5a.75.75 0 0 0 0-1.5h-1.25a.75.75 0 0 0 0 1.5Z"/>
+  `,
+
+  // ── Currency / Coin ────────────────────────────────────────────────────────
+  currency: `
+    <circle opacity="0.2" fill="currentColor" cx="12" cy="12" r="10"/>
+    <circle fill="currentColor" opacity="0.08" cx="12" cy="12" r="10"/>
+    <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2Zm0 1.5a8.5 8.5 0 1 1 0 17 8.5 8.5 0 0 1 0-17Z"/>
+    <path fill="currentColor" d="M14.5 8h-5a.75.75 0 0 0 0 1.5h1.75v1H9.5a.75.75 0 0 0 0 1.5h1.75v4.25a.75.75 0 0 0 1.5 0V12h1.75a.75.75 0 0 0 0-1.5h-1.75v-1H14.5a.75.75 0 0 0 0-1.5Z"/>
+  `,
+
+  // ── Users / Community ──────────────────────────────────────────────────────
+  users: `
+    <circle opacity="0.2" fill="currentColor" cx="8" cy="7" r="4"/>
+    <path opacity="0.2" fill="currentColor" d="M1.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5H1.5Z"/>
+    <circle fill="currentColor" cx="16" cy="8" r="3"/>
+    <path fill="currentColor" d="M22.5 20c0-3-2.2-5.5-5-6.2a6.5 6.5 0 0 1 .5 2.5 8 8 0 0 1-.4 2.5 1 1 0 0 0 1 1.2h3.9Z"/>
+    <circle fill="currentColor" opacity="0.9" cx="9" cy="8" r="4"/>
+    <path fill="currentColor" d="M1.5 21a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1c0-3.9-3.4-7-7.5-7s-7.5 3.1-7.5 7Z"/>
+  `,
+
+  // ── Trophy / Achievement ───────────────────────────────────────────────────
+  trophy: `
+    <path opacity="0.2" fill="currentColor" d="M7 4h10v8a5 5 0 0 1-10 0V4Z"/>
+    <path fill="currentColor" d="M7 3a1 1 0 0 0-1 1v8a6 6 0 0 0 4.5 5.8V20H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-2.5v-2.2A6 6 0 0 0 18 12V4a1 1 0 0 0-1-1H7Zm1 2h8v7a4 4 0 0 1-8 0V5Z"/>
+    <path fill="currentColor" opacity="0.7" d="M5 5H3a2 2 0 0 0-2 2v1a4 4 0 0 0 4 4h.5A6 6 0 0 1 5 11V5Zm14 0h2a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4h-.5A6 6 0 0 0 19 11V5Z"/>
+    <path fill="currentColor" d="M12 7.5l.9 2.1 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3L12 7.5Z"/>
+  `,
+
+  // ── Lightbulb / Tip ───────────────────────────────────────────────────────
+  lightbulb: `
+    <path opacity="0.2" fill="currentColor" d="M12 2a7 7 0 0 0-4 12.8V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.2A7 7 0 0 0 12 2Z"/>
+    <path fill="currentColor" d="M12 1a8 8 0 0 0-5 14.3V17a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1.7A8 8 0 0 0 12 1Zm0 1.5a6.5 6.5 0 0 1 4.2 11.5.75.75 0 0 0-.2.5V17a.5.5 0 0 1-.5.5H8.5a.5.5 0 0 1-.5-.5v-2.5a.75.75 0 0 0-.2-.5A6.5 6.5 0 0 1 12 2.5Z"/>
+    <path fill="currentColor" d="M9.5 20.5a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5Z"/>
+    <path fill="currentColor" opacity="0.6" d="M10.5 19h3v1.5h-3z"/>
+    <path fill="currentColor" opacity="0.5" d="M10 9.5a.75.75 0 0 1 .75-.75 1.75 1.75 0 0 1 1.75 1.75.75.75 0 0 1-1.5 0 .25.25 0 0 0-.25-.25A.75.75 0 0 1 10 9.5Z"/>
+  `,
+
+  // ── Warning / Alert ────────────────────────────────────────────────────────
+  warning: `
+    <path opacity="0.2" fill="currentColor" d="M12 2.5 1.5 21.5h21L12 2.5Z"/>
+    <path fill="currentColor" d="M12 1a1.5 1.5 0 0 0-1.3.75L.2 20.75A1.5 1.5 0 0 0 1.5 23h21a1.5 1.5 0 0 0 1.3-2.25L13.3 1.75A1.5 1.5 0 0 0 12 1Zm0 2.5 10 17.5H2L12 3.5Z"/>
+    <path fill="currentColor" d="M12 9a.75.75 0 0 0-.75.75v5.5a.75.75 0 0 0 1.5 0v-5.5A.75.75 0 0 0 12 9Z"/>
+    <circle fill="currentColor" cx="12" cy="18" r="1"/>
+  `,
+
+  // ── Lock / Security ────────────────────────────────────────────────────────
+  lock: `
+    <rect opacity="0.2" fill="currentColor" x="4" y="11" width="16" height="11" rx="2"/>
+    <path fill="currentColor" d="M4 11a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H4Zm0 1.5h16a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5Z"/>
+    <path fill="currentColor" d="M12 3a5 5 0 0 0-5 5v3.5h1.5V8a3.5 3.5 0 0 1 7 0v3.5H17V8a5 5 0 0 0-5-5Z"/>
+    <path fill="currentColor" opacity="0.7" d="M12 14a1.5 1.5 0 0 0-1 2.6V18a1 1 0 0 0 2 0v-1.4A1.5 1.5 0 0 0 12 14Z"/>
+  `,
+
+  // ── Check / Verified ───────────────────────────────────────────────────────
+  check: `
+    <path opacity="0.2" fill="currentColor" d="M12 2 4 5.5v6c0 5 3.5 9.7 8 10.8 4.5-1.1 8-5.8 8-10.8v-6L12 2Z"/>
+    <path fill="currentColor" d="M12 1 3 4.8v6.7c0 5.7 4 11 9 12.3 5-1.3 9-6.6 9-12.3V4.8L12 1Zm0 1.9 8 3.4v5.6c0 4.8-3.3 9.2-8 10.5-4.7-1.3-8-5.7-8-10.5V6.3l8-3.4Z"/>
+    <path fill="currentColor" d="M16 9.5 10.5 15 8 12.5l-1.1 1.1 3.6 3.6 6.6-6.6L16 9.5Z"/>
+  `,
+
+  // ── Arrow Right ────────────────────────────────────────────────────────────
+  'arrow-right': `
+    <path opacity="0.2" fill="currentColor" d="M13 5 21 12 13 19v-4.5H3v-5h10V5Z"/>
+    <path fill="currentColor" d="M14.3 4.2a.75.75 0 0 0-1.05 1.07L18.44 11H3.75a.75.75 0 0 0 0 1.5H18.44l-5.2 5.73a.75.75 0 1 0 1.12 1l6-6.6a.75.75 0 0 0 0-1L14.3 4.2Z"/>
+  `,
+
+  // ── Telegram ───────────────────────────────────────────────────────────────
+  telegram: `
+    <path opacity="0.2" fill="currentColor" d="M2.3 11.8 20 4 17 20l-6-5-4 3 1-6-3 3-2.7-3.2Z"/>
+    <path fill="currentColor" d="M21.5 3.2a1.5 1.5 0 0 0-1.6-.2L1.4 10.8a1.5 1.5 0 0 0 .1 2.8l4.3 1.5 1.9 5.8a1 1 0 0 0 1.7.3l2.4-2.4 4.3 3.3a1.5 1.5 0 0 0 2.3-1L21 4.9a1.5 1.5 0 0 0-.5-1.7ZM18.3 6.8 9.4 14.3l-.4 4.1-1.3-4L4 13l14.3-6.2Z"/>
+  `,
+
+  // ── WhatsApp ───────────────────────────────────────────────────────────────
+  whatsapp: `
+    <path opacity="0.2" fill="currentColor" d="M12 2a10 10 0 0 0-8.7 15L2 22l5.2-1.4A10 10 0 1 0 12 2Z"/>
+    <path fill="currentColor" d="M12 1A11 11 0 0 0 2.4 16.7L1 23l6.5-1.4A11 11 0 1 0 12 1Zm0 2a9 9 0 1 1-4.8 16.6l-.3-.2-3.8 1 1-3.7-.2-.3A9 9 0 0 1 12 3Z"/>
+    <path fill="currentColor" d="M9.1 7.5c-.3 0-.7.3-1 .6-.5.6-.8 1.2-.8 1.8 0 1 .6 2 1.4 2.9 1.3 1.6 3 2.7 4.8 3.1.7.2 1.3 0 1.8-.3.3-.2.6-.6.7-1l.2-.6c0-.2-.1-.3-.3-.4l-2-.9c-.2-.1-.3 0-.5.1l-.7 1c-.1.1-.2.1-.3 0-1.2-.5-2.2-1.5-2.6-2.7 0-.1 0-.2.1-.3l.8-.9c.1-.1.1-.3.1-.4L9.8 7.7c-.2-.1-.4-.2-.7-.2Z"/>
+  `,
+
+  // ── Facebook ───────────────────────────────────────────────────────────────
+  facebook: `
+    <rect opacity="0.2" fill="currentColor" x="2" y="2" width="20" height="20" rx="5.5"/>
+    <path fill="currentColor" d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5ZM7 3.5h10A3.5 3.5 0 0 1 20.5 7v10a3.5 3.5 0 0 1-3.5 3.5H7A3.5 3.5 0 0 1 3.5 17V7A3.5 3.5 0 0 1 7 3.5Z"/>
+    <path fill="currentColor" d="M13.5 8.5H15V6.5h-1.5C12.1 6.5 11 7.6 11 9v1H9.5v2H11V22h2V12h1.5l.5-2H13V9c0-.3.2-.5.5-.5Z"/>
+  `,
+
+  // ── Instagram ──────────────────────────────────────────────────────────────
+  instagram: `
+    <rect opacity="0.2" fill="currentColor" x="2" y="2" width="20" height="20" rx="6"/>
+    <path fill="currentColor" d="M7 2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7Zm0 1.5h10A3.5 3.5 0 0 1 20.5 7v10a3.5 3.5 0 0 1-3.5 3.5H7A3.5 3.5 0 0 1 3.5 17V7A3.5 3.5 0 0 1 7 3.5Z"/>
+    <circle fill="currentColor" opacity="0.2" cx="12" cy="12" r="4.5"/>
+    <path fill="currentColor" d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 1.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"/>
+    <circle fill="currentColor" cx="17" cy="7" r="1.1"/>
+  `,
+
+  // ── Tag / Label ────────────────────────────────────────────────────────────
+  tag: `
+    <path opacity="0.2" fill="currentColor" d="M3 3h8.2a1 1 0 0 1 .7.3l9.4 9.4a1 1 0 0 1 0 1.4l-7.6 7.6a1 1 0 0 1-1.4 0L2.9 12.3A1 1 0 0 1 2.6 11.6 L3 3Z"/>
+    <path fill="currentColor" d="M13 2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 .6 1.4l8.6 8.6a2 2 0 0 0 2.8 0l7-7a2 2 0 0 0 0-2.8L14.4 2.6A2 2 0 0 0 13 2Zm0 1.5a.5.5 0 0 1 .35.15l8.6 8.6a.5.5 0 0 1 0 .7l-7 7a.5.5 0 0 1-.7 0L5.7 11.4 4.35 4.7 A.5.5 0 0 1 4 4.5V4a.5.5 0 0 1 .5-.5H13Z"/>
+    <circle fill="currentColor" cx="7.5" cy="7.5" r="1.75"/>
+  `,
+
+};
+
+const content = icons[name] ?? icons['gift'];
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  class={className}
+  aria-hidden="true"
+  set:html={content}
+/>
