@@ -8,7 +8,49 @@ export interface AppData {
 
 export const apps: AppData[] = [
 
-  // ── RUMMY (18) ──────────────────────────────────────────────────────────────
+  // ── FEATURED (6) ─────────────────────────────────────────────────────────────
+
+  {
+    name: 'Dhan Game', slug: 'dhan-game', logo: '/logos/dhan-game.webp', category: 'Slots',
+    tagline: 'New slots platform launching July 23 — welcome bonus ₹80 to ₹175',
+    description: 'Dhan Game is an upcoming Slots platform launching on July 23, 2026. Featuring a premium slot machine experience with a generous welcome bonus of ₹80–₹175 on first deposit and a low minimum withdrawal of ₹100. Built for Indian players with UPI support and instant withdrawals. Register early and claim your launch-day bonus.',
+    rating: 4.5, downloads: 'New', size: '45 MB', minDeposit: '₹100', bonus: '₹175 Welcome Bonus',
+    features: [
+      'Welcome bonus ₹80–₹175 on first deposit',
+      'Minimum withdrawal of just ₹100',
+      'Premium slot machine games with high RTP',
+      'Instant UPI deposits and withdrawals',
+      'Daily promo codes updated 3× per day',
+    ],
+    downloadUrl: '#',
+    faqs: [
+      { q: 'When does Dhan Game launch?', a: 'Dhan Game launches on July 23, 2026 at 8:00 AM IST. Register early to claim the launch-day welcome bonus of ₹80–₹175 on your first deposit.' },
+      { q: 'What is the welcome bonus on Dhan Game?', a: 'New users receive a welcome bonus of ₹80–₹175 on their first deposit. Visit our Promo Codes page for the latest Dhan Game launch code.' },
+      { q: 'What is the minimum withdrawal on Dhan Game?', a: 'The minimum withdrawal on Dhan Game is ₹100, processed via UPI instantly after your request is approved.' },
+    ],
+    suggestedApps: ['yono-slots', 'yono-777', 'slots-winner'],
+  },
+
+  {
+    name: 'Max Rummy', slug: 'max-rummy', logo: '/logos/max-rummy.webp', category: 'Rummy',
+    tagline: 'Maximum rummy action — bigger prize pools, faster tables, higher stakes',
+    description: 'Max Rummy lives up to its name by offering the biggest prize pools in the Yono rummy ecosystem. With daily guaranteed jackpots worth ₹5 lakh, Max Rummy attracts India\'s most competitive rummy players. Ultra-fast card dealing, multi-table support for up to 4 simultaneous games, and an advanced opponent tracking system make every session feel like a professional tournament.',
+    rating: 4.5, downloads: '1.8M+', size: '36 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
+    features: [
+      'Daily ₹5 lakh guaranteed jackpot across all formats',
+      'Multi-table play — run up to 4 rummy tables simultaneously',
+      'Ultra-fast dealing engine with sub-second card animations',
+      'Advanced opponent stats to help sharpen your strategy',
+      'Instant UPI withdrawal with zero processing fee',
+    ],
+    downloadUrl: 'https://www.maxrummy11.com/?code=QUMG2BV9MQB&t=1783568316',
+    faqs: [
+      { q: 'What makes Max Rummy different from other rummy apps?', a: 'Max Rummy offers the largest daily guaranteed prize pools in the Yono ecosystem — up to ₹5 lakh per day — combined with multi-table support that lets experienced players run up to 4 simultaneous games.' },
+      { q: 'How do I download Max Rummy on Android?', a: 'Tap the Download button on this page to get the Max Rummy APK. Enable Unknown Sources in your Android settings, open the downloaded file, and install. The whole process takes under 2 minutes.' },
+      { q: 'Can I claim the welcome bonus as a new user?', a: 'Yes. Register a new account on Max Rummy, make your first deposit of ₹100 or more, and enter your welcome code (from our Promo Codes page) in the Wallet section to claim your ₹500 welcome bonus instantly.' },
+    ],
+    suggestedApps: ['boss-rummy', 'top-rummy', 'yono-rummy'],
+  },
 
   {
     name: 'Yono Rummy', slug: 'yono-rummy', logo: '/logos/yono-rummy.webp', category: 'Rummy',
@@ -30,6 +72,71 @@ export const apps: AppData[] = [
     ],
     suggestedApps: ['top-rummy', 'boss-rummy', 'ind-rummy'],
   },
+
+  {
+    name: 'Yono Games', slug: 'yono-games', logo: '/logos/yono-games.webp', category: 'Arcade',
+    tagline: 'The complete Yono gaming platform — one app for all Yono games',
+    description: 'Yono Games is the official main platform application for the entire Yono ecosystem. It is the single source of truth for your Yono balance, rewards, and game access. All Yono games — Rummy, Slots, 777, Fantasy, Ludo, and more — are accessible from the Yono Games lobby. It\'s the app to download if you want everything Yono in one place.',
+    rating: 4.6, downloads: '5M+', size: '80 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
+    features: [
+      'Unified lobby for every Yono game — rummy to casino',
+      'Master Yono wallet used across all games and apps',
+      'Single KYC verification valid for all Yono products',
+      'Yono Games loyalty programme — the highest-earning tier',
+      'Priority customer support for Yono Games users',
+    ],
+    downloadUrl: 'https://youonogamesgift.com/?code=GK1EVT15SS7&t=1782476329',
+    faqs: [
+      { q: 'Is Yono Games the main Yono platform?', a: 'Yes. Yono Games is the primary Yono app. Your account, wallet, KYC and loyalty points all live here. Other Yono apps (Yono Rummy, Yono Slots etc.) are extensions of this platform.' },
+      { q: 'Do I need separate apps for each Yono game?', a: 'No. Yono Games gives access to all Yono titles from one app. Standalone Yono apps (Rummy, Slots, 777) are offered for players who prefer a focused experience.' },
+      { q: 'What promo code should I use on Yono Games?', a: 'Visit our Promo Codes page to get the current welcome code and any daily codes — they stack for maximum bonus value.' },
+    ],
+    suggestedApps: ['yono-arcade', 'yono-slots', 'yono-rummy'],
+  },
+
+  {
+    name: 'Yono 777', slug: 'yono-777', logo: '/logos/yono-777.webp', category: 'Slots',
+    tagline: 'Yono\'s flagship 777 casino — premium games with Yono ecosystem integration',
+    description: 'Yono 777 is the flagship casino experience of the Yono platform, combining slots, live dealer, Teen Patti, and 777 specialty games in a premium package. Full Yono ecosystem integration means your balance, promo codes, and loyalty points work seamlessly across Yono 777, Yono Slots, and Yono Rummy. VIP tables unlock for deposits over ₹5,000.',
+    rating: 4.6, downloads: '3.2M+', size: '65 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
+    features: [
+      'Full Yono ecosystem wallet and promo code compatibility',
+      'Live dealer Teen Patti and Andar Bahar with HD streaming',
+      '777 specialty games exclusive to the Yono 777 platform',
+      'VIP tables with dedicated dealer for ₹5,000+ sessions',
+      'Yono loyalty multiplier — earn 3x loyalty points in casino',
+    ],
+    downloadUrl: 'https://yonomain777.one/?code=ZMRZ6SUQQZ2&t=1782213370',
+    faqs: [
+      { q: 'Can I use promo codes in Yono 777?', a: 'Yes. All Yono promo codes apply to Yono 777 via the Wallet → Promo Code section. The balance is credited to your shared Yono wallet instantly.' },
+      { q: 'What are 777 specialty games on Yono 777?', a: 'These are Yono-exclusive games with 777 themes — Golden 777 Roulette, Triple 7 Baccarat, and 777 Crash — not found on any other platform.' },
+      { q: 'How do I access the VIP tables on Yono 777?', a: 'VIP table access unlocks automatically when you deposit ₹5,000 or more in any single session. The VIP tab appears in your lobby immediately after qualifying.' },
+    ],
+    suggestedApps: ['yono-slots', 'yono-games', '777game'],
+  },
+
+  {
+    name: 'Yono Arcade', slug: 'yono-arcade', logo: '/logos/yono-arcade.webp', category: 'Arcade',
+    tagline: 'Yono\'s multi-game arcade — play anything in the Yono universe from one app',
+    description: 'Yono Arcade brings every Yono game under one roof — rummy, slots, 777, fantasy, ludo, spin, and exclusive arcade-only titles. The Yono Arcade Pass (monthly subscription) gives unlimited access to all free-play tables and doubled daily bonuses across the entire Yono platform. New Yono games launch exclusively in Arcade before standalone release.',
+    rating: 4.5, downloads: '2.1M+', size: '75 MB', minDeposit: '₹100', bonus: '₹350 Welcome Bonus',
+    features: [
+      'Every Yono game accessible from one unified arcade lobby',
+      'Yono Arcade Pass — monthly subscription for doubled bonuses',
+      'Arcade-first game launches before standalone releases',
+      'Cross-game daily missions with combined rewards',
+      'All Yono promo codes valid across every Arcade game',
+    ],
+    downloadUrl: 'https://yonoofficial2.com/?code=96LUT957MWS&t=1782476174',
+    faqs: [
+      { q: 'What is the Yono Arcade Pass?', a: 'The Arcade Pass is a monthly subscription (₹99/month) that gives doubled daily bonuses, unlimited free-play table access, and early access to new Yono games before public release.' },
+      { q: 'Is Yono Arcade the same as the Yono Games app?', a: 'They are related but different. Yono Games is the main Yono platform. Yono Arcade is a separate app with an arcade lobby feel and exclusive games not in the main Yono Games app.' },
+      { q: 'Can I use promo codes in Yono Arcade?', a: 'Yes. All Yono promo codes work across Yono Arcade. Enter codes in Wallet → Promo Codes and the balance applies to any game in the arcade lobby. Get the latest codes from our Promo Codes page.' },
+    ],
+    suggestedApps: ['yono-games', 'yono-777', 'yono-slots'],
+  },
+
+  // ── RUMMY (16) ──────────────────────────────────────────────────────────────
 
   {
     name: 'ABC Rummy', slug: 'abc-rummy', logo: '/logos/abc-rummy.webp', category: 'Rummy',
@@ -386,27 +493,6 @@ export const apps: AppData[] = [
       { q: 'Is Rummy Ludo available on iOS?', a: 'Rummy Ludo currently offers an Android APK and a browser-based version accessible on any device including iPhones through Safari.' },
     ],
     suggestedApps: ['yono-rummy', 'ind-rummy', 'jaiho-rummy'],
-  },
-
-  {
-    name: 'Max Rummy', slug: 'max-rummy', logo: '/logos/max-rummy.webp', category: 'Rummy',
-    tagline: 'Maximum rummy action — bigger prize pools, faster tables, higher stakes',
-    description: 'Max Rummy lives up to its name by offering the biggest prize pools in the Yono rummy ecosystem. With daily guaranteed jackpots worth ₹5 lakh, Max Rummy attracts India\'s most competitive rummy players. Ultra-fast card dealing, multi-table support for up to 4 simultaneous games, and an advanced opponent tracking system make every session feel like a professional tournament.',
-    rating: 4.5, downloads: '1.8M+', size: '36 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
-    features: [
-      'Daily ₹5 lakh guaranteed jackpot across all formats',
-      'Multi-table play — run up to 4 rummy tables simultaneously',
-      'Ultra-fast dealing engine with sub-second card animations',
-      'Advanced opponent stats to help sharpen your strategy',
-      'Instant UPI withdrawal with zero processing fee',
-    ],
-    downloadUrl: 'https://www.maxrummy11.com/?code=QUMG2BV9MQB&t=1783568316',
-    faqs: [
-      { q: 'What makes Max Rummy different from other rummy apps?', a: 'Max Rummy offers the largest daily guaranteed prize pools in the Yono ecosystem — up to ₹5 lakh per day — combined with multi-table support that lets experienced players run up to 4 simultaneous games.' },
-      { q: 'How do I download Max Rummy on Android?', a: 'Tap the Download button on this page to get the Max Rummy APK. Enable Unknown Sources in your Android settings, open the downloaded file, and install. The whole process takes under 2 minutes.' },
-      { q: 'Can I claim the welcome bonus as a new user?', a: 'Yes. Register a new account on Max Rummy, make your first deposit of ₹100 or more, and enter your welcome code (from our Promo Codes page) in the Wallet section to claim your ₹500 welcome bonus instantly.' },
-    ],
-    suggestedApps: ['boss-rummy', 'top-rummy', 'yono-rummy'],
   },
 
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
@@ -814,28 +900,7 @@ export const apps: AppData[] = [
     suggestedApps: ['777game', 'jahio-777', 'yono-777'],
   },
 
-  {
-    name: 'Yono 777', slug: 'yono-777', logo: '/logos/yono-777.webp', category: 'Slots',
-    tagline: 'Yono\'s flagship 777 casino — premium games with Yono ecosystem integration',
-    description: 'Yono 777 is the flagship casino experience of the Yono platform, combining slots, live dealer, Teen Patti, and 777 specialty games in a premium package. Full Yono ecosystem integration means your balance, promo codes, and loyalty points work seamlessly across Yono 777, Yono Slots, and Yono Rummy. VIP tables unlock for deposits over ₹5,000.',
-    rating: 4.6, downloads: '3.2M+', size: '65 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
-    features: [
-      'Full Yono ecosystem wallet and promo code compatibility',
-      'Live dealer Teen Patti and Andar Bahar with HD streaming',
-      '777 specialty games exclusive to the Yono 777 platform',
-      'VIP tables with dedicated dealer for ₹5,000+ sessions',
-      'Yono loyalty multiplier — earn 3x loyalty points in casino',
-    ],
-    downloadUrl: 'https://yonomain777.one/?code=ZMRZ6SUQQZ2&t=1782213370',
-    faqs: [
-      { q: 'Can I use promo codes in Yono 777?', a: 'Yes. All Yono promo codes apply to Yono 777 via the Wallet → Promo Code section. The balance is credited to your shared Yono wallet instantly.' },
-      { q: 'What are 777 specialty games on Yono 777?', a: 'These are Yono-exclusive games with 777 themes — Golden 777 Roulette, Triple 7 Baccarat, and 777 Crash — not found on any other platform.' },
-      { q: 'How do I access the VIP tables on Yono 777?', a: 'VIP table access unlocks automatically when you deposit ₹5,000 or more in any single session. The VIP tab appears in your lobby immediately after qualifying.' },
-    ],
-    suggestedApps: ['yono-slots', 'yono-games', '777game'],
-  },
-
-  // ── ARCADE / MULTI-GAME (7) ──────────────────────────────────────────────────
+  // ── ARCADE / MULTI-GAME (5) ──────────────────────────────────────────────────
 
   {
     name: '101z', slug: '101z', logo: '/logos/101z.webp', category: 'Arcade',
@@ -940,48 +1005,6 @@ export const apps: AppData[] = [
       { q: 'What is Tiplu on Maha Games?', a: 'Tiplu is a traditional Maharashtra card game similar to Teen Patti but with regional rule variations. Maha Games is one of the only platforms to offer it as a real-cash game.' },
     ],
     suggestedApps: ['ind-club', 'ind-rummy', 'yono-games'],
-  },
-
-  {
-    name: 'Yono Arcade', slug: 'yono-arcade', logo: '/logos/yono-arcade.webp', category: 'Arcade',
-    tagline: 'Yono\'s multi-game arcade — play anything in the Yono universe from one app',
-    description: 'Yono Arcade brings every Yono game under one roof — rummy, slots, 777, fantasy, ludo, spin, and exclusive arcade-only titles. The Yono Arcade Pass (monthly subscription) gives unlimited access to all free-play tables and doubled daily bonuses across the entire Yono platform. New Yono games launch exclusively in Arcade before standalone release.',
-    rating: 4.5, downloads: '2.1M+', size: '75 MB', minDeposit: '₹100', bonus: '₹350 Welcome Bonus',
-    features: [
-      'Every Yono game accessible from one unified arcade lobby',
-      'Yono Arcade Pass — monthly subscription for doubled bonuses',
-      'Arcade-first game launches before standalone releases',
-      'Cross-game daily missions with combined rewards',
-      'All Yono promo codes valid across every Arcade game',
-    ],
-    downloadUrl: 'https://yonoofficial2.com/?code=96LUT957MWS&t=1782476174',
-    faqs: [
-      { q: 'What is the Yono Arcade Pass?', a: 'The Arcade Pass is a monthly subscription (₹99/month) that gives doubled daily bonuses, unlimited free-play table access, and early access to new Yono games before public release.' },
-      { q: 'Is Yono Arcade the same as the Yono Games app?', a: 'They are related but different. Yono Games is the main Yono platform. Yono Arcade is a separate app with an arcade lobby feel and exclusive games not in the main Yono Games app.' },
-      { q: 'Can I use promo codes in Yono Arcade?', a: 'Yes. All Yono promo codes work across Yono Arcade. Enter codes in Wallet → Promo Codes and the balance applies to any game in the arcade lobby. Get the latest codes from our Promo Codes page.' },
-    ],
-    suggestedApps: ['yono-games', 'yono-777', 'yono-slots'],
-  },
-
-  {
-    name: 'Yono Games', slug: 'yono-games', logo: '/logos/yono-games.webp', category: 'Arcade',
-    tagline: 'The complete Yono gaming platform — one app for all Yono games',
-    description: 'Yono Games is the official main platform application for the entire Yono ecosystem. It is the single source of truth for your Yono balance, rewards, and game access. All Yono games — Rummy, Slots, 777, Fantasy, Ludo, and more — are accessible from the Yono Games lobby. It\'s the app to download if you want everything Yono in one place.',
-    rating: 4.6, downloads: '5M+', size: '80 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
-    features: [
-      'Unified lobby for every Yono game — rummy to casino',
-      'Master Yono wallet used across all games and apps',
-      'Single KYC verification valid for all Yono products',
-      'Yono Games loyalty programme — the highest-earning tier',
-      'Priority customer support for Yono Games users',
-    ],
-    downloadUrl: 'https://youonogamesgift.com/?code=GK1EVT15SS7&t=1782476329',
-    faqs: [
-      { q: 'Is Yono Games the main Yono platform?', a: 'Yes. Yono Games is the primary Yono app. Your account, wallet, KYC and loyalty points all live here. Other Yono apps (Yono Rummy, Yono Slots etc.) are extensions of this platform.' },
-      { q: 'Do I need separate apps for each Yono game?', a: 'No. Yono Games gives access to all Yono titles from one app. Standalone Yono apps (Rummy, Slots, 777) are offered for players who prefer a focused experience.' },
-      { q: 'What promo code should I use on Yono Games?', a: 'Visit our Promo Codes page to get the current welcome code and any daily codes — they stack for maximum bonus value.' },
-    ],
-    suggestedApps: ['yono-arcade', 'yono-slots', 'yono-rummy'],
   },
 
   // ── BET / VIP / CLUB (6) ─────────────────────────────────────────────────────
@@ -1110,29 +1133,6 @@ export const apps: AppData[] = [
       { q: 'What happens if I go below ₹10,000 cumulative after reaching VIP?', a: 'Yono Vip is based on lifetime cumulative deposits, which never decrease. Once you hit ₹10,000 total deposits, your VIP status is permanent and cannot be revoked.' },
     ],
     suggestedApps: ['yono-games', 'neta-vip', 'ind-club'],
-  },
-
-  // ── UPCOMING ────────────────────────────────────────────────────────────────
-
-  {
-    name: 'Dhan Game', slug: 'dhan-game', logo: '/logos/dhan-game.webp', category: 'Slots',
-    tagline: 'New slots platform launching July 23 — welcome bonus ₹80 to ₹175',
-    description: 'Dhan Game is an upcoming Slots platform launching on July 23, 2026. Featuring a premium slot machine experience with a generous welcome bonus of ₹80–₹175 on first deposit and a low minimum withdrawal of ₹100. Built for Indian players with UPI support and instant withdrawals. Register early and claim your launch-day bonus.',
-    rating: 4.5, downloads: 'New', size: '45 MB', minDeposit: '₹100', bonus: '₹175 Welcome Bonus',
-    features: [
-      'Welcome bonus ₹80–₹175 on first deposit',
-      'Minimum withdrawal of just ₹100',
-      'Premium slot machine games with high RTP',
-      'Instant UPI deposits and withdrawals',
-      'Daily promo codes updated 3× per day',
-    ],
-    downloadUrl: '#',
-    faqs: [
-      { q: 'When does Dhan Game launch?', a: 'Dhan Game launches on July 23, 2026 at 8:00 AM IST. Register early to claim the launch-day welcome bonus of ₹80–₹175 on your first deposit.' },
-      { q: 'What is the welcome bonus on Dhan Game?', a: 'New users receive a welcome bonus of ₹80–₹175 on their first deposit. Visit our Promo Codes page for the latest Dhan Game launch code.' },
-      { q: 'What is the minimum withdrawal on Dhan Game?', a: 'The minimum withdrawal on Dhan Game is ₹100, processed via UPI instantly after your request is approved.' },
-    ],
-    suggestedApps: ['yono-slots', 'yono-777', 'slots-winner'],
   },
 
   // ── BINGO (2) ────────────────────────────────────────────────────────────────
