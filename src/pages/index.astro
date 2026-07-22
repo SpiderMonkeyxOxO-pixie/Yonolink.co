@@ -7,10 +7,8 @@ import GameCard from '../components/GameCard.astro';
 import { getCollection } from 'astro:content';
 import { apps } from '../data/apps';
 
-const allPromos = await getCollection('promos');
 const allPosts  = await getCollection('blog');
 
-const activePromos   = allPromos.filter(p => p.data.isActive).slice(0, 3);
 const featuredPosts  = allPosts.filter(p => p.data.featured).slice(0, 3);
 
 // Featured game gallery — 4 flagship apps shown with full card metadata
@@ -620,7 +618,6 @@ const itemListSchema = {
       <!-- Tab buttons -->
       <div class="flex gap-2 flex-wrap justify-center mb-8" id="tab-buttons">
         {[
-          { id: 'promos',   label: 'Promo Codes', icon: 'gift'      },
           { id: 'games',    label: 'New Games',   icon: 'gamepad'   },
           { id: 'guides',   label: 'Guides',      icon: 'newspaper' },
           { id: 'trending', label: 'Trending',    icon: 'sparkles'  },
@@ -635,31 +632,8 @@ const itemListSchema = {
         ))}
       </div>
 
-      <!-- Tab panel: Promo Codes -->
-      <div id="panel-promos" class="tab-panel">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-          {activePromos.map(promo => (
-            <div class="glow-card glass-gold border border-yellow-400/20 rounded-2xl p-5 text-center">
-              <div class="text-white font-black text-base mb-3">{promo.data.game}</div>
-              <code class="code-pill text-xl tracking-widest block mb-4">{promo.data.code}</code>
-              <button
-                onclick={`navigator.clipboard.writeText('${promo.data.code}').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Code'},1500)})`}
-                class="btn-shimmer btn-glow w-full bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-sm py-2.5 rounded-xl"
-              >
-                Copy Code
-              </button>
-            </div>
-          ))}
-        </div>
-        <div class="text-center">
-          <a href="/promo-codes" class="btn-shimmer btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl">
-            <Icon name="gift" class="w-5 h-5" /> View All Promo Codes
-          </a>
-        </div>
-      </div>
-
       <!-- Tab panel: New Games -->
-      <div id="panel-games" class="tab-panel hidden">
+      <div id="panel-games" class="tab-panel">
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
           {apps.slice(0, 6).map(app => (
             <a href={`/app/${app.slug}`} class="glow-card group glass border border-white/5 rounded-xl p-3 text-center hover:border-yellow-400/20 transition-all">
