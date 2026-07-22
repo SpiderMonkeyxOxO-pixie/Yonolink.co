@@ -14,13 +14,13 @@ const activePromos   = allPromos.filter(p => p.data.isActive).slice(0, 3);
 const featuredPosts  = allPosts.filter(p => p.data.featured).slice(0, 3);
 
 // Featured game gallery — 4 flagship apps shown with full card metadata
-const featuredGameSlugs = ['yono-rummy', 'yono-games', 'max-rummy', 'yono-777'];
-const featuredNewSlugs  = new Set(['max-rummy']);
+const featuredGameSlugs = ['dhan-game', 'max-rummy', 'yono-rummy', 'yono-games'];
+const featuredNewSlugs  = new Set(['dhan-game', 'max-rummy']);
 
-// Top apps — manually curated, in display order
+// Top apps — featured order first, then curated picks
 const topAppSlugs = [
-  'yono-rummy', 'yono-games', 'yono-arcade', 'yono-777',
-  'yono-slots', 'max-rummy', 'rumble-rummy', 'top-rummy',
+  'dhan-game', 'max-rummy', 'yono-rummy', 'yono-games',
+  'yono-777', 'yono-arcade', 'yono-slots', 'top-rummy',
 ];
 import { appsBySlug } from '../data/apps';
 const topApps = topAppSlugs.map(s => appsBySlug[s]).filter(Boolean);

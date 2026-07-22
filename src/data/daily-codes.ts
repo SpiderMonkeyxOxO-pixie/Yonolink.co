@@ -12,8 +12,15 @@ export interface DailyCode {
 
 export const dailyCodes: DailyCode[] = [
 
-  // ── RUMMY ─────────────────────────────────────────────────────────────────
+  // ── FEATURED ──────────────────────────────────────────────────────────────
+  { slug: 'dhan-game',    am: '', pm: '', eve: '' },
+  { slug: 'max-rummy',    am: '', pm: '', eve: '' },
   { slug: 'yono-rummy',   am: '', pm: '', eve: '' },
+  { slug: 'yono-games',   am: '', pm: '', eve: '' },
+  { slug: 'yono-777',     am: '', pm: '', eve: '' },
+  { slug: 'yono-arcade',  am: '', pm: '', eve: '' },
+
+  // ── RUMMY ─────────────────────────────────────────────────────────────────
   { slug: 'abc-rummy',    am: '', pm: '', eve: '' },
   { slug: 'boss-rummy',   am: '', pm: '', eve: '' },
   { slug: 'game-rummy',   am: '', pm: '', eve: '' },
@@ -31,7 +38,6 @@ export const dailyCodes: DailyCode[] = [
   { slug: 'rummy888',     am: '', pm: '', eve: '' },
   { slug: 'top-rummy',    am: '', pm: '', eve: '' },
   { slug: 'rummy-ludo',   am: '', pm: '', eve: '' },
-  { slug: 'max-rummy',    am: '', pm: '', eve: '' },
 
   // ── SPIN ──────────────────────────────────────────────────────────────────
   { slug: 'spin-101',     am: '', pm: '', eve: '' },
@@ -52,7 +58,6 @@ export const dailyCodes: DailyCode[] = [
   { slug: 'slots-winner', am: '', pm: '', eve: '' },
   { slug: 'yono-slots',   am: '', pm: '', eve: '' },
   { slug: 'jaiho-slot',   am: '', pm: '', eve: '' },
-  { slug: 'dhan-game',    am: '', pm: '', eve: '' },
 
   // ── CASINO / 777 ──────────────────────────────────────────────────────────
   { slug: '777game',      am: '', pm: '', eve: '' },
@@ -60,7 +65,6 @@ export const dailyCodes: DailyCode[] = [
   { slug: 'hindi777',     am: '', pm: '', eve: '' },
   { slug: 'jahio-777',    am: '', pm: '', eve: '' },
   { slug: 'yn-777',       am: '', pm: '', eve: '' },
-  { slug: 'yono-777',     am: '', pm: '', eve: '' },
 
   // ── ARCADE ────────────────────────────────────────────────────────────────
   { slug: '101z',         am: '', pm: '', eve: '' },
@@ -68,8 +72,6 @@ export const dailyCodes: DailyCode[] = [
   { slug: 'jaiho-win',    am: '', pm: '', eve: '' },
   { slug: 'jaiho91',      am: '', pm: '', eve: '' },
   { slug: 'maha-games',   am: '', pm: '', eve: '' },
-  { slug: 'yono-arcade',  am: '', pm: '', eve: '' },
-  { slug: 'yono-games',   am: '', pm: '', eve: '' },
 
   // ── BET / CLUB ────────────────────────────────────────────────────────────
   { slug: 'bet-213',      am: '', pm: '', eve: '' },
