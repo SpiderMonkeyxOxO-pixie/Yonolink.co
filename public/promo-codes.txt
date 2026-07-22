@@ -55,6 +55,7 @@ share-slots  | |
 slots-winner | |
 yono-slots   | |
 jaiho-slot   | |
+dhan-game    | |
 
 ## CASINO / 777
 777game      | |

@@ -1112,6 +1112,29 @@ export const apps: AppData[] = [
     suggestedApps: ['yono-games', 'neta-vip', 'ind-club'],
   },
 
+  // ── UPCOMING ────────────────────────────────────────────────────────────────
+
+  {
+    name: 'Dhan Game', slug: 'dhan-game', logo: '/logos/dhan-game.webp', category: 'Slots',
+    tagline: 'New slots platform launching July 23 — welcome bonus ₹80 to ₹175',
+    description: 'Dhan Game is an upcoming Slots platform launching on July 23, 2026. Featuring a premium slot machine experience with a generous welcome bonus of ₹80–₹175 on first deposit and a low minimum withdrawal of ₹100. Built for Indian players with UPI support and instant withdrawals. Register early and claim your launch-day bonus.',
+    rating: 4.5, downloads: 'New', size: '45 MB', minDeposit: '₹100', bonus: '₹175 Welcome Bonus',
+    features: [
+      'Welcome bonus ₹80–₹175 on first deposit',
+      'Minimum withdrawal of just ₹100',
+      'Premium slot machine games with high RTP',
+      'Instant UPI deposits and withdrawals',
+      'Daily promo codes updated 3× per day',
+    ],
+    downloadUrl: '#',
+    faqs: [
+      { q: 'When does Dhan Game launch?', a: 'Dhan Game launches on July 23, 2026 at 8:00 AM IST. Register early to claim the launch-day welcome bonus of ₹80–₹175 on your first deposit.' },
+      { q: 'What is the welcome bonus on Dhan Game?', a: 'New users receive a welcome bonus of ₹80–₹175 on their first deposit. Visit our Promo Codes page for the latest Dhan Game launch code.' },
+      { q: 'What is the minimum withdrawal on Dhan Game?', a: 'The minimum withdrawal on Dhan Game is ₹100, processed via UPI instantly after your request is approved.' },
+    ],
+    suggestedApps: ['yono-slots', 'yono-777', 'slots-winner'],
+  },
+
   // ── BINGO (2) ────────────────────────────────────────────────────────────────
 
   {

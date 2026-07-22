@@ -52,6 +52,7 @@ export const dailyCodes: DailyCode[] = [
   { slug: 'slots-winner', am: '', pm: '', eve: '' },
   { slug: 'yono-slots',   am: '', pm: '', eve: '' },
   { slug: 'jaiho-slot',   am: '', pm: '', eve: '' },
+  { slug: 'dhan-game',    am: '', pm: '', eve: '' },
 
   // ── CASINO / 777 ──────────────────────────────────────────────────────────
   { slug: '777game',      am: '', pm: '', eve: '' },
