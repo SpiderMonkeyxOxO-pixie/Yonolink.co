@@ -12,8 +12,8 @@ export const apps: AppData[] = [
 
   {
     name: 'Dhan Game', slug: 'dhan-game', logo: '/logos/dhan-game.webp', category: 'Slots',
-    tagline: 'New slots platform launching July 23 — welcome bonus ₹80 to ₹175',
-    description: 'Dhan Game is an upcoming Slots platform launching on July 23, 2026. Featuring a premium slot machine experience with a generous welcome bonus of ₹80–₹175 on first deposit and a low minimum withdrawal of ₹100. Built for Indian players with UPI support and instant withdrawals. Register early and claim your launch-day bonus.',
+    tagline: 'India\'s newest slots platform — launched July 23 2026 with ₹175 welcome bonus',
+    description: 'Dhan Game is India\'s newest real-cash slots platform, launched on July 23 2026. Built exclusively for Android players in India, it delivers premium slot machine gameplay with verified high-RTP games, a welcome bonus of ₹80–₹175 on your first deposit, and instant UPI withdrawals from just ₹100. Grab a daily promo code from YonoLink.co to maximize your first-deposit bonus.',
     rating: 4.5, downloads: 'New', size: '45 MB', minDeposit: '₹100', bonus: '₹175 Welcome Bonus',
     features: [
       'Welcome bonus ₹80–₹175 on first deposit',
@@ -22,7 +22,7 @@ export const apps: AppData[] = [
       'Instant UPI deposits and withdrawals',
       'Daily promo codes updated 3× per day',
     ],
-    downloadUrl: '#',
+    downloadUrl: 'https://dhanwinplay.com/?code=L2VRQRRF2UK&t=1784778249',
     faqs: [
       { q: 'When does Dhan Game launch?', a: 'Dhan Game launches on July 23, 2026 at 8:00 AM IST. Register early to claim the launch-day welcome bonus of ₹80–₹175 on your first deposit.' },
       { q: 'What is the welcome bonus on Dhan Game?', a: 'New users receive a welcome bonus of ₹80–₹175 on their first deposit. Visit our Promo Codes page for the latest Dhan Game launch code.' },
