@@ -15,7 +15,7 @@ const lastUpdated = new Date().toLocaleDateString('en-IN', { day: 'numeric', mon
 const monthYear  = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
 // Featured-first order, then A→Z for the rest
-const featuredOrder = ['dhan-game', 'max-rummy', 'yono-rummy', 'yono-games', 'yono-777', 'yono-arcade'];
+const featuredOrder = ['win-rummy', 'dhan-game', 'max-rummy', 'yono-rummy', 'yono-games', 'yono-777', 'yono-arcade'];
 const codeCards = dailyCodes
   .map(dc => ({ ...dc, app: appsBySlug[dc.slug] }))
   .filter(dc => dc.app)

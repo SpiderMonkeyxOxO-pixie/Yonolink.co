@@ -13,6 +13,7 @@ export interface DailyCode {
 export const dailyCodes: DailyCode[] = [
 
   // ── FEATURED ──────────────────────────────────────────────────────────────
+  { slug: 'win-rummy',    am: '', pm: '', eve: '' },
   { slug: 'dhan-game',    am: '', pm: '', eve: '' },
   { slug: 'max-rummy',    am: '', pm: '', eve: '' },
   { slug: 'yono-rummy',   am: '', pm: '', eve: '' },

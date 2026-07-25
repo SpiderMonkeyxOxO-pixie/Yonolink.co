@@ -16,6 +16,7 @@
 # The site will show the new codes immediately — no rebuild needed.
 
 ## RUMMY
+win-rummy    | |
 yono-rummy   | |
 abc-rummy    | |
 boss-rummy   | |
