@@ -12,20 +12,20 @@ export const apps: AppData[] = [
 
   {
     name: 'Win Rummy', slug: 'win-rummy', logo: '/logos/win-rummy.png', category: 'Rummy',
-    tagline: 'Win Rummy — upcoming rummy platform launching July 29 2026 with ₹500 welcome bonus',
-    description: 'Win Rummy is an upcoming real-cash rummy platform scheduled to launch on July 29, 2026 at 7:00 AM IST. Designed for competitive Indian rummy players, it offers 13-card rummy in Points, Deals and Pool formats with a generous welcome bonus of ₹150–₹500 on first deposit and a minimum withdrawal of just ₹100 via UPI. Daily promo codes will be published on YonoLink.co three times a day from launch date.',
-    rating: 4.5, downloads: 'New', size: '38 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
+    tagline: 'Win Rummy — now live July 29 2026 with ₹150–₹500 welcome bonus on first deposit',
+    description: 'Win Rummy is a real-cash rummy platform that launched on July 29, 2026. Designed for competitive Indian rummy players, it offers 13-card rummy in Points, Deals and Pool formats with a welcome bonus of ₹150–₹500 on first deposit and a minimum withdrawal of just ₹100 via UPI. Daily promo codes are published on YonoLink.co three times a day.',
+    rating: 4.5, downloads: 'New', size: 'New', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
     features: [
       'Welcome bonus ₹150–₹500 on first deposit',
       'Minimum withdrawal of ₹100 via UPI',
       '13-card rummy — Points, Deals and Pool formats',
       'Instant UPI deposits and withdrawals',
-      'Daily promo codes updated 3× per day from launch',
+      'Daily promo codes updated 3× per day',
     ],
-    downloadUrl: '#',
+    downloadUrl: 'https://www.winrummy10.com/?code=8JT9D83WCC3&t=1785293043',
     faqs: [
-      { q: 'When does Win Rummy launch?', a: 'Win Rummy is scheduled to launch on July 29, 2026 at 7:00 AM IST. The APK download link will be available on this page as soon as it goes live.' },
-      { q: 'What is the welcome bonus on Win Rummy?', a: 'New users will receive a welcome bonus of ₹150–₹500 on their first deposit. Use the latest Win Rummy promo code from the YonoLink Promo Codes page to maximize your bonus.' },
+      { q: 'Is Win Rummy available to download now?', a: 'Yes — Win Rummy launched on July 29, 2026. Tap the Download button above to get the official APK from winrummy10.com.' },
+      { q: 'What is the welcome bonus on Win Rummy?', a: 'New users receive a welcome bonus of ₹150–₹500 on their first deposit. Use the latest Win Rummy promo code from the YonoLink Promo Codes page to maximize your bonus.' },
       { q: 'What is the minimum withdrawal on Win Rummy?', a: 'The minimum withdrawal on Win Rummy is ₹100, processed instantly via UPI after your request is approved.' },
     ],
     suggestedApps: ['yono-rummy', 'max-rummy', 'boss-rummy'],
