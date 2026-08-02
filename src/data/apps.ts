@@ -32,6 +32,27 @@ export const apps: AppData[] = [
   },
 
   {
+    name: 'Yono 777', slug: 'yono-777', logo: '/logos/yono-777.webp', category: 'Slots',
+    tagline: 'Yono\'s flagship 777 casino — premium games with Yono ecosystem integration',
+    description: 'Yono 777 is the flagship casino experience of the Yono platform, combining slots, live dealer, Teen Patti, and 777 specialty games in a premium package. Full Yono ecosystem integration means your balance, promo codes, and loyalty points work seamlessly across Yono 777, Yono Slots, and Yono Rummy. VIP tables unlock for deposits over ₹5,000.',
+    rating: 4.6, downloads: '3.2M+', size: '65 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
+    features: [
+      'Full Yono ecosystem wallet and promo code compatibility',
+      'Live dealer Teen Patti and Andar Bahar with HD streaming',
+      '777 specialty games exclusive to the Yono 777 platform',
+      'VIP tables with dedicated dealer for ₹5,000+ sessions',
+      'Yono loyalty multiplier — earn 3x loyalty points in casino',
+    ],
+    downloadUrl: 'https://yononewgames.vip/?code=SCHFQRY8DAS',
+    faqs: [
+      { q: 'Can I use promo codes in Yono 777?', a: 'Yes. All Yono promo codes apply to Yono 777 via the Wallet → Promo Code section. The balance is credited to your shared Yono wallet instantly.' },
+      { q: 'What are 777 specialty games on Yono 777?', a: 'These are Yono-exclusive games with 777 themes — Golden 777 Roulette, Triple 7 Baccarat, and 777 Crash — not found on any other platform.' },
+      { q: 'How do I access the VIP tables on Yono 777?', a: 'VIP table access unlocks automatically when you deposit ₹5,000 or more in any single session. The VIP tab appears in your lobby immediately after qualifying.' },
+    ],
+    suggestedApps: ['yono-slots', 'yono-games', '777game'],
+  },
+
+  {
     name: 'Dhan Game', slug: 'dhan-game', logo: '/logos/dhan-game.webp', category: 'Slots',
     tagline: 'India\'s newest slots platform — launched July 23 2026 with ₹175 welcome bonus',
     description: 'Dhan Game is India\'s newest real-cash slots platform, launched on July 23 2026. Built exclusively for Android players in India, it delivers premium slot machine gameplay with verified high-RTP games, a welcome bonus of ₹80–₹175 on your first deposit, and instant UPI withdrawals from just ₹100. Grab a daily promo code from YonoLink.co to maximize your first-deposit bonus.',
@@ -113,27 +134,6 @@ export const apps: AppData[] = [
       { q: 'What promo code should I use on Yono Games?', a: 'Visit our Promo Codes page to get the current welcome code and any daily codes — they stack for maximum bonus value.' },
     ],
     suggestedApps: ['yono-arcade', 'yono-slots', 'yono-rummy'],
-  },
-
-  {
-    name: 'Yono 777', slug: 'yono-777', logo: '/logos/yono-777.webp', category: 'Slots',
-    tagline: 'Yono\'s flagship 777 casino — premium games with Yono ecosystem integration',
-    description: 'Yono 777 is the flagship casino experience of the Yono platform, combining slots, live dealer, Teen Patti, and 777 specialty games in a premium package. Full Yono ecosystem integration means your balance, promo codes, and loyalty points work seamlessly across Yono 777, Yono Slots, and Yono Rummy. VIP tables unlock for deposits over ₹5,000.',
-    rating: 4.6, downloads: '3.2M+', size: '65 MB', minDeposit: '₹100', bonus: '₹500 Welcome Bonus',
-    features: [
-      'Full Yono ecosystem wallet and promo code compatibility',
-      'Live dealer Teen Patti and Andar Bahar with HD streaming',
-      '777 specialty games exclusive to the Yono 777 platform',
-      'VIP tables with dedicated dealer for ₹5,000+ sessions',
-      'Yono loyalty multiplier — earn 3x loyalty points in casino',
-    ],
-    downloadUrl: 'https://yonomain777.one/?code=ZMRZ6SUQQZ2&t=1782213370',
-    faqs: [
-      { q: 'Can I use promo codes in Yono 777?', a: 'Yes. All Yono promo codes apply to Yono 777 via the Wallet → Promo Code section. The balance is credited to your shared Yono wallet instantly.' },
-      { q: 'What are 777 specialty games on Yono 777?', a: 'These are Yono-exclusive games with 777 themes — Golden 777 Roulette, Triple 7 Baccarat, and 777 Crash — not found on any other platform.' },
-      { q: 'How do I access the VIP tables on Yono 777?', a: 'VIP table access unlocks automatically when you deposit ₹5,000 or more in any single session. The VIP tab appears in your lobby immediately after qualifying.' },
-    ],
-    suggestedApps: ['yono-slots', 'yono-games', '777game'],
   },
 
   {

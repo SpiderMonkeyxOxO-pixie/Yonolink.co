@@ -17,8 +17,8 @@ const featuredNewSlugs  = new Set(['win-rummy', 'dhan-game']);
 
 // Top apps — featured order first, then curated picks
 const topAppSlugs = [
-  'win-rummy', 'dhan-game', 'max-rummy', 'yono-rummy',
-  'yono-games', 'yono-777', 'yono-arcade', 'yono-slots',
+  'win-rummy', 'yono-777', 'dhan-game', 'max-rummy', 'yono-rummy',
+  'yono-games', 'yono-arcade', 'yono-slots',
 ];
 import { appsBySlug } from '../data/apps';
 const topApps = topAppSlugs.map(s => appsBySlug[s]).filter(Boolean);
