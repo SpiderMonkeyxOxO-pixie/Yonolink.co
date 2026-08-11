@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: 'How many games are available on Yono?',
-    a: 'The Yono gaming ecosystem currently covers 52 apps across 5 categories: Rummy, Slots, Spin, Arcade, and VIP. New apps are added regularly.',
+    a: `The Yono gaming ecosystem currently covers ${apps.length} apps across ${categories.length} categories: Rummy, Slots, Spin, Arcade, and VIP. New apps are added regularly.`,
   },
   {
     q: 'Which All Yono Game is best for winning real money?',
@@ -153,7 +153,7 @@ const itemListSchema = {
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 sm:mb-16">
         <a
-          href="/games"
+          href="/app"
           class="btn-shimmer btn-glow w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black text-base px-8 py-4 rounded-2xl"
         >
           <svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
@@ -725,20 +725,20 @@ const itemListSchema = {
         <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-5">What is All Yono Game?</h2>
         <div class="space-y-4 text-gray-400 text-sm leading-relaxed">
           <p>
-            <strong class="text-white">All Yono Game</strong> is the collective term for the entire ecosystem of real-cash gaming apps built on the Yono platform. As of July 2026, the platform covers <strong class="text-white">55 apps across 8 categories</strong> — making it one of India's largest online skill gaming ecosystems.
+            <strong class="text-white">All Yono Game</strong> is the collective term for the entire ecosystem of real-cash gaming apps built on the Yono platform. As of July 2026, the platform covers <strong class="text-white">{apps.length} apps across {categories.length} categories</strong> — making it one of India's largest online skill gaming ecosystems.
           </p>
           <p>
-            The most popular category is <strong class="text-white">Yono Rummy</strong>, with 18 dedicated apps including Yono Rummy, Boss Rummy, Top Rummy, and Game Rummy. Each app offers 13-card rummy in Points, Deals and Pool formats with daily prize pools starting from ₹1 lakh.
+            The most popular category is <strong class="text-white">Yono Rummy</strong>, with {apps.filter(a => a.category === 'Rummy').length} dedicated apps including Yono Rummy, Boss Rummy, Top Rummy, and Game Rummy. Each app offers 13-card rummy in Points, Deals and Pool formats with daily prize pools starting from ₹1 lakh.
           </p>
           <p>
-            Beyond card games, the <strong class="text-white">all Yono game</strong> portfolio covers spin wheels (9 apps), classic slots (7 apps), arcade games (7 apps), 777 casino (6 apps), betting clubs (4 apps), VIP lounges (2 apps), and online bingo (2 apps) — ensuring every type of player finds their game.
+            Beyond card games, the <strong class="text-white">all Yono game</strong> portfolio covers slots ({apps.filter(a => a.category === 'Slots').length} apps), arcade &amp; multi-game platforms ({apps.filter(a => a.category === 'Arcade').length} apps), spin wheels ({apps.filter(a => a.category === 'Spin').length} apps), and VIP lounges ({apps.filter(a => a.category === 'VIP').length} apps) — ensuring every type of player finds their game.
           </p>
           <p>
             All apps are available as <strong class="text-white">free Android APK downloads</strong>. New users on every app can claim a welcome bonus on their first deposit — visit the <a href="/promo-codes" class="text-yellow-400 hover:underline font-semibold">Promo Codes page</a> for the current code.
           </p>
         </div>
         <a href="/app" class="inline-flex items-center gap-2 mt-6 text-yellow-400 font-semibold hover:underline text-sm">
-          Browse all 55 Yono apps <Icon name="arrow-right" class="w-4 h-4" />
+          Browse all {apps.length} Yono apps <Icon name="arrow-right" class="w-4 h-4" />
         </a>
       </div>
 
@@ -749,8 +749,8 @@ const itemListSchema = {
         </div>
         <div class="divide-y divide-white/5">
           {[
-            { label: 'Total Apps',    value: '56 apps'                 },
-            { label: 'Categories',    value: '8 categories'            },
+            { label: 'Total Apps',    value: `${apps.length} apps`     },
+            { label: 'Categories',    value: `${categories.length} categories` },
             { label: 'Top App',       value: 'Yono Rummy — 4.7★'      },
             { label: 'Welcome Bonus', value: '₹30–₹500 (new users)'   },
             { label: 'Min. Deposit',  value: '₹100'                    },
@@ -789,11 +789,11 @@ const itemListSchema = {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {[
         { icon: 'check',       title: 'Verified Promo Codes',   desc: 'Every code is manually tested before publishing. Dead codes are removed immediately — no wasted copy-pastes.',       color: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/20' },
-        { icon: 'sparkles',    title: 'All 56 Apps Covered',    desc: 'We track every single Yono app across all 8 categories. If it\'s in the Yono ecosystem, it\'s on YonoLink.co.',       color: 'text-blue-400',   bg: 'bg-blue-400/10 border-blue-400/20'   },
+        { icon: 'sparkles',    title: `All ${apps.length} Apps Covered`,    desc: `We track every single Yono app across all ${categories.length} categories. If it's in the Yono ecosystem, it's on YonoLink.co.`,       color: 'text-blue-400',   bg: 'bg-blue-400/10 border-blue-400/20'   },
         { icon: 'newspaper',   title: 'Daily Code Updates',     desc: 'Promo codes are updated up to 3× per day — morning, afternoon, and evening — as platforms release them.',            color: 'text-green-400',  bg: 'bg-green-400/10 border-green-400/20' },
         { icon: 'lightbulb',   title: 'Expert Game Guides',     desc: 'Strategy guides, tips, and reviews written for real players — not marketing copy. Learn to play and win more.',      color: 'text-purple-400', bg: 'bg-purple-400/10 border-purple-400/20'},
         { icon: 'gift',        title: 'Welcome Bonus Offers',    desc: 'New users on every Yono app get a welcome bonus on their first deposit. Grab the code from our Promo Codes page before you register.',  color: 'text-orange-400', bg: 'bg-orange-400/10 border-orange-400/20'},
-        { icon: 'arrow-right', title: 'Free APK Downloads',     desc: 'All 56 Yono apps are free to download as Android APKs — no Play Store required. Install in under 2 minutes.',       color: 'text-teal-400',   bg: 'bg-teal-400/10 border-teal-400/20'   },
+        { icon: 'arrow-right', title: 'Free APK Downloads',     desc: `All ${apps.length} Yono apps are free to download as Android APKs — no Play Store required. Install in under 2 minutes.`,       color: 'text-teal-400',   bg: 'bg-teal-400/10 border-teal-400/20'   },
       ].map(item => (
         <div class={`glow-card glass border rounded-2xl p-6 hover:border-white/10 transition-all group`} style={`border-color: rgba(255,255,255,0.05)`}>
           <div class={`w-11 h-11 rounded-xl border flex items-center justify-center mb-4 ${item.bg} group-hover:scale-110 transition-transform duration-300`}>
@@ -863,20 +863,20 @@ const itemListSchema = {
             depends on meeting Yonolink's requirements and performance criteria.
           </p>
 
-          <!-- Live counter card -->
+          <!-- Network status card -->
           <div class="glow-card-static glass-gold border border-yellow-400/15 rounded-2xl p-6">
             <div class="flex items-center gap-2 mb-2">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
               </span>
-              <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Registered Agents</span>
+              <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Agent Network</span>
             </div>
-            <div id="agent-counter" class="font-display font-black text-4xl sm:text-5xl text-gold leading-none mb-2" data-target="3091826">
-              0
+            <div class="font-display font-black text-2xl sm:text-3xl text-gold leading-tight mb-2">
+              Applications Open
             </div>
             <p class="text-gray-500 text-xs">
-              This number updates continuously as new agents join the Yonolink Agent Network.
+              The Yonolink Agent Network is actively growing across India — apply below to join.
             </p>
           </div>
         </div>
@@ -998,45 +998,6 @@ const itemListSchema = {
   </section>
 
   <script>
-    // ── Agent counter animation ──
-    const counterEl = document.getElementById('agent-counter');
-    if (counterEl) {
-      const target = parseInt(counterEl.dataset.target ?? '0', 10);
-      let current = 0;
-      const duration = 2400;
-      let start: number | null = null;
-      const fmt = (n: number) => n.toLocaleString('en-US');
-      const easeOutExpo = (t: number) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-
-      const liveIncrement = () => {
-        current += Math.random() < 0.5 ? 1 : 2;
-        counterEl.textContent = fmt(current);
-        setTimeout(liveIncrement, 5000 + Math.random() * 7000);
-      };
-
-      const tick = (timestamp: number) => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / duration, 1);
-        current = Math.floor(easeOutExpo(progress) * target);
-        counterEl.textContent = fmt(current);
-        if (progress < 1) requestAnimationFrame(tick);
-        else {
-          current = target;
-          counterEl.textContent = fmt(current);
-          setTimeout(liveIncrement, 5000 + Math.random() * 5000);
-        }
-      };
-
-      const observer = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-          requestAnimationFrame(tick);
-          observer.disconnect();
-        }
-      }, { threshold: 0.3 });
-
-      observer.observe(counterEl);
-    }
-
     // ── Add another channel ──
     const addBtn = document.getElementById('add-channel-btn');
     const container = document.getElementById('channels-container');
@@ -1142,7 +1103,7 @@ const itemListSchema = {
         </div>
         <h2 class="font-display font-black text-2xl sm:text-4xl text-white mb-3">Ready to Play All Yono Game?</h2>
         <p class="text-gray-400 text-sm sm:text-base mb-8 max-w-xl mx-auto">
-          Download any of the 56 Yono apps and claim up to <strong class="text-gold">₹500 welcome bonus</strong> on your first deposit — get the code from our Promo Codes page before you register.
+          Download any of the {apps.length} Yono apps and claim up to <strong class="text-gold">₹500 welcome bonus</strong> on your first deposit — get the code from our Promo Codes page before you register.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/app" class="btn-shimmer btn-glow w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-4 rounded-2xl text-base">

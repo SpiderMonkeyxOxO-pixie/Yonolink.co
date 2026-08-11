@@ -82,20 +82,20 @@ const breadcrumbSchema = {
               depends on meeting Yonolink's requirements and performance criteria.
             </p>
 
-            <!-- Live counter card -->
+            <!-- Network status card -->
             <div class="glow-card-static glass-gold border border-yellow-400/15 rounded-2xl p-6">
               <div class="flex items-center gap-2 mb-2">
                 <span class="relative flex h-2 w-2">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
                 </span>
-                <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Registered Agents</span>
+                <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Agent Network</span>
               </div>
-              <div id="agent-counter" class="font-display font-black text-4xl sm:text-5xl text-gold leading-none mb-2" data-target="3091826">
-                0
+              <div class="font-display font-black text-2xl sm:text-3xl text-gold leading-tight mb-2">
+                Applications Open
               </div>
               <p class="text-gray-500 text-xs">
-                This number updates continuously as new agents join the Yonolink Agent Network.
+                The Yonolink Agent Network is actively growing across India — apply below to join.
               </p>
             </div>
           </div>
@@ -221,41 +221,6 @@ const breadcrumbSchema = {
 </BaseLayout>
 
 <script>
-  // ── Counter animation ──
-  const counterEl = document.getElementById('agent-counter');
-  if (counterEl) {
-    const target = parseInt(counterEl.dataset.target ?? '0', 10);
-    let current = 0;
-    const duration = 2400;
-    let start: number | null = null;
-    const ease = (t: number) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-
-    const fmt = (n: number) => n.toLocaleString('en-US');
-
-    const liveIncrement = () => {
-      current += Math.random() < 0.5 ? 1 : 2;
-      counterEl.textContent = fmt(current);
-      setTimeout(liveIncrement, 5000 + Math.random() * 7000);
-    };
-
-    const tick = (ts: number) => {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      current = Math.floor(ease(progress) * target);
-      counterEl.textContent = fmt(current);
-      if (progress < 1) requestAnimationFrame(tick);
-      else {
-        current = target;
-        counterEl.textContent = fmt(current);
-        setTimeout(liveIncrement, 5000 + Math.random() * 5000);
-      }
-    };
-
-    new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) { requestAnimationFrame(tick); }
-    }, { threshold: 0.3 }).observe(counterEl);
-  }
-
   // ── Add channel ──
   document.getElementById('add-channel-btn')?.addEventListener('click', () => {
     const container = document.getElementById('channels-container');

@@ -1,0 +1,5 @@
+# Phase 3 Wave 1 (see phase3/YONOLINK_CO_WAVE1_IMPLEMENTATION.md): duplicate
+# entity pages consolidated onto their canonical /app/[slug] equivalents.
+# Cloudflare Pages redirect syntax (source, destination, status code).
+/games/yono-rummy/  /app/yono-rummy/  301
+/games/yono-slots/  /app/yono-slots/  301

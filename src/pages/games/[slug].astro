@@ -88,13 +88,6 @@ const gameSchema = {
   operatingSystem: 'Android, iOS, Web',
   description,
   url: `https://yonolink.co/games/${game.data.slug}`,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: rating,
-    bestRating: 5,
-    worstRating: 1,
-    ratingCount: 512,
-  },
   offers: {
     '@type': 'Offer',
     price: '0',

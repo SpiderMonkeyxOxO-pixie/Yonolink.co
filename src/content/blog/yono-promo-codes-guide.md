@@ -22,7 +22,7 @@ A Yono promo code is an alphanumeric string provided by a Yono app that unlocks 
 
 Codes are released by individual apps — not by a single central source — which is why the type and value of available codes varies from platform to platform.
 
-There is no universal Yono promo code that works across all 54 apps. Each code is app-specific and time-limited.
+There is no universal Yono promo code that works across all 55 apps. Each code is app-specific and time-limited.
 
 ---
 
@@ -102,7 +102,7 @@ Welcome codes can only be applied once. If you deposit before entering the code,
 Some bonuses come with a wagering requirement — you may need to play through the bonus amount before it becomes withdrawable. Reading the terms first avoids surprises.
 
 **4. Compare bonuses across apps before deciding**
-With 54 apps available, welcome bonus values differ significantly between platforms. Browse the [full games list](/games) and compare before registering. A few minutes of comparison can meaningfully increase your starting balance.
+With 55 apps available, welcome bonus values differ significantly between platforms. Browse the [full apps list](/app) and compare before registering. A few minutes of comparison can meaningfully increase your starting balance.
 
 **5. Stack referral bonuses with promo codes**
 On most platforms, a referral bonus and a promo code bonus can both be applied. Register with a referral link and also enter a welcome promo code at the deposit stage to claim both rewards.

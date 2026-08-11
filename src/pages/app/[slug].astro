@@ -49,13 +49,6 @@ const appSchema = {
   operatingSystem: 'Android',
   url: `https://yonolink.co/app/${slug}`,
   image: `https://yonolink.co${logo}`,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: rating,
-    bestRating: 5,
-    worstRating: 1,
-    ratingCount: 10000,
-  },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', availability: 'https://schema.org/InStock' },
 };
 
