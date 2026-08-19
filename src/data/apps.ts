@@ -8,7 +8,25 @@ export interface AppData {
 
 export const apps: AppData[] = [
 
-  // ── FEATURED (7) ─────────────────────────────────────────────────────────────
+  // ── FEATURED (8) ─────────────────────────────────────────────────────────────
+
+  {
+    name: 'Gold Rummy', slug: 'gold-rummy', logo: '/logos/gold-rummy.png', category: 'Rummy',
+    tagline: 'Gold Rummy — now live August 19 2026',
+    description: 'Gold Rummy is a real-cash rummy platform that launched on August 19, 2026. As a newly launched app, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this listing will be updated as those details are verified.',
+    rating: 4.0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-cash rummy gameplay',
+      'Newly launched — August 19, 2026',
+    ],
+    downloadUrl: 'https://goldrummy20.com/?code=JLX7LRP2YTG&t=1787111858',
+    faqs: [
+      { q: 'Is Gold Rummy available to download now?', a: 'Yes — Gold Rummy launched on August 19, 2026. Tap the Download button above to get the official app.' },
+      { q: 'What is the welcome bonus on Gold Rummy?', a: 'No welcome bonus has been announced yet. This page will be updated once bonus details are confirmed.' },
+      { q: 'What is the minimum withdrawal on Gold Rummy?', a: 'The minimum withdrawal has not yet been confirmed for Gold Rummy. Check back here as details are verified.' },
+    ],
+    suggestedApps: ['win-rummy', 'yono-rummy', 'max-rummy'],
+  },
 
   {
     name: 'Win Rummy', slug: 'win-rummy', logo: '/logos/win-rummy.png', category: 'Rummy',
