@@ -4,7 +4,7 @@ description: "Gold Rummy appears across several listings that do not clearly sha
 pubDate: "2026-08-19"
 author: "YonoLink Team"
 tags: ["Gold Rummy", "App Verification", "Rummy Apps", "Editorial Standards"]
-image: "/blogs/gold-rummy-app-listings-explained.jpg"
+image: "/blogs/gold-rummy-app-listings-explained.webp"
 featured: false
 ---
 
