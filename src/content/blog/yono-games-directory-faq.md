@@ -4,7 +4,7 @@ description: "Answers to the Yono games directory questions we get most often th
 pubDate: "2026-08-27"
 author: "YonoLink Team"
 tags: ["yono games directory faq", "yono games", "yono apps"]
-image: "/blogs/Yono Games Directory FAQ — Common Questions Answered.webp"
+image: "/blogs/Yono Games Directory FAQ — Common Questions Answered.jpg"
 featured: false
 ---
 

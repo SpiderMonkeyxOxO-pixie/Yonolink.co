@@ -4,7 +4,7 @@ description: "A directory-level look at the 12 Arcade-category Yono apps — wha
 pubDate: "2026-08-22"
 author: "YonoLink Team"
 tags: ["yono arcade all games", "yono arcade category", "yono arcade", "yono games arcade"]
-image: "/blogs/Yono Arcade Category — Every Game Inside the Arcade Apps.webp"
+image: "/blogs/Yono Arcade Category — Every Game Inside the Arcade Apps.jpg"
 featured: false
 ---
 

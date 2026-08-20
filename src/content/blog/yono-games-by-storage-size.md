@@ -4,7 +4,7 @@ description: "A practical look at Yono app sizes and storage needs, useful for c
 pubDate: "2026-08-24"
 author: "YonoLink Team"
 tags: ["yono all games app", "yono games storage", "yono apk size"]
-image: "/blogs/Yono Games by App Size & Storage Requirements.webp"
+image: "/blogs/Yono Games by App Size & Storage Requirements.jpg"
 featured: false
 ---
 

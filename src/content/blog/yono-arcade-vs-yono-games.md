@@ -4,7 +4,7 @@ description: "Two similarly-named apps in the Yono directory, Yono Arcade and Yo
 pubDate: "2026-08-26"
 author: "YonoLink Team"
 tags: ["yono games arcade", "yono arcade vs yono games", "yono arcade", "yono games"]
-image: "/blogs/Yono Arcade vs Yono Games — Whats the Difference.webp"
+image: "/blogs/Yono Arcade vs Yono Games — Whats the Difference.jpg"
 featured: false
 ---
 

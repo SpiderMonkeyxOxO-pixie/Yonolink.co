@@ -4,7 +4,7 @@ description: "The full Yono games list, sorted by category instead of one long l
 pubDate: "2026-08-21"
 author: "YonoLink Team"
 tags: ["yono games list", "yono game list", "yono games", "yono game directory"]
-image: "/blogs/Yono Games List — Every App Sorted by Category.webp"
+image: "/blogs/Yono Games List — Every App Sorted by Category.jpg"
 featured: false
 ---
 
