@@ -29,6 +29,25 @@ export const apps: AppData[] = [
   },
 
   {
+    name: 'Money Rummy', slug: 'money-rummy', logo: '/logos/money-rummy.jpg', category: 'Rummy',
+    tagline: 'Money Rummy — reported to launch September 9, 2026',
+    description: 'Money Rummy is a real-money rummy app reported to launch on September 9, 2026, and reported to be the 57th platform released on the Yono network. As of publication it has not been officially confirmed as launched — no verified APK, download link, welcome bonus or promo code is currently available. This listing will be updated once launch is independently confirmed.',
+    rating: 4.0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-money rummy gameplay (reported)',
+      'Reported to launch September 9, 2026',
+      'Reported to be the 57th platform on the Yono network',
+    ],
+    downloadUrl: 'https://moneyrummy.site',
+    faqs: [
+      { q: 'Has Money Rummy launched yet?', a: 'Not as of publication. A launch date of September 9, 2026 has been reported, but no official operator statement, app-store listing or press release has confirmed it. Check MoneyRummy.site for the current verified status.' },
+      { q: 'What is the welcome bonus on Money Rummy?', a: 'No welcome bonus has been announced yet, since the app has not been confirmed as launched. This page will be updated once bonus details are confirmed.' },
+      { q: 'Is Money Rummy part of the Yono network?', a: 'It has been reported to be the 57th platform on the Yono network, though this has not been independently verified by YonoLink.' },
+    ],
+    suggestedApps: ['gold-rummy', 'win-rummy', 'yono-rummy'],
+  },
+
+  {
     name: 'Win Rummy', slug: 'win-rummy', logo: '/logos/win-rummy.png', category: 'Rummy',
     tagline: 'Win Rummy — now live July 29 2026 with ₹150–₹500 welcome bonus on first deposit',
     description: 'Win Rummy is a real-cash rummy platform that launched on July 29, 2026. Designed for competitive Indian rummy players, it offers 13-card rummy in Points, Deals and Pool formats with a welcome bonus of ₹150–₹500 on first deposit and a minimum withdrawal of just ₹100 via UPI. Daily promo codes are published on YonoLink.co three times a day.',
