@@ -30,18 +30,18 @@ export const apps: AppData[] = [
 
   {
     name: 'Money Rummy', slug: 'money-rummy', logo: '/logos/money-rummy.jpg', category: 'Rummy',
-    tagline: 'Money Rummy — reported to launch September 9, 2026',
-    description: 'Money Rummy is a real-money rummy app reported to launch on September 9, 2026, and reported to be the 57th platform released on the Yono network. As of publication it has not been officially confirmed as launched — no verified APK, download link, welcome bonus or promo code is currently available. This listing will be updated once launch is independently confirmed.',
+    tagline: 'Money Rummy — now live September 9 2026',
+    description: 'Money Rummy is a real-money rummy platform that launched on September 9, 2026, reported to be the 57th platform released on the Yono network. As a newly launched app, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this listing will be updated as those details are verified.',
     rating: 4.0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
     features: [
-      'Real-money rummy gameplay (reported)',
-      'Reported to launch September 9, 2026',
+      'Real-money rummy gameplay',
+      'Newly launched — September 9, 2026',
       'Reported to be the 57th platform on the Yono network',
     ],
-    downloadUrl: 'https://moneyrummy.site',
+    downloadUrl: 'https://moneyrummyff.com/?code=T1XR7S7YJ9T&t=1788922546',
     faqs: [
-      { q: 'Has Money Rummy launched yet?', a: 'Not as of publication. A launch date of September 9, 2026 has been reported, but no official operator statement, app-store listing or press release has confirmed it. Check MoneyRummy.site for the current verified status.' },
-      { q: 'What is the welcome bonus on Money Rummy?', a: 'No welcome bonus has been announced yet, since the app has not been confirmed as launched. This page will be updated once bonus details are confirmed.' },
+      { q: 'Is Money Rummy available to download now?', a: 'Yes — Money Rummy launched on September 9, 2026. Tap the Download button above to get the current app link.' },
+      { q: 'What is the welcome bonus on Money Rummy?', a: 'No welcome bonus has been announced yet. This page will be updated once bonus details are confirmed.' },
       { q: 'Is Money Rummy part of the Yono network?', a: 'It has been reported to be the 57th platform on the Yono network, though this has not been independently verified by YonoLink.' },
     ],
     suggestedApps: ['gold-rummy', 'win-rummy', 'yono-rummy'],
