@@ -12,13 +12,13 @@ const allPosts  = await getCollection('blog');
 const featuredPosts  = allPosts.filter(p => p.data.featured).slice(0, 3);
 
 // Featured game gallery — 4 flagship apps shown with full card metadata
-const featuredGameSlugs = ['win-rummy', 'dhan-game', 'max-rummy', 'yono-rummy'];
-const featuredNewSlugs  = new Set(['win-rummy', 'dhan-game']);
+const featuredGameSlugs = ['jeet-spin', 'win-rummy', 'dhan-game', 'max-rummy'];
+const featuredNewSlugs  = new Set(['jeet-spin', 'win-rummy']);
 
 // Top apps — featured order first, then curated picks
 const topAppSlugs = [
-  'win-rummy', 'yono-777', 'dhan-game', 'max-rummy', 'yono-rummy',
-  'yono-games', 'yono-arcade', 'yono-slots',
+  'jeet-spin', 'win-rummy', 'yono-777', 'dhan-game', 'max-rummy',
+  'yono-rummy', 'yono-games', 'yono-arcade',
 ];
 import { appsBySlug } from '../data/apps';
 const topApps = topAppSlugs.map(s => appsBySlug[s]).filter(Boolean);
@@ -188,139 +188,57 @@ const itemListSchema = {
     </div>
   </section>
 
-  <!-- ── UPCOMING & NEW RELEASES ──────────────────────────────────────────── -->
+  <!-- ── UPCOMING PLATFORM ─────────────────────────────────────────────────── -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
     <div class="flex items-center justify-between mb-5">
-      <h2 class="font-display font-black text-xl sm:text-2xl text-white">Upcoming And New Games</h2>
+      <h2 class="font-display font-black text-xl sm:text-2xl text-white">Upcoming Platform</h2>
       <div class="flex items-center gap-2 text-sm text-gray-500">
-        Sort:
-        <span class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-gray-300 text-xs">Latest added</span>
+        <span class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-gray-300 text-xs">Coming Soon</span>
       </div>
     </div>
 
-    <!-- Gold Rummy — Now Live card -->
-    <div class="bg-gray-900/80 border border-yellow-400/30 rounded-2xl overflow-hidden mb-5">
+    <!-- Jeet Spin — Coming Soon card -->
+    <div class="bg-gray-900/80 border border-pink-500/30 rounded-2xl overflow-hidden">
 
-      <!-- Top bar: logo + Now Live badge -->
+      <!-- Top bar: logo + Coming Soon badge -->
       <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
         <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
-          <img src="/logos/gold-rummy.png" alt="Gold Rummy" class="w-full h-full object-contain p-1" loading="eager" />
+          <img src="/logos/jeet-spin.png" alt="Jeet Spin" class="w-full h-full object-contain p-1" loading="eager" />
         </div>
         <div class="flex flex-col gap-2">
-          <div class="inline-flex items-center gap-2 bg-yellow-400/15 border border-yellow-400/40 text-yellow-400 text-sm font-black px-5 py-2.5 rounded-xl">
+          <div class="inline-flex items-center gap-2 bg-pink-500/15 border border-pink-500/40 text-pink-400 text-sm font-black px-5 py-2.5 rounded-xl">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-pink-400"></span>
             </span>
-            Now Live — Launched August 19, 2026
+            Coming Soon — Launching 30 September 2026
           </div>
-          <p class="text-gray-500 text-xs pl-1">APK available at goldrummy20.com</p>
+          <p class="text-gray-500 text-xs pl-1">Spin-and-win platform</p>
         </div>
       </div>
 
       <!-- Body -->
       <div class="p-5">
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-400/15 text-yellow-400 border border-yellow-400/30">Now Live</span>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">Launched August 19</span>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">Rummy</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/15 text-pink-400 border border-pink-500/30">Coming Soon</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">30 Sep 2026</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/15 text-pink-400 border border-pink-500/30">Spin</span>
         </div>
 
-        <h3 class="text-lg sm:text-xl font-black text-white mb-2">Gold Rummy is now live on All Yono</h3>
+        <h3 class="text-lg sm:text-xl font-black text-white mb-2">Jeet Spin is launching on All Yono</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          Gold Rummy launched August 19, 2026. No welcome bonus or promo code has been announced yet — this page will update as those details are confirmed.
+          Jeet Spin is a new spin-and-win platform scheduled to launch on 30 September 2026. Welcome bonus, promo codes and download link will be updated here after launch.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://goldrummy20.com/?code=JLX7LRP2YTG&t=1787111858"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 text-sm font-black hover:opacity-90 transition-opacity"
+          <button
+            disabled
+            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-700 text-gray-400 text-sm font-black cursor-not-allowed opacity-60"
           >
             <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-            Download Gold Rummy
-          </a>
-          <a href="/promo-codes" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-green-500/40 text-green-400 text-sm font-bold hover:bg-green-500/10 transition-colors">
-            <Icon name="gift" class="w-4 h-4" /> Get Promo Code
-          </a>
-          <a href="/app/gold-rummy" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
-            View Details
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Win Rummy — Now Live card -->
-    <div class="bg-gray-900/80 border border-yellow-400/30 rounded-2xl overflow-hidden">
-
-      <!-- Top bar: logo + Now Live badge -->
-      <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
-        <!-- Logo -->
-        <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
-          <img src="/logos/win-rummy.png" alt="Win Rummy" class="w-full h-full object-contain p-1" loading="eager" />
-        </div>
-
-        <!-- Now Live badge -->
-        <div class="flex flex-col gap-2">
-          <div class="inline-flex items-center gap-2 bg-yellow-400/15 border border-yellow-400/40 text-yellow-400 text-sm font-black px-5 py-2.5 rounded-xl">
-            <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-400"></span>
-            </span>
-            Now Live — Launched July 29, 2026
-          </div>
-          <p class="text-gray-500 text-xs pl-1">APK available at winrummy10.com</p>
-        </div>
-      </div>
-
-      <!-- Body -->
-      <div class="p-5">
-        <!-- Tags -->
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-400/15 text-yellow-400 border border-yellow-400/30">Now Live</span>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">Launched July 29</span>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/15 text-blue-400 border border-blue-500/30">Rummy</span>
-        </div>
-
-        <h3 class="text-lg sm:text-xl font-black text-white mb-2">Win Rummy is now live on All Yono</h3>
-        <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          Win Rummy launched July 29, 2026. Get a welcome bonus of ₹150–₹500 on your first deposit. Minimum withdrawal ₹100 via UPI. Daily promo codes published here 3× a day.
-        </p>
-
-        <!-- Bonus info row -->
-        <div class="flex flex-wrap gap-4 mb-5">
-          <div class="flex items-center gap-2 text-sm">
-            <Icon name="gift" class="w-4 h-4 text-yellow-400 shrink-0" />
-            <span class="text-gray-300"><span class="font-semibold text-white">Welcome bonus:</span> ₹150–₹500</span>
-          </div>
-          <div class="flex items-center gap-2 text-sm">
-            <Icon name="currency" class="w-4 h-4 text-yellow-400 shrink-0" />
-            <span class="text-gray-300"><span class="font-semibold text-white">Min. Withdrawal:</span> ₹100</span>
-          </div>
-        </div>
-
-        <!-- Action buttons -->
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://www.winrummy10.com/?code=8JT9D83WCC3&t=1785293043"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-950 text-sm font-black hover:opacity-90 transition-opacity"
-          >
-            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-            Download Win Rummy
-          </a>
-          <a
-            href="/promo-codes"
-            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-green-500/40 text-green-400 text-sm font-bold hover:bg-green-500/10 transition-colors"
-          >
-            <Icon name="gift" class="w-4 h-4" /> Get Promo Code
-          </a>
-          <a
-            href="/app/win-rummy"
-            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors"
-          >
+            Download Coming Soon
+          </button>
+          <a href="/app/jeet-spin" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
             View Details
           </a>
         </div>
