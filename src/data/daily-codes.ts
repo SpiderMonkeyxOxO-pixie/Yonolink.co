@@ -50,6 +50,7 @@ export const dailyCodes: DailyCode[] = [
   { slug: 'yes-spin',     am: '', pm: '', eve: '' },
   { slug: 'jaiho-spin',   am: '', pm: '', eve: '' },
   { slug: 'slot-spin',    am: '', pm: '', eve: '' },
+  { slug: 'jeet-spin',   am: '', pm: '', eve: '' },
 
   // ── SLOTS ─────────────────────────────────────────────────────────────────
   { slug: '567-slots',    am: '', pm: '', eve: '' },

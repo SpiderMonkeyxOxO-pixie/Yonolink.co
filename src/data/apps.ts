@@ -702,6 +702,24 @@ export const apps: AppData[] = [
     suggestedApps: ['spin-winner', 'ind-slots'],
   },
 
+  {
+    name: 'Jeet Spin', slug: 'jeet-spin', logo: '/logos/jeet-spin.png', category: 'Spin',
+    tagline: 'Jeet Spin — launching 30 September 2026',
+    description: 'Jeet Spin is a new spin-and-win platform scheduled to launch on 30 September 2026. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-cash spin-and-win gameplay',
+      'Launching 30 September 2026',
+    ],
+    downloadUrl: '',
+    faqs: [
+      { q: 'When does Jeet Spin launch?', a: 'Jeet Spin is scheduled to launch on 30 September 2026. This listing will be updated with a download link once the app goes live.' },
+      { q: 'What is the welcome bonus on Jeet Spin?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
+      { q: 'Where can I download Jeet Spin?', a: 'The download link is not yet available. Once Jeet Spin launches on 30 September 2026, the official download link will be added to this page.' },
+    ],
+    suggestedApps: ['spin-101', 'spin-777', 'spin-winner'],
+  },
+
   // ── SLOTS (7) ────────────────────────────────────────────────────────────────
 
   {
