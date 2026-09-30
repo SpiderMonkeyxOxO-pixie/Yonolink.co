@@ -16,7 +16,7 @@ featured: false
 
 - **Launch date:** 30 September 2026
 - **Category:** Spin / Arcade (spin-and-win format)
-- **Download link:** Not yet available
+- **Download link:** [jeetspin12.com](https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445)
 - **Promo code:** Not yet released
 - **Google Play:** Not found as of 29 September 2026
 - **Distribution:** Expected as sideloaded APK (standard for this network)
@@ -40,7 +40,7 @@ Jeet Spin is expected to become available on **30 September 2026**. Once live, i
 | App name | Jeet Spin |
 | Category | Spin / Arcade |
 | Expected launch | 30 September 2026 |
-| APK download link | Not yet available |
+| APK download link | [jeetspin12.com](https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445) |
 | Google Play listing | Not found |
 | File size | Not yet known |
 | Minimum Android | Not yet confirmed (likely 5.0+) |
@@ -49,7 +49,7 @@ Jeet Spin is expected to become available on **30 September 2026**. Once live, i
 
 ## How to Download Jeet Spin
 
-The download link is not yet available. Once the app launches, follow these steps:
+Jeet Spin is now live. [Download it from jeetspin12.com](https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445). Follow these steps:
 
 1. Visit the Jeet Spin listing on [YonoLink.co](/) or the platform's own website
 2. Tap the download button to get the APK file
@@ -155,7 +155,7 @@ No promo code has been released yet. Check our [Promo Codes page](/promo-codes) 
 
 ### Where can I download Jeet Spin?
 
-The download link is not yet available. Once live, the Jeet Spin listing on YonoLink.co will carry the current download URL. Do not trust any pre-launch APK link.
+Jeet Spin is now live. Download it from [jeetspin12.com](https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445). Do not trust APK links from unofficial sources.
 
 ### Is Jeet Spin safe?
 
