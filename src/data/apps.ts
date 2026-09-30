@@ -704,18 +704,18 @@ export const apps: AppData[] = [
 
   {
     name: 'Jeet Spin', slug: 'jeet-spin', logo: '/logos/jeet-spin.png', category: 'Spin',
-    tagline: 'Jeet Spin — launching 30 September 2026',
-    description: 'Jeet Spin is a new spin-and-win platform scheduled to launch on 30 September 2026. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
+    tagline: 'Jeet Spin — now live',
+    description: 'Jeet Spin is a spin-and-win platform that launched on 30 September 2026. Its full feature set, welcome bonus and promo-code schedule are being reviewed — this page will be updated as those details are verified.',
     rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
     features: [
       'Real-cash spin-and-win gameplay',
-      'Launching 30 September 2026',
+      'Launched 30 September 2026',
     ],
-    downloadUrl: '',
+    downloadUrl: 'https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445',
     faqs: [
-      { q: 'When does Jeet Spin launch?', a: 'Jeet Spin is scheduled to launch on 30 September 2026. This listing will be updated with a download link once the app goes live.' },
-      { q: 'What is the welcome bonus on Jeet Spin?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
-      { q: 'Where can I download Jeet Spin?', a: 'The download link is not yet available. Once Jeet Spin launches on 30 September 2026, the official download link will be added to this page.' },
+      { q: 'When did Jeet Spin launch?', a: 'Jeet Spin launched on 30 September 2026 and is now live. Download it from jeetspin12.com.' },
+      { q: 'What is the welcome bonus on Jeet Spin?', a: 'No welcome bonus has been independently confirmed yet. Check the app itself for current bonus details.' },
+      { q: 'Where can I download Jeet Spin?', a: 'Download Jeet Spin from jeetspin12.com. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['spin-101', 'spin-777', 'spin-winner'],
   },
