@@ -46,7 +46,7 @@ Keep screenshots of the terms you agreed to, with the date. If conditions change
 
 ## Comparing it with other rummy apps
 
-If you are still choosing, compare Love Rummy with two or three other rummy apps in the directory using the same checklist. Look at clarity of terms, visibility of support, permissions requested and formats offered. Our [rummy overview](/blog/best-yono-rummy-apps) is a good place to find alternatives, and our [beginner rules guide](/blog/indian-rummy-rules-basics-for-beginners) will help you judge whether an app's formats match what you actually want to play.
+If you are still choosing, compare Love Rummy with two or three other rummy apps in the directory using the same checklist. Look at clarity of terms, visibility of support, permissions requested and formats offered. Our [rummy overview](/blog/best-yono-rummy-apps) is a good place to find alternatives, and our beginner rules guide will help you judge whether an app's formats match what you actually want to play.
 
 ## Money and limits
 

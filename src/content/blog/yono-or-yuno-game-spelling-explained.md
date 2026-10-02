@@ -32,7 +32,7 @@ None of these are separate products. They are different routes to the same searc
 
 ## A name clash worth knowing
 
-"YONO" is also the name of a well-known banking app from a major Indian bank. That is a completely different thing from the Yono games directory. If you are looking for games, you don't need a banking app, and if you are looking for your bank, you don't need any of the apps on this site. Our guide to [Yono app download: bank app vs Yono games](/blog/yono-sbi-vs-yono-games-apps) goes into detail.
+"YONO" is also the name of a well-known banking app from a major Indian bank. That is a completely different thing from the Yono games directory. If you are looking for games, you don't need a banking app, and if you are looking for your bank, you don't need any of the apps on this site. Our guide to Yono app download: bank app vs Yono games goes into detail.
 
 ## Why spelling matters for safety
 

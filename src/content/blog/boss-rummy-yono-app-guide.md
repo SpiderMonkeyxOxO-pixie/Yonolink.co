@@ -35,7 +35,7 @@ Names built from common words ("Boss", "Gold", "Joy") are easy to imitate. The s
 
 ## Rummy basics worth knowing
 
-Rummy is played by forming sets and sequences from a hand of cards. Skill matters, but so does the deal, which is chance. If you are new to the rules, our [beginner rules guide](/blog/indian-rummy-rules-basics-for-beginners) explains sequences, sets and declaring. Real-money formats add financial risk. The rules around such formats in India have changed recently, so check current law, and remember you must be 18 or older.
+Rummy is played by forming sets and sequences from a hand of cards. Skill matters, but so does the deal, which is chance. If you are new to the rules, our beginner rules guide explains sequences, sets and declaring. Real-money formats add financial risk. The rules around such formats in India have changed recently, so check current law, and remember you must be 18 or older.
 
 ## Questions to ask inside the app
 

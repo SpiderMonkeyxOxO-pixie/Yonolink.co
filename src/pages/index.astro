@@ -5,9 +5,10 @@ import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
 import GameCard from '../components/GameCard.astro';
 import { getCollection } from 'astro:content';
+import { isPublished } from '../lib/published';
 import { apps } from '../data/apps';
 
-const allPosts  = await getCollection('blog');
+const allPosts  = await getCollection('blog', isPublished);
 
 const featuredPosts  = allPosts.filter(p => p.data.featured).slice(0, 3);
 

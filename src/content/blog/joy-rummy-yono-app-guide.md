@@ -54,7 +54,7 @@ Set a spend limit before you open the app, take regular breaks and never chase l
 
 If you are weighing Joy Rummy against other apps in the category, compare them on the same checklist rather than on advertising. Useful points of comparison are how easy the terms are to find, whether support contact details are visible, what permissions the installer asks for, which game formats are offered, and how the app describes verification and withdrawals. Differences in design or colour matter much less than differences in clarity.
 
-Avoid comparing on bonus size alone. A larger headline figure with strict conditions can be worth less than a smaller one with clear, simple terms. Our [guide to reading bonus offers](/blog/rummy-51-bonus-meaning-how-to-read-offers) explains how to judge the conditions behind a number.
+Avoid comparing on bonus size alone. A larger headline figure with strict conditions can be worth less than a smaller one with clear, simple terms. Our guide to reading bonus offers explains how to judge the conditions behind a number.
 
 ## Reading reviews with care
 

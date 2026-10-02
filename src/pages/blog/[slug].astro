@@ -4,10 +4,11 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Icon from '../../components/Icon.astro';
 import { getCollection } from 'astro:content';
+import { isPublished } from '../../lib/published';
 import { apps, appsBySlug } from '../../data/apps';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', isPublished);
   return posts.map(post => ({
     params: { slug: post.slug },
     props: { post },
@@ -29,7 +30,7 @@ const readTime = Math.max(1, Math.ceil(wordCount / 200));
 const tocHeadings = headings.filter(h => h.depth === 2);
 
 // Related posts (same tags, different slug)
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog', isPublished);
 const relatedPosts = allPosts
   .filter(p => p.slug !== post.slug && p.data.tags.some(t => tags.includes(t)))
   .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
