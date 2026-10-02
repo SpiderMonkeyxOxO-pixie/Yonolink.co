@@ -1,7 +1,7 @@
 ---
 title: "Yono vs Yuno vs Eno Game: Which Spelling Is Right?"
 description: "People search \"yuno game\", \"eno game\" and \"you know games\" for the same apps. Here is what each spelling means and how to find the right app."
-pubDate: "2026-10-04"
+pubDate: "2026-10-03"
 author: "YonoLink Team"
 tags: ["yuno game", "eno game", "you know games", "yono spelling", "yono rami", "yuno rummy"]
 image: "/blogs/yono-or-yuno-game-spelling-explained.webp"

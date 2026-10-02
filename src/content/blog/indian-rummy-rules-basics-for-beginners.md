@@ -1,7 +1,7 @@
 ---
 title: "Indian Rummy Rules: Beginner Basics (13-Card Guide)"
 description: "New to Indian rummy? Learn the 13-card rules, sets, sequences, the pure sequence requirement and how to declare, in plain language."
-pubDate: "2026-10-17"
+pubDate: "2026-10-16"
 author: "YonoLink Team"
 tags: ["indian rummy yono", "indian rummy rules", "13 card rummy", "pure sequence", "rummy for beginners"]
 image: "/blogs/indian-rummy-rules-basics-for-beginners.webp"

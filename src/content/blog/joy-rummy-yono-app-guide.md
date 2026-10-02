@@ -1,7 +1,7 @@
 ---
 title: "Joy Rummy Yono: What It Is and What to Verify"
 description: "Searching \"Joy Rummy Yono\"? See where Joy Rummy sits in the Yono directory, what to check before you install and how to read its terms."
-pubDate: "2026-10-06"
+pubDate: "2026-10-05"
 author: "YonoLink Team"
 tags: ["joy rummy yono", "joy rummy", "joy rummy app", "yono rummy", "rummy app verification"]
 image: "/blogs/joy-rummy-yono-app-guide.webp"

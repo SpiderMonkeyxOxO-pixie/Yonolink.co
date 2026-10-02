@@ -1,7 +1,7 @@
 ---
 title: "Yono Games APK Old Version: Should You Download One?"
 description: "Thinking about an old version of a Yono games APK? Understand the security risks, compatibility issues and safer alternatives first."
-pubDate: "2026-10-12"
+pubDate: "2026-10-11"
 author: "YonoLink Team"
 tags: ["yono games apk download old version", "old version apk", "yono apk update", "apk troubleshooting", "yono game apk"]
 image: "/blogs/yono-games-apk-old-version-risks.webp"

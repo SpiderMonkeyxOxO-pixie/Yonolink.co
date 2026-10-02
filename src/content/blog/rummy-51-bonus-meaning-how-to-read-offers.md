@@ -1,7 +1,7 @@
 ---
 title: "Rummy \"51 Bonus\" Offers: What the Number Really Means"
 description: "Seeing \"Rummy 51 bonus\" on Yono pages? Learn how to read bonus offers, wagering terms and expiry so you know what you're agreeing to."
-pubDate: "2026-10-10"
+pubDate: "2026-10-09"
 author: "YonoLink Team"
 tags: ["yono rummy 51 bonus", "rummy 51 bonus", "rummy bonus terms", "wagering requirements", "yono welcome bonus"]
 image: "/blogs/rummy-51-bonus-meaning-how-to-read-offers.webp"

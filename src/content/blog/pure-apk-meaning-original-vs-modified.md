@@ -1,7 +1,7 @@
 ---
 title: "\"Pure APK\" Meaning: Original vs Modified Files"
 description: "What does \"pure APK\" mean when people search Yono Arcade? Learn how original and modified Android files differ and how to check yours."
-pubDate: "2026-10-11"
+pubDate: "2026-10-10"
 author: "YonoLink Team"
 tags: ["yono arcade pure apk", "pure apk", "original apk", "modded apk", "apk verification"]
 image: "/blogs/pure-apk-meaning-original-vs-modified.webp"

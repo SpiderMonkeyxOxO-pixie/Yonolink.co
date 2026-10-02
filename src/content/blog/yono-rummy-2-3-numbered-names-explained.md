@@ -1,7 +1,7 @@
 ---
 title: "Yono Rummy 2, 3 and Other Numbered Names Explained"
 description: "Why do people search \"Yono Rummy 2\" and \"Yono Rummy 3\"? Learn what numbered names mean and how to avoid mix-ups before you install."
-pubDate: "2026-10-09"
+pubDate: "2026-10-08"
 author: "YonoLink Team"
 tags: ["yono rummy 2", "yono rummy 3", "yono rummy", "numbered app names", "yono rummy 888"]
 image: "/blogs/yono-rummy-2-3-numbered-names-explained.webp"

@@ -1,7 +1,7 @@
 ---
 title: "New Yono Games: How to Check What's Really New"
 description: "Seeing \"new Yono games\" everywhere? Learn how to verify a launch date, spot recycled listings and check an app before you install it."
-pubDate: "2026-10-03"
+pubDate: "2026-10-02"
 author: "YonoLink Team"
 tags: ["new yono games", "yono new games", "new yono app", "yono games new", "yono game launch"]
 image: "/blogs/new-yono-games-how-to-verify.webp"

@@ -1,7 +1,7 @@
 ---
 title: "Love Rummy Yono: Listing Guide and Safety Checks"
 description: "Searching \"Love Rummy Yono\"? Find where it sits in the directory, what to verify, and how to read terms before you install the app."
-pubDate: "2026-10-16"
+pubDate: "2026-10-15"
 author: "YonoLink Team"
 tags: ["love rummy yono", "love rummy", "love rummy app", "yono rummy", "rummy app verification"]
 image: "/blogs/love-rummy-yono-app-guide.webp"

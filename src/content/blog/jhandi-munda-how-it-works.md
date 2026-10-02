@@ -1,7 +1,7 @@
 ---
 title: "Jhandi Munda: How the Game Works (Plain Explanation)"
 description: "What is Jhandi Munda? A neutral explainer on the traditional dice game, its six symbols, how rounds work and why odds favour the house."
-pubDate: "2026-10-13"
+pubDate: "2026-10-12"
 author: "YonoLink Team"
 tags: ["jhandi munda", "jhandi munda game", "langur burja", "dice game india", "jhandi munda rules"]
 image: "/blogs/jhandi-munda-how-it-works.webp"

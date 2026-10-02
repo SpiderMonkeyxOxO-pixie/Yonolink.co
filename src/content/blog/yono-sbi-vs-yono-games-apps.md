@@ -1,7 +1,7 @@
 ---
 title: "Yono App Download: Bank App vs Yono Games Explained"
 description: "\"Yono\" means two different things in India: a bank app and a network of gaming apps. See the difference so you download the right one."
-pubDate: "2026-10-07"
+pubDate: "2026-10-06"
 author: "YonoLink Team"
 tags: ["yono app download", "yono app download apk", "yono sbi apk", "yono games vs yono sbi", "yono app"]
 image: "/blogs/yono-sbi-vs-yono-games-apps.webp"

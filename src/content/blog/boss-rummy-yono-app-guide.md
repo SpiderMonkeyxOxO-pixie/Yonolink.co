@@ -1,7 +1,7 @@
 ---
 title: "Boss Rummy Yono: What to Know Before You Install"
 description: "Looking for Boss Rummy in the Yono network? See where the listing sits, what's confirmed and the checks to make before installing."
-pubDate: "2026-10-15"
+pubDate: "2026-10-14"
 author: "YonoLink Team"
 tags: ["boss rummy yono", "boss rummy", "boss rummy app", "yono rummy", "rummy app verification"]
 image: "/blogs/boss-rummy-yono-app-guide.webp"
