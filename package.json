@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "postbuild": "node scripts/promo-admin/restore.js"
+    "postbuild": "node scripts/promo-admin/restore.cjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

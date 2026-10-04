@@ -8,7 +8,7 @@
  */
 const fs = require("node:fs");
 const path = require("node:path");
-const { MASTER_FILE, LIVE_FILE } = require("./paths");
+const { MASTER_FILE, LIVE_FILE } = require("./paths.cjs");
 
 if (!fs.existsSync(MASTER_FILE)) {
   console.log("[promo-admin] no master promo file yet — leaving the built promo-codes.txt as is.");

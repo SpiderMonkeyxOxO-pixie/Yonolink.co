@@ -1,6 +1,6 @@
 # Promo-code admin — code.yonolink.co
 
-A dependency-free Node server (`server.js`, Node 18+) that edits the promo-code
+A dependency-free Node server (`server.cjs`, Node 18+) that edits the promo-code
 file the Yonolink.co pages fetch in the browser on every load
 (`/promo-codes.txt`). Single admin, no sign-up. Saves are live instantly — no
 rebuild.
@@ -8,7 +8,7 @@ rebuild.
 Because `npm run build` replaces `dist/` (and with it `dist/promo-codes.txt`),
 the admin keeps a **master copy outside the repo**
 (`/www/wwwroot/yonolink-admin-data/promo-codes.txt`) and writes it to
-`dist/promo-codes.txt` too. The `postbuild` npm hook (`restore.js`) puts the
+`dist/promo-codes.txt` too. The `postbuild` npm hook (`restore.cjs`) puts the
 master back after every build — including the daily 07:00 cron rebuild — so
 live codes are never wiped by a deploy.
 
@@ -29,7 +29,7 @@ live codes are never wiped by a deploy.
 4. **Start it:**
    ```
    ss -tlnp | grep 3130          # should print nothing (port free)
-   pm2 start scripts/promo-admin/server.js --name yonolink-admin
+   pm2 start scripts/promo-admin/server.cjs --name yonolink-admin
    pm2 save
    curl -s http://127.0.0.1:3130/healthz; echo     # -> ok
    ```

@@ -8,9 +8,9 @@
  * updates the site instantly with no rebuild. Because a rebuild wipes dist/,
  * the admin keeps a MASTER copy outside the repo and writes it to
  * dist/promo-codes.txt too; `npm run build` restores the master afterwards
- * (see restore.js, wired as npm "postbuild").
+ * (see restore.cjs, wired as npm "postbuild").
  *
- * Config: env file OUTSIDE the git checkout (see paths.js and README.md).
+ * Config: env file OUTSIDE the git checkout (see paths.cjs and README.md).
  */
 "use strict";
 
@@ -18,7 +18,7 @@ const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
-const { SITE_ROOT, MASTER_FILE, LIVE_FILE, REPO_FILE, BACKUP_DIR } = require("./paths");
+const { SITE_ROOT, MASTER_FILE, LIVE_FILE, REPO_FILE, BACKUP_DIR } = require("./paths.cjs");
 
 const PORT = Number(process.env.PORT || 3130);
 const PUBLIC_URL = (process.env.PUBLIC_URL || "https://yonolink.co").replace(/\/$/, "");
