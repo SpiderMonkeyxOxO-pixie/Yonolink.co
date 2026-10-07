@@ -190,63 +190,143 @@ const itemListSchema = {
   </section>
 
   <!-- ── UPCOMING PLATFORM ─────────────────────────────────────────────────── -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12" aria-labelledby="upcoming-platform-heading">
     <div class="flex items-center justify-between mb-5">
-      <h2 class="font-display font-black text-xl sm:text-2xl text-white">Upcoming Platform</h2>
+      <h2 id="upcoming-platform-heading" class="font-display font-black text-xl sm:text-2xl text-white">Upcoming Platform</h2>
       <div class="flex items-center gap-2 text-sm text-gray-500">
         <span class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-gray-300 text-xs">Coming Soon</span>
       </div>
     </div>
 
-    <!-- Jeet Spin — Now Live card -->
-    <div class="bg-gray-900/80 border border-green-500/30 rounded-2xl overflow-hidden">
+    <!-- Jaiho Play — launch countdown card -->
+    <div class="bg-gray-900/80 border border-yellow-400/30 rounded-2xl overflow-hidden">
 
-      <!-- Top bar: logo + Live badge -->
+      <!-- Top bar: logo + countdown -->
       <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
         <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
-          <img src="/logos/jeet-spin.png" alt="Jeet Spin" class="w-full h-full object-contain p-1" loading="eager" />
+          <img src="/logos/jaiho-play.webp" alt="Jaiho Play logo" width="80" height="80" class="w-full h-full object-contain p-1" loading="eager" />
         </div>
-        <div class="flex flex-col gap-2">
-          <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
-            <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
-            </span>
-            Now Live — Launched 30 September 2026
+        <div id="jaiho-countdown" class="flex flex-col gap-2" role="timer" aria-label="Time remaining until Jaiho Play launch">
+          <div class="flex gap-2">
+            <div class="min-w-[64px] text-center bg-yellow-400/10 border border-yellow-400/30 rounded-xl px-3 py-2">
+              <div class="text-2xl font-black text-yellow-400" data-cd="days">--</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-400">Days</div>
+            </div>
+            <div class="min-w-[64px] text-center bg-yellow-400/10 border border-yellow-400/30 rounded-xl px-3 py-2">
+              <div class="text-2xl font-black text-yellow-400" data-cd="hours">--</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-400">Hrs</div>
+            </div>
+            <div class="min-w-[64px] text-center bg-yellow-400/10 border border-yellow-400/30 rounded-xl px-3 py-2">
+              <div class="text-2xl font-black text-yellow-400" data-cd="minutes">--</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-400">Min</div>
+            </div>
+            <div class="min-w-[64px] text-center bg-yellow-400/10 border border-yellow-400/30 rounded-xl px-3 py-2">
+              <div class="text-2xl font-black text-yellow-400" data-cd="seconds">--</div>
+              <div class="text-[10px] uppercase tracking-wide text-gray-400">Sec</div>
+            </div>
           </div>
-          <p class="text-gray-500 text-xs pl-1">Spin-and-win platform</p>
+          <p class="text-gray-500 text-xs pl-1" id="jaiho-countdown-note">Launching 15 October 2026, 12:00 PM IST</p>
         </div>
       </div>
 
       <!-- Body -->
       <div class="p-5">
         <div class="flex flex-wrap gap-2 mb-4">
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-green-500/15 text-green-400 border border-green-500/30">Live</span>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">30 Sep 2026</span>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-green-500/15 text-green-400 border border-green-500/30">Spin</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-yellow-400/15 text-yellow-400 border border-yellow-400/30">Coming Soon</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">15 Oct 2026</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">New</span>
         </div>
 
-        <h3 class="text-lg sm:text-xl font-black text-white mb-2">Jeet Spin is now live on All Yono</h3>
+        <h3 class="text-lg sm:text-xl font-black text-white mb-2">Jaiho Play launches on 15 October 2026</h3>
         <p class="text-gray-400 text-sm leading-relaxed mb-3">
-          Jeet Spin is a spin-and-win platform that launched on 30 September 2026. Download it from jeetspin12.com. Welcome bonus and promo code details will be updated here as they are confirmed.
+          Jaiho Play is an upcoming platform joining the All Yono network. No download link, welcome bonus or promo code has been announced yet. Details are added here only once they are confirmed.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3">
-          <a
-            href="https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445"
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white text-sm font-black transition-colors"
-          >
-            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-            Download Jeet Spin
-          </a>
-          <a href="/app/jeet-spin" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
-            View Details
+          <a href="/app" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
+            Browse Available Apps
           </a>
         </div>
       </div>
     </div>
+
+    <div class="mt-5">
+      <!-- Jeet Spin — Now Live card -->
+      <div class="bg-gray-900/80 border border-green-500/30 rounded-2xl overflow-hidden">
+  
+        <!-- Top bar: logo + Live badge -->
+        <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
+          <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
+            <img src="/logos/jeet-spin.png" alt="Jeet Spin" class="w-full h-full object-contain p-1" loading="eager" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
+              <span class="relative flex h-2.5 w-2.5 shrink-0">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
+              </span>
+              Now Live — Launched 30 September 2026
+            </div>
+            <p class="text-gray-500 text-xs pl-1">Spin-and-win platform</p>
+          </div>
+        </div>
+  
+        <!-- Body -->
+        <div class="p-5">
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-green-500/15 text-green-400 border border-green-500/30">Live</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">30 Sep 2026</span>
+            <span class="px-3 py-1 rounded-full text-xs font-bold bg-green-500/15 text-green-400 border border-green-500/30">Spin</span>
+          </div>
+  
+          <h3 class="text-lg sm:text-xl font-black text-white mb-2">Jeet Spin is now live on All Yono</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-3">
+            Jeet Spin is a spin-and-win platform that launched on 30 September 2026. Download it from jeetspin12.com. Welcome bonus and promo code details will be updated here as they are confirmed.
+          </p>
+  
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://www.jeetspin12.com/?code=SYHPBD5M972&t=1790735445"
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white text-sm font-black transition-colors"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+              Download Jeet Spin
+            </a>
+            <a href="/app/jeet-spin" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
+              View Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script is:inline>
+      (function () {
+        var target = new Date('2026-10-15T12:00:00+05:30').getTime();
+        var root = document.getElementById('jaiho-countdown');
+        if (!root) return;
+        var cells = {};
+        ['days', 'hours', 'minutes', 'seconds'].forEach(function (k) { cells[k] = root.querySelector('[data-cd="' + k + '"]'); });
+        function pad(n) { return String(n).padStart(2, '0'); }
+        function tick() {
+          var diff = target - Date.now();
+          if (diff <= 0) {
+            cells.days.textContent = cells.hours.textContent = cells.minutes.textContent = cells.seconds.textContent = '00';
+            var note = document.getElementById('jaiho-countdown-note');
+            if (note) note.textContent = 'Launching now. Check back for confirmed details.';
+            return false;
+          }
+          var s = Math.floor(diff / 1000);
+          cells.days.textContent = pad(Math.floor(s / 86400));
+          cells.hours.textContent = pad(Math.floor((s % 86400) / 3600));
+          cells.minutes.textContent = pad(Math.floor((s % 3600) / 60));
+          cells.seconds.textContent = pad(s % 60);
+          return true;
+        }
+        if (tick()) { var id = setInterval(function () { if (!tick()) clearInterval(id); }, 1000); }
+      })();
+    </script>
   </section>
 
   <!-- ── CATEGORY CAROUSEL ────────────────────────────────────────────────── -->
