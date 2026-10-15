@@ -553,6 +553,24 @@ export const apps: AppData[] = [
     suggestedApps: ['yono-rummy', 'ind-rummy', 'jaiho-rummy'],
   },
 
+  {
+    name: 'Jaiho Play', slug: 'jaiho-play', logo: '/logos/jaiho-play.webp', category: 'Rummy',
+    tagline: 'Jaiho Play — now live',
+    description: 'Jaiho Play is a rummy and Teen Patti platform from the Jaiho gaming family that launched on 15 October 2026. Its full feature set, welcome bonus and promo-code schedule are being reviewed — this page will be updated as those details are verified.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-cash rummy and Teen Patti gameplay',
+      'Launched 15 October 2026',
+    ],
+    downloadUrl: 'https://jaihogo.com/?code=E4VW58CDZFY&t=1792035058',
+    faqs: [
+      { q: 'When did Jaiho Play launch?', a: 'Jaiho Play launched on 15 October 2026 and is now live. Download it from jaihogo.com.' },
+      { q: 'What is the welcome bonus on Jaiho Play?', a: 'No welcome bonus has been independently confirmed yet. Check the app itself for current bonus details.' },
+      { q: 'Where can I download Jaiho Play?', a: 'Download Jaiho Play from jaihogo.com. Do not trust APK links from unofficial sources.' },
+    ],
+    suggestedApps: ['jaiho-rummy', 'jaiho-win', 'jaiho-arcade'],
+  },
+
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
 
   {
