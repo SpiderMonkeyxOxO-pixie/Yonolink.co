@@ -1252,6 +1252,24 @@ export const apps: AppData[] = [
     suggestedApps: ['ind-club'],
   },
 
+  {
+    name: 'VIP Rummy', slug: 'vip-rummy', logo: '/logos/vip-rummy.webp', category: 'Rummy',
+    tagline: 'VIP Rummy — now live',
+    description: 'VIP Rummy launched on 20 October 2026, pairing a crowned-rummy brand identity with a green-diamond background. Its full feature set, welcome bonus and promo-code schedule are being reviewed — this page will be updated as those details are verified.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-cash rummy gameplay',
+      'Launched 20 October 2026',
+    ],
+    downloadUrl: 'https://viprummy6.com/?code=XSDWNSC153Q&t=1792476153',
+    faqs: [
+      { q: 'When did VIP Rummy launch?', a: 'VIP Rummy launched on 20 October 2026 and is now live. Download it from viprummy6.com.' },
+      { q: 'What is the welcome bonus on VIP Rummy?', a: 'No welcome bonus has been independently confirmed yet. Check the app itself for current bonus details.' },
+      { q: 'Where can I download VIP Rummy?', a: 'Download VIP Rummy from viprummy6.com. Do not trust APK links from unofficial sources.' },
+    ],
+    suggestedApps: ['jaiho-play'],
+  },
+
 ];
 
 export const appsBySlug: Record<string, AppData> = Object.fromEntries(apps.map(a => [a.slug, a]));

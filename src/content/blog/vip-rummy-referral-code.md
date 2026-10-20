@@ -8,7 +8,7 @@ image: "/blogs/vip-rummy-referral-code.webp"
 featured: false
 ---
 
-VIP Rummy launches today, **20 October 2026 at 8:00 AM IST**, and no referral code or referral program has been officially confirmed yet — if you've seen a code circulating already, treat it as unverified until the app itself confirms a referral system exists.
+VIP Rummy launched today, **20 October 2026 at 8:00 AM IST** ([download it here](/app/vip-rummy)), and no referral code or referral program has been officially confirmed yet — if you've seen a code circulating already, treat it as unverified until the app itself confirms a referral system exists.
 
 ---
 
