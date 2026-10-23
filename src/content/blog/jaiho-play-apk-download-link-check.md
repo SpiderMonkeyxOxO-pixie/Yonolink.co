@@ -8,7 +8,7 @@ image: "/logos/jaiho-play.webp"
 featured: false
 ---
 
-**Direct answer:** Jaiho Play 1.0.0 is reachable through the operator's referral link; there is no official website or store listing yet. The link below is a sponsored referral link, not an official store page. Before installing, check the app name, the operator (Yonotech Pvt. Ltd.), the version and the permissions it asks for.
+**Direct answer:** Jaiho Play 1.0.0 is reachable through the operator's referral link; there is no official website or store listing yet. The link below is a sponsored referral link, not an official store page. Before installing, check the app name, the operator (Yonotech Pvt. Ltd.), the version and the permissions it asks for. See the [Jaiho Play app page](/app/jaiho-play) on YonoLink for the current download link and quick stats at a glance.
 
 ---
 

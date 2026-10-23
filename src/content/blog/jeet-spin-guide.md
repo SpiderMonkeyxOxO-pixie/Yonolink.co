@@ -20,6 +20,7 @@ featured: false
 - **Promo code:** Not yet released
 - **Google Play:** Not found as of 29 September 2026
 - **Distribution:** Expected as sideloaded APK (standard for this network)
+- **App page:** See the [Jeet Spin app page](/app/jeet-spin) on YonoLink for quick stats and the current download link
 
 ---
 

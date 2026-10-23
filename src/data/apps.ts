@@ -4,6 +4,8 @@ export interface AppData {
   tagline: string; description: string; rating: number;
   downloads: string; size: string; minDeposit: string; bonus: string;
   features: string[]; downloadUrl: string; faqs: AppFaq[]; suggestedApps: string[];
+  /** Slug of a deep-dive blog post (src/content/blog) that covers this app in detail. Optional. */
+  relatedPost?: string;
 }
 
 export const apps: AppData[] = [
@@ -26,6 +28,7 @@ export const apps: AppData[] = [
       { q: 'What is the minimum withdrawal on Gold Rummy?', a: 'The minimum withdrawal has not yet been confirmed for Gold Rummy. Check back here as details are verified.' },
     ],
     suggestedApps: ['win-rummy', 'yono-rummy', 'max-rummy'],
+    relatedPost: 'gold-rummy-app-listings-explained',
   },
 
   {
@@ -569,6 +572,7 @@ export const apps: AppData[] = [
       { q: 'Where can I download Jaiho Play?', a: 'Download Jaiho Play from jaihogo.com. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['jaiho-rummy', 'jaiho-win', 'jaiho-arcade'],
+    relatedPost: 'jaiho-play-apk-download-link-check',
   },
 
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
@@ -736,6 +740,7 @@ export const apps: AppData[] = [
       { q: 'Where can I download Jeet Spin?', a: 'Download Jeet Spin from jeetspin12.com. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['spin-101', 'spin-777', 'spin-winner'],
+    relatedPost: 'jeet-spin-guide',
   },
 
   // ── SLOTS (7) ────────────────────────────────────────────────────────────────
@@ -1268,6 +1273,7 @@ export const apps: AppData[] = [
       { q: 'Where can I download VIP Rummy?', a: 'Download VIP Rummy from viprummy6.com. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['jaiho-play'],
+    relatedPost: 'vip-rummy-referral-code',
   },
 
 ];

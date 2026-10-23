@@ -10,7 +10,7 @@ export function getStaticPaths() {
 }
 
 const { app } = Astro.props;
-const { name, slug, logo, category, tagline, description, rating, downloads, size, minDeposit, bonus, features, downloadUrl, faqs, suggestedApps } = app;
+const { name, slug, logo, category, tagline, description, rating, downloads, size, minDeposit, bonus, features, downloadUrl, faqs, suggestedApps, relatedPost } = app;
 
 const stars = Math.round(rating);
 
@@ -219,6 +219,18 @@ const faqSchema = {
             About {name}
           </h2>
           <p class="text-gray-400 leading-relaxed text-sm">{description}</p>
+          {relatedPost && (
+            <a
+              href={`/blog/${relatedPost}/`}
+              class="mt-4 flex items-center gap-3 bg-yellow-400/5 border border-yellow-400/20 rounded-xl p-3.5 hover:bg-yellow-400/10 transition-colors group"
+            >
+              <Icon name="newspaper" class="w-4 h-4 text-yellow-400 shrink-0" />
+              <span class="text-sm text-gray-300">
+                <span class="font-semibold text-yellow-400 group-hover:underline">Read the full {name} guide</span> — launch details, safety checks and FAQs in depth.
+              </span>
+              <Icon name="arrow-right" class="w-4 h-4 text-yellow-400 shrink-0 ml-auto" />
+            </a>
+          )}
         </div>
 
         <!-- Key Features -->
