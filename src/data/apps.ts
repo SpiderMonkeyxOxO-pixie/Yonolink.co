@@ -69,6 +69,7 @@ export const apps: AppData[] = [
       { q: 'What is the minimum withdrawal on Win Rummy?', a: 'The minimum withdrawal on Win Rummy is ₹100, processed instantly via UPI after your request is approved.' },
     ],
     suggestedApps: ['yono-rummy', 'max-rummy', 'boss-rummy'],
+    relatedPost: 'win-rummy-apk-safety-checklist',
   },
 
   {
@@ -90,6 +91,7 @@ export const apps: AppData[] = [
       { q: 'How do I access the VIP tables on Yono 777?', a: 'VIP table access unlocks automatically when you deposit ₹5,000 or more in any single session. The VIP tab appears in your lobby immediately after qualifying.' },
     ],
     suggestedApps: ['yono-slots', 'yono-games', '777game'],
+    relatedPost: 'yono-777-app-download-guide',
   },
 
   {
@@ -111,6 +113,7 @@ export const apps: AppData[] = [
       { q: 'What is the minimum withdrawal on Dhan Game?', a: 'The minimum withdrawal on Dhan Game is ₹100, processed via UPI instantly after your request is approved.' },
     ],
     suggestedApps: ['yono-slots', 'yono-777', 'slots-winner'],
+    relatedPost: 'dhan-game-apk-download-promo-code',
   },
 
   {
@@ -239,6 +242,7 @@ export const apps: AppData[] = [
       { q: 'Does Boss Rummy have leaderboard rewards?', a: 'Yes. Boss Rummy runs a weekly ₹25 lakh leaderboard. The top 100 players win guaranteed cash, with the #1 player taking ₹2.5 lakh every week.' },
     ],
     suggestedApps: ['rumble-rummy', 'top-rummy', 'hi-rummy'],
+    relatedPost: 'boss-rummy-yono-app-guide',
   },
 
   {
@@ -386,6 +390,7 @@ export const apps: AppData[] = [
       { q: 'How do I install Joy Rummy on my phone?', a: 'Download the APK from Joy Rummy\'s official site. On Android, go to Settings → Security → Unknown Sources, then install the downloaded file.' },
     ],
     suggestedApps: ['love-rummy', 'gogo-rummy', 'abc-rummy'],
+    relatedPost: 'joy-rummy-yono-app-guide',
   },
 
   {
@@ -407,6 +412,7 @@ export const apps: AppData[] = [
       { q: 'How do I contact Love Rummy support?', a: 'Love Rummy offers 24/7 WhatsApp support at their official number, plus in-app live chat and email support with a guaranteed 2-hour response time.' },
     ],
     suggestedApps: ['joy-rummy', 'gogo-rummy', 'jaiho-rummy'],
+    relatedPost: 'love-rummy-yono-app-guide',
   },
 
   {
