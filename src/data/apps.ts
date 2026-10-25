@@ -1175,6 +1175,7 @@ export const apps: AppData[] = [
       { q: 'Is there a fee to join Ind Club?', a: 'No joining fee. Standard Club membership is free. Tier upgrades are earned through referrals, not paid subscriptions.' },
     ],
     suggestedApps: ['club-inr', 'neta-vip', 'yono-vip'],
+    relatedPost: 'ind-club-app-guide',
   },
 
   {
