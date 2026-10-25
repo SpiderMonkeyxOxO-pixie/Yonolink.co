@@ -4,7 +4,7 @@ description: "Ind Club uses an invite-based membership model with Standard, Silv
 pubDate: "2026-10-25"
 author: "YonoLink Team"
 tags: ["ind club", "ind club apk", "ind club app", "ind club membership", "yono rummy app verification"]
-image: "/logos/ind-club.webp"
+image: "/blogs/ind-club-app-guide.webp"
 featured: false
 ---
 
