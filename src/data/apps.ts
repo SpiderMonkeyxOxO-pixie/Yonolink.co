@@ -1110,6 +1110,7 @@ export const apps: AppData[] = [
       { q: 'What is Tiplu on Maha Games?', a: 'Tiplu is a traditional Maharashtra card game similar to Teen Patti but with regional rule variations. Maha Games is one of the only platforms to offer it as a real-cash game.' },
     ],
     suggestedApps: ['ind-club', 'ind-rummy', 'yono-games'],
+    relatedPost: 'maha-games-app-guide',
   },
 
   // ── BET / VIP / CLUB (6) ─────────────────────────────────────────────────────
