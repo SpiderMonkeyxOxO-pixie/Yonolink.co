@@ -48,6 +48,7 @@ export const apps: AppData[] = [
       { q: 'Is Money Rummy part of the Yono network?', a: 'It has been reported to be the 57th platform on the Yono network, though this has not been independently verified by YonoLink.' },
     ],
     suggestedApps: ['gold-rummy', 'win-rummy', 'yono-rummy'],
+    relatedPost: 'money-rummy-app-guide',
   },
 
   {
