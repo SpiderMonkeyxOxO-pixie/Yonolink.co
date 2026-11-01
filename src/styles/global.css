@@ -91,23 +91,34 @@
 .glow-card-always:hover::before { opacity: 1; }
 
 /* Pulsing download button */
+/* GPU-composited glow pulse (transform/opacity only) -- the previous
+   version animated box-shadow directly, which Chrome can't composite
+   and forces a main-thread style/paint recalculation every frame on
+   every element using it. */
 @keyframes btn-pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(250,204,21,0.45), 0 4px 14px rgba(249,115,22,0.25); }
-  50%       { box-shadow: 0 0 0 7px rgba(250,204,21,0),  0 4px 22px rgba(249,115,22,0.40); }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.02); }
 }
 .btn-download-pulse {
+  box-shadow: 0 4px 18px rgba(249,115,22,0.32);
   animation: btn-pulse-glow 2s ease-in-out infinite;
 }
 
 /* ── GRADIENT TEXT ───────────────────────────────────────── */
 
+/* Static by default -- text-shimmer animates background-position,
+   which forces a non-composited style/paint recalculation every
+   frame. With 26 .text-gold/.text-aurora elements on the page all
+   animating simultaneously, this was costing 2s+ of main-thread
+   Style & Layout work and delaying the LCP paint. Use the
+   `-shimmer` modifier classes below to opt specific elements back
+   into the animation (e.g. a single hero heading). */
 .text-gold {
   background: linear-gradient(135deg, #FACC15 0%, #F97316 40%, #FACC15 85%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: text-shimmer 5s linear infinite;
 }
 
 .text-aurora {
@@ -116,6 +127,13 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gold-shimmer {
+  animation: text-shimmer 5s linear infinite;
+}
+
+.text-aurora-shimmer {
   animation: text-shimmer 6s linear infinite;
 }
 
@@ -173,9 +191,14 @@
   0%, 100% { transform: translateY(0px);  }
   50%       { transform: translateY(-4px); }
 }
+/* GPU-composited (transform/opacity only) -- see note above on
+   text-shimmer. The glow itself is now a static box-shadow on the
+   element (set where pulse-glow-gold is applied below); animating
+   box-shadow directly isn't compositable and ran on every
+   .hot-badge / .animate-pulse-glow element at once. */
 @keyframes pulse-glow-gold {
-  0%, 100% { box-shadow: 0 0 10px rgba(250,204,21,0.35); }
-  50%       { box-shadow: 0 0 24px rgba(250,204,21,0.7), 0 0 48px rgba(250,204,21,0.18); }
+  0%, 100% { transform: scale(1); opacity: 0.88; }
+  50%       { transform: scale(1.05); opacity: 1; }
 }
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
@@ -221,6 +244,7 @@
   font-size: 9px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  box-shadow: 0 0 16px rgba(250,204,21,0.45);
   animation: pulse-glow-gold 2s ease-in-out infinite;
 }
 
