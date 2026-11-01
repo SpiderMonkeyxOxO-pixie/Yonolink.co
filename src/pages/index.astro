@@ -114,7 +114,13 @@ const itemListSchema = {
   <section class="relative min-h-[88vh] flex items-center overflow-hidden hero-mesh py-16 sm:py-24">
     <!-- Hero background image -->
     <div class="absolute inset-0 pointer-events-none">
-      <img src="/herobg.jpg" alt="" class="w-full h-full object-cover object-center opacity-20" aria-hidden="true" />
+      <img
+        src="/herobg-bg.webp"
+        alt=""
+        fetchpriority="high"
+        class="w-full h-full object-cover object-center opacity-20"
+        aria-hidden="true"
+      />
       <!-- Dark overlay so text stays readable -->
       <div class="absolute inset-0 bg-[#05070A]/60"></div>
     </div>
@@ -367,7 +373,7 @@ const itemListSchema = {
         <!-- Top bar: logo + Live badge -->
         <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
           <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
-            <img src="/logos/jeet-spin.png" alt="Jeet Spin" class="w-full h-full object-contain p-1" loading="eager" />
+            <img src="/logos/jeet-spin.webp" alt="Jeet Spin" class="w-full h-full object-contain p-1" loading="eager" />
           </div>
           <div class="flex flex-col gap-2">
             <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">

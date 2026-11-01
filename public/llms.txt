@@ -1,0 +1,25 @@
+# YonoLink
+
+> YonoLink (yonolink.co) is an independent, informational directory covering Yono-branded real-cash gaming apps available in India — Rummy, Slots, Spin, Arcade, and VIP categories. It is not a gambling operator, does not run or host any game, and is not affiliated with Yono, Yono SBI, State Bank of India, any bank, or any gaming platform it describes. "Yono" here refers exclusively to third-party real-cash gaming apps, never any banking product.
+
+Every app listing reflects independently researched, fact-checked information. Promo codes and download links are kept current; claims that can't be verified are labelled rather than guessed. This platform is strictly for users aged 18 and above, and real-cash gaming carries financial risk — final safety, legality, and account decisions always belong to the reader.
+
+## Directory
+
+- [All Yono apps](https://yonolink.co/games/): the full tracked directory across Rummy, Slots, Spin, Arcade, and VIP
+- [App pages](https://yonolink.co/app/): individual app detail pages with download links, ratings, and category
+- [Promo codes](https://yonolink.co/promo-codes/): current verified promo-code status per app
+- [Blog](https://yonolink.co/blog/): app guides, safety explainers, and how-to content
+
+## Safety and context
+
+- [Gambling awareness](https://yonolink.co/gambling-awareness/): responsible-play information and where to find support
+- [Editorial policy](https://yonolink.co/editorial-policy/): how listings are researched and verified
+- [Disclaimer](https://yonolink.co/disclaimer/): scope, affiliation, and risk notice
+
+## About
+
+- [About YonoLink](https://yonolink.co/about/)
+- [Privacy policy](https://yonolink.co/privacy-policy/)
+- [Become an agent](https://yonolink.co/become-agent/)
+- [Contact](https://yonolink.co/contact/)

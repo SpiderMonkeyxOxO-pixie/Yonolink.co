@@ -732,7 +732,7 @@ export const apps: AppData[] = [
   },
 
   {
-    name: 'Jeet Spin', slug: 'jeet-spin', logo: '/logos/jeet-spin.png', category: 'Spin',
+    name: 'Jeet Spin', slug: 'jeet-spin', logo: '/logos/jeet-spin.webp', category: 'Spin',
     tagline: 'Jeet Spin — now live',
     description: 'Jeet Spin is a spin-and-win platform that launched on 30 September 2026. Its full feature set, welcome bonus and promo-code schedule are being reviewed — this page will be updated as those details are verified.',
     rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
