@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
 import GameCard from '../components/GameCard.astro';
+import UpcomingGameCountdown from '../components/UpcomingGameCountdown.astro';
 import { getCollection } from 'astro:content';
 import { isPublished } from '../lib/published';
 import { apps } from '../data/apps';
@@ -203,6 +204,16 @@ const itemListSchema = {
         <span class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-gray-300 text-xs">Coming Soon</span>
       </div>
     </div>
+
+    <UpcomingGameCountdown
+      name="Cash Rummy"
+      image="/logos/cash-rummy.webp"
+      releaseIso="2026-11-05T08:00:00+05:30"
+      releaseLabel="5 Nov 2026, 8:00 AM IST"
+      heading="Cash Rummy is launching soon"
+      description="Cash Rummy is scheduled to join the Yono network on 5 November 2026 at 8:00 AM IST. No download link, welcome bonus, or promo code has been confirmed yet."
+      detailsHref="/blog/cash-rummy-guide/"
+    />
 
     <!-- Spin Rummy — now live card -->
     <div class="bg-gray-900/80 border border-green-500/30 rounded-2xl overflow-hidden">

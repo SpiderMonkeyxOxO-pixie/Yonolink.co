@@ -1,0 +1,81 @@
+---
+interface Props {
+  name: string;
+  image: string;
+  releaseIso: string;
+  releaseLabel: string;
+  heading: string;
+  description: string;
+  detailsHref: string;
+}
+
+const { name, image, releaseIso, releaseLabel, heading, description, detailsHref } = Astro.props;
+---
+
+<div class="bg-gray-900/80 border border-purple-500/30 rounded-2xl overflow-hidden mb-6" data-countdown-card data-target={releaseIso}>
+  <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
+    <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
+      <img src={image} alt={`${name} logo`} width="80" height="80" class="w-full h-full object-contain p-1" loading="eager" />
+    </div>
+    <div class="flex flex-col gap-2">
+      <div class="inline-flex items-center gap-2 bg-purple-500/15 border border-purple-500/40 text-purple-300 text-sm font-black px-5 py-2.5 rounded-xl">
+        Launching {releaseLabel}
+      </div>
+      <p class="text-gray-500 text-xs pl-1">Rummy platform</p>
+    </div>
+  </div>
+
+  <div class="p-5">
+    <div class="flex gap-2 sm:gap-3 mb-4" aria-hidden="true">
+      <div class="flex-1 max-w-[76px] rounded-xl border border-gray-700 bg-gray-800/80 px-2 py-2.5 text-center">
+        <span class="block font-mono text-xl font-black text-white" data-countdown-value="days">--</span>
+        <span class="block text-[10px] font-semibold uppercase tracking-wide text-gray-500 mt-0.5">Days</span>
+      </div>
+      <div class="flex-1 max-w-[76px] rounded-xl border border-gray-700 bg-gray-800/80 px-2 py-2.5 text-center">
+        <span class="block font-mono text-xl font-black text-white" data-countdown-value="hours">--</span>
+        <span class="block text-[10px] font-semibold uppercase tracking-wide text-gray-500 mt-0.5">Hrs</span>
+      </div>
+      <div class="flex-1 max-w-[76px] rounded-xl border border-purple-500/40 bg-gray-800/80 px-2 py-2.5 text-center">
+        <span class="block font-mono text-xl font-black text-purple-300" data-countdown-value="minutes">--</span>
+        <span class="block text-[10px] font-semibold uppercase tracking-wide text-gray-500 mt-0.5">Min</span>
+      </div>
+      <div class="flex-1 max-w-[76px] rounded-xl border border-purple-500/40 bg-gray-800/80 px-2 py-2.5 text-center">
+        <span class="block font-mono text-xl font-black text-purple-300" data-countdown-value="seconds">--</span>
+        <span class="block text-[10px] font-semibold uppercase tracking-wide text-gray-500 mt-0.5">Sec</span>
+      </div>
+    </div>
+
+    <h3 class="text-lg sm:text-xl font-black text-white mb-2">{heading}</h3>
+    <p class="text-gray-400 text-sm leading-relaxed mb-3">{description}</p>
+
+    <a href={detailsHref} class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
+      Read Launch Coverage
+    </a>
+  </div>
+</div>
+
+<script>
+  function updateCountdownCards() {
+    const cards = document.querySelectorAll('[data-countdown-card]');
+    cards.forEach((card) => {
+      const target = card.getAttribute('data-target');
+      if (!target) return;
+      const diff = Math.max(new Date(target).getTime() - Date.now(), 0);
+      const values: Record<string, number> = {
+        days: Math.floor(diff / 86400000),
+        hours: Math.floor((diff % 86400000) / 3600000),
+        minutes: Math.floor((diff % 3600000) / 60000),
+        seconds: Math.floor((diff % 60000) / 1000),
+      };
+      card.querySelectorAll('[data-countdown-value]').forEach((el) => {
+        const unit = el.getAttribute('data-countdown-value');
+        if (unit && unit in values) {
+          el.textContent = String(values[unit]).padStart(2, '0');
+        }
+      });
+    });
+  }
+
+  updateCountdownCards();
+  setInterval(updateCountdownCards, 1000);
+</script>
