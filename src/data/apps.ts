@@ -313,7 +313,7 @@ export const apps: AppData[] = [
     name: 'Ind Rummy', slug: 'ind-rummy', logo: '/logos/ind-rummy.webp', category: 'Rummy',
     tagline: 'Authentic Indian rummy with regional language support',
     description: 'Ind Rummy celebrates the roots of Indian card gaming by offering the full traditional 13-card experience with support for Hindi, Tamil, Telugu, Marathi and Bengali. Regional table themes and festival-specific tournaments make it the most culturally relevant rummy app in India. Deposit and withdraw in seconds via any UPI app.',
-    rating: 4.4, downloads: '1M+', size: '32 MB', minDeposit: '₹100', bonus: '₹125 Welcome Bonus',
+    rating: 4.4, downloads: '1M+', size: '32 MB', minDeposit: '₹100', bonus: '₹176 Welcome Bonus',
     features: [
       'Full Hindi, Tamil, Telugu, Marathi and Bengali language support',
       'Regional festival tournaments — Diwali, Holi, Eid specials',
@@ -328,6 +328,7 @@ export const apps: AppData[] = [
       { q: 'Which payment methods work on Ind Rummy?', a: 'Ind Rummy accepts UPI (all apps), Paytm, PhonePe, Google Pay, net banking and debit/credit cards. All deposits are instant.' },
     ],
     suggestedApps: ['inr-rummy', 'jaiho-rummy', 'ind-club'],
+    relatedPost: 'ind-rummy-app-guide',
   },
 
   {

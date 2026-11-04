@@ -8,7 +8,7 @@ image: "/blogs/win-rummy-apk-safety-checklist.webp"
 featured: false
 ---
 
-**Win Rummy** is a new rummy platform scheduled to launch its Android APK on **July 29, 2026**. As of this writing, the official website [winrummy.com](https://winrummy.com) is live but shows a "Wait For APK" notice — meaning no verified download file has been released to the public yet.
+**Win Rummy** launched its Android APK on **July 29, 2026**, and the download is now live at [winrummy10.com](https://www.winrummy10.com). Because it is a new, recently-launched platform distributed outside the Google Play Store, this checklist still applies — verify the APK before installing it.
 
 This checklist helps you verify any APK file claiming to be Win Rummy before you install it on your Android device.
 
@@ -16,17 +16,17 @@ This checklist helps you verify any APK file claiming to be Win Rummy before you
 
 ## Quick Answer: Is the Win Rummy APK Safe to Download Right Now?
 
-**No verified APK has been released as of July 28, 2026.** The official Win Rummy website confirms the app is "coming soon." Any APK circulating on third-party sites before the official launch has not been verified and could carry risks. Wait for the official release from winrummy.com before downloading.
+**Win Rummy launched on July 29, 2026, and the APK is available for download from winrummy10.com.** As with any newly-launched, sideloaded Android app, verify the source, package ID, and permissions using the checklist below before installing. Avoid any copy of the APK offered on a site other than the official download link.
 
 ---
 
 ## TL;DR
 
-- Win Rummy APK is **not yet released** (as of July 28, 2026)
-- Official site: winrummy.com — currently shows "Wait For APK"
-- Do **not** install any APK from unofficial sources before launch day
-- Once released, verify package ID, permissions, and file signature before installing
-- Welcome bonus: ₹150–₹500 on first deposit after official launch
+- Win Rummy APK is **live and available for download** (launched July 29, 2026)
+- Official download: [winrummy10.com](https://www.winrummy10.com)
+- Do **not** install any APK from unofficial or third-party mirror sites
+- Verify package ID, permissions, and file signature before installing
+- Welcome bonus: ₹150–₹500 on first deposit
 
 ---
 
@@ -34,13 +34,13 @@ This checklist helps you verify any APK file claiming to be Win Rummy before you
 
 | Detail | Status |
 |---|---|
-| APK Released | Not yet (Expected July 29, 2026) |
-| Official Website | winrummy.com (live) |
-| Package ID | Unknown — not yet released |
-| File Size | Unconfirmed |
-| Signing Certificate | Unknown — not yet released |
-| Play Protect Scan | Cannot scan — no file available |
-| Welcome Bonus | ₹150–₹500 (on first deposit, post-launch) |
+| APK Released | Yes — launched July 29, 2026 |
+| Official Website | winrummy10.com (live) |
+| Package ID | Verify at install — not published in advance |
+| File Size | Not officially published — check the installer before installing |
+| Signing Certificate | Verify at install using a signature-checking tool |
+| Play Protect Scan | Run before installing (see checklist below) |
+| Welcome Bonus | ₹150–₹500 on first deposit |
 | Minimum Withdrawal | ₹100 via UPI |
 
 ---
@@ -64,13 +64,11 @@ Use this checklist once an official APK is available for download.
 
 ### 1. Confirm the Source is Official
 
-Only download from the link published on **winrummy.com** or from a trusted directory that links directly to the official file. Do not use APKs shared via WhatsApp, Telegram groups, or unofficial APK mirror sites.
+Only download from the link published on **winrummy10.com** or from a trusted directory that links directly to the official file. Do not use APKs shared via WhatsApp, Telegram groups, or unofficial APK mirror sites.
 
 ### 2. Check the Package ID
 
 Every Android app has a unique package identifier (e.g., `com.winrummy.app`). When you install an APK, your device shows the package ID. Compare it to the package ID listed on the official Win Rummy website. A mismatch means the file is not the legitimate app.
-
-*Note: Win Rummy's package ID is not yet public. Check winrummy.com on launch day.*
 
 ### 3. Verify the File Size
 
@@ -117,7 +115,7 @@ To install an APK, you must enable **Install Unknown Apps** for your file manage
 
 ### 9. Check the Download URL
 
-The URL you download from should begin with `https://` and be hosted on a domain you can verify as belonging to Win Rummy (e.g., winrummy.com or a CDN they officially announce). Avoid shortened links (bit.ly, tinyurl) for APK downloads.
+The URL you download from should begin with `https://` and be hosted on a domain you can verify as belonging to Win Rummy (e.g., winrummy10.com or a CDN they officially announce). Avoid shortened links (bit.ly, tinyurl) for APK downloads.
 
 ### 10. Look at the App Store Listing (If Available)
 
@@ -160,17 +158,17 @@ Based on standard rummy platform requirements, here is what to expect:
 
 ## Is Win Rummy Available on Google Play?
 
-As of July 28, 2026, Win Rummy is not listed on the Google Play Store. Most Indian rummy platforms distribute via APK only, due to Play Store restrictions on real-money gaming apps in India. This is normal for the category — it does not make the app unsafe, but it does mean you bear responsibility for verifying the file yourself.
+Win Rummy is not listed on the Google Play Store. Most Indian rummy platforms distribute via APK only, due to Play Store restrictions on real-money gaming apps in India. This is normal for the category — it does not make the app unsafe, but it does mean you bear responsibility for verifying the file yourself.
 
 ---
 
 ## Where to Get the Official Win Rummy Download Link
 
-Once the APK is released, the official download link will be published on:
+The official download link is published on:
 
-- **winrummy.com** — the official website
+- **winrummy10.com** — the official website
 - **YonoLink Win Rummy page** — [/app/win-rummy/](/app/win-rummy/) — we link only to the official source
-- **YonoLink promo codes page** — [/promo-codes/](/promo-codes/) — launch-day codes will be published here
+- **YonoLink promo codes page** — [/promo-codes/](/promo-codes/) — daily codes are published here
 
 We do not host APK files. All download links on YonoLink point directly to the platform's official website or verified CDN.
 
@@ -180,15 +178,15 @@ We do not host APK files. All download links on YonoLink point directly to the p
 
 ### Is the Win Rummy APK available to download now?
 
-No. As of July 28, 2026, winrummy.com shows a "Wait For APK" message. The app is expected to launch on July 29, 2026. Do not download any file claiming to be Win Rummy from unofficial sources before the official release.
+Yes. Win Rummy launched on July 29, 2026, and the APK is available from winrummy10.com. Do not download any file claiming to be Win Rummy from unofficial sources — always use the official link.
 
 ### What is the Win Rummy package ID?
 
-The package ID has not been publicly released yet. Check winrummy.com on launch day and compare the package ID shown during installation to the one listed officially.
+Compare the package ID shown on your device during installation to the one listed on the official Win Rummy website before completing installation.
 
 ### How large is the Win Rummy APK file?
 
-The file size has not been confirmed. Rummy apps in India are typically 30–60 MB. Any file significantly smaller or larger should be treated with caution.
+Check the file size shown by your device before installing. Rummy apps in India are typically 30–60 MB. Any file significantly smaller or larger should be treated with caution.
 
 ### Can I install Win Rummy on iOS?
 
@@ -225,7 +223,7 @@ If you encounter a fake APK, do not install it. You can report it to Google via 
 - [How to Download Yono Game APK Safely](/blog/how-to-download-yono-game-apk/) — step-by-step guide for any Yono-family APK
 - [Best Yono Rummy Apps 2026](/blog/best-yono-rummy-apps/) — compare top rummy platforms
 - [All Rummy Apps Directory](/games/) — full list of rummy apps we track
-- [Win Rummy Platform Page](/app/win-rummy/) — official details, bonus, and download link once live
+- [Win Rummy Platform Page](/app/win-rummy/) — official details, bonus, and download link
 
 ---
 
