@@ -585,20 +585,21 @@ export const apps: AppData[] = [
 
   {
     name: 'Cash Rummy', slug: 'cash-rummy', logo: '/logos/cash-rummy.webp', category: 'Rummy',
-    tagline: 'Cash Rummy — launching 5 November 2026',
-    description: 'Cash Rummy is a new real-money rummy platform scheduled to launch on 5 November 2026 at 8:00 AM IST. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
-    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    tagline: 'Cash Rummy — now live, 10-game platform',
+    description: 'Cash Rummy launched on 5 November 2026 at 8:00 AM IST as a 10-game real-money platform, not a single rummy app. The app\'s own listing states a ₹50–500 welcome bonus (a range, not a fixed figure) and a ₹100 minimum withdrawal — neither independently verified. Promo codes release up to 3x daily.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: '₹100', bonus: '₹50–500 Welcome Bonus',
     features: [
-      'Real-cash rummy gameplay',
-      'Launching 5 November 2026, 8:00 AM IST',
+      '10-game platform: Rummy, Ludo, Poker, Crash, Andar Bahar, Wingo Lottery, 7 Up Down, Dragon & Tiger, Jhandi Munda, Roulette',
+      'Launched 5 November 2026, 8:00 AM IST',
     ],
-    downloadUrl: '',
+    downloadUrl: 'https://www.cashrummy99.com/?code=RS9XV2AA&t=1793849345',
     faqs: [
-      { q: 'When does Cash Rummy launch?', a: 'Cash Rummy is scheduled to launch on 5 November 2026 at 8:00 AM IST. This listing will be updated with a download link once the app goes live.' },
-      { q: 'What is the welcome bonus on Cash Rummy?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
-      { q: 'Where can I download Cash Rummy?', a: 'The download link is not yet available. Once Cash Rummy launches on 5 November 2026, the official download link will be added to this page.' },
+      { q: 'Is Cash Rummy available to download now?', a: 'Yes — Cash Rummy launched on 5 November 2026. Tap the Download button above to get the official app.' },
+      { q: 'What is the welcome bonus on Cash Rummy?', a: 'The app\'s own listing states a ₹50–500 welcome bonus — a range, not a fixed amount. Confirm the real figure inside your own account.' },
+      { q: 'Where can I download Cash Rummy?', a: 'Download Cash Rummy from the link above. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['money-rummy', 'win-rummy', 'gold-rummy'],
+    relatedPost: 'cash-rummy-guide',
   },
 
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────

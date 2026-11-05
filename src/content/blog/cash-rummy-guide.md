@@ -1,111 +1,55 @@
 ---
-title: "Cash Rummy Guide 2026 — Launch Date, Download, Promo Code & App Details"
-description: "Complete Cash Rummy guide for the 5 Nov 2026 launch. Download status, promo code, expected features, and how it compares to other rummy apps in the Yono network."
-pubDate: "2026-11-04"
+title: "Cash Rummy: What's Confirmed Now That It's Live"
+description: "Cash Rummy launched 5 Nov 2026 as a 10-game platform — not just rummy. Here's what's actually confirmed about its bonus, promo codes, and download status."
+pubDate: "2026-11-05"
 author: "YonoLink Team"
 tags: ["cash rummy", "cash rummy guide", "cash rummy download", "cash rummy promo code", "cash rummy app 2026", "cash rummy launch"]
-image: "/logos/cash-rummy.webp"
-featured: false
+image: "/blogs/cash-rummy-whats-confirmed-now-live.webp"
+featured: true
 ---
 
-**Cash Rummy is a real-money rummy app launching on 5 November 2026 at 8:00 AM IST as the newest entry in the Yono network.** No download link or promo code has been confirmed yet — this guide covers everything announced so far and will be updated once the app goes live.
-
----
-
-## Key Takeaways
-
-- **Launch date:** 5 November 2026, 8:00 AM IST
-- **Category:** Rummy (real-money card game)
-- **Download link:** Not yet available
-- **Promo code:** Not yet released
-- **Google Play:** Not found as of 4 November 2026
-- **Distribution:** Expected as sideloaded APK (standard for this network)
+**Cash Rummy launched 5 November 2026 at 8:00 AM IST — a 10-game platform, not a single rummy app.** Confirmed: ₹50–500 welcome bonus (range), ₹100 minimum withdrawal, codes released up to 3x daily, operated by Cash Rummy Tech Co. Ltd. Not confirmed: the real-world bonus amount within that range, or full game availability at launch.
 
 ---
 
-## What Is Cash Rummy?
+## Where It Sits
 
-Cash Rummy is a real-money rummy app scheduled to launch on 5 November 2026 as part of the wider Yono network. Beyond its name, category, and launch date, nothing else about the app has been independently confirmed — this page avoids guessing at features, bonus structure, or branding details until they're actually announced.
-
-The app is expected to be distributed as a sideloaded APK from the platform's own website, not through Google Play. This is the standard distribution method for apps in this network. If you're new to sideloading, see our [download guide](/blog/how-to-download-yono-game-apk) for the step-by-step process.
+A newly-launched, independently-operated platform with no connection to other apps catalogued here beyond shared branding conventions. Its ten-game lineup places it closer to directory-style apps than single-game rummy titles like [Money Rummy](/app/money-rummy), [Win Rummy](/app/win-rummy), [Gold Rummy](/app/gold-rummy), or [Max Rummy](/app/max-rummy).
 
 ---
 
-## Cash Rummy Launch Date
+## About the Bonus Range
 
-Cash Rummy is scheduled to become available on **5 November 2026 at 8:00 AM IST**. Once live, its listing will appear on the [YonoLink.co homepage](/) with a direct link to the platform's download page.
-
-| Detail | Status |
-|--------|--------|
-| App name | Cash Rummy |
-| Category | Rummy |
-| Expected launch | 5 November 2026, 8:00 AM IST |
-| APK download link | Not yet available |
-| Google Play listing | Not found |
-| File size | Not yet known |
-| Minimum Android | Not yet confirmed (likely 5.0+) |
+Most apps tracked here state one fixed bonus figure. Cash Rummy is a genuine exception — a range typically signals the actual amount depends on something undisclosed. Confirm the real number inside your own account.
 
 ---
 
-## How to Download Cash Rummy
+## Download Cash Rummy
 
-The download link is not yet available. Once the app launches, follow these steps:
-
-1. Visit the Cash Rummy listing on [YonoLink.co](/) or the platform's own website
-2. Tap the download button to get the APK file
-3. If your phone blocks the install, go to **Settings → Security → Install unknown apps** and grant permission to your browser
-4. Open the downloaded APK and tap **Install**
-5. Launch the app and register with your phone number + OTP
-
-For a detailed walkthrough of the sideloading process, see our [APK download guide](/blog/how-to-download-yono-game-apk).
-
-**Do not trust any "Cash Rummy APK" links circulating before the official launch.** Pre-launch APKs are not from the official source.
+<a href="https://www.cashrummy99.com/?code=RS9XV2AA&t=1793849345" target="_blank" rel="noopener noreferrer sponsored">Download Cash Rummy here</a>
 
 ---
 
-## Cash Rummy Promo Code
+## Lookalike Risk
 
-No Cash Rummy promo code has been announced as of 4 November 2026. Based on how other apps in this network handle launches:
-
-- Promo codes are typically released inside the app itself at or shortly after launch
-- Codes are usually single-use and updated multiple times per day
-- A separate voucher code may also be available
-
-Once a Cash Rummy code is confirmed, it will be added to our [Promo Codes page](/promo-codes). Check there daily for the latest codes across all platforms.
-
-For tips on how promo codes work across the network, see our [promo codes guide](/blog/yono-promo-codes-guide).
+A newly-launched app with a generic name is an easy target for lookalike pages and copycat download links, especially once a verified URL starts circulating. Compare package name and signing certificate before installing.
 
 ---
 
-## How Cash Rummy Compares to Other Rummy Apps
+## Pre-Install Checklist
 
-The Yono network already includes a large cluster of rummy apps. Here's where Cash Rummy fits:
-
-| App | Category | Status | Notable Detail |
-|-----|----------|--------|----------------|
-| Cash Rummy | Rummy | Launching 5 Nov 2026 | Newest entry |
-| [Money Rummy](/app/money-rummy) | Rummy | Live | Points and deals rummy formats |
-| [Win Rummy](/app/win-rummy) | Rummy | Live | Established network listing |
-| [Gold Rummy](/app/gold-rummy) | Rummy | Live | Gold-themed branding |
-| [Max Rummy](/app/max-rummy) | Rummy | Live | Larger feature set |
-| [Jaiho Play](/app/jaiho-play) | Rummy | Live | Rummy and Teen Patti from the Jaiho family |
-
-Each app has its own accounts, bonuses, and promo codes. Installing Cash Rummy won't affect anything on other rummy apps.
-
-For a full breakdown of rummy apps on this network, see our [best Yono rummy apps](/blog/best-yono-rummy-apps) roundup.
-
----
-
-## Safety Checks Before You Download
-
-We cannot fully assess Cash Rummy's safety before the app launches. Once the APK is available, we recommend:
-
-1. **Verify the source** — download only from the platform's own website, not from forwarded links or third-party APK sites
-2. **Check permissions** — review what the app requests access to before granting anything
-3. **Read the terms** — check minimum withdrawal, wagering requirements, and KYC steps before depositing
-4. **Compare the package name** — once we publish Cash Rummy's verified package name, confirm it matches what's on your device
+1. Download only from the verified link above.
+2. Expect a larger footprint given ten bundled games.
+3. Review permissions — no legitimate reason for contacts/SMS access.
+4. Keep Play Protect on.
 
 For a detailed safety walkthrough, see our [Win Rummy safety checklist](/blog/win-rummy-apk-safety-checklist) — the same checks apply to any new app.
+
+---
+
+## Staying in Control
+
+Pick a spending limit independent of the advertised range. With several chance-based games bundled in, be especially deliberate about limits here.
 
 ---
 
@@ -115,28 +59,41 @@ Online money games are prohibited in India since 1 May 2026 under the Promotion 
 
 ---
 
-## Frequently Asked Questions
+## Full Game Lineup
 
-### When does Cash Rummy launch?
-
-Cash Rummy is scheduled to launch on 5 November 2026 at 8:00 AM IST. This guide will be updated with a download link and full review once the app goes live.
-
-### Is there a Cash Rummy promo code?
-
-No promo code has been released yet. Check our [Promo Codes page](/promo-codes) after launch for daily-updated codes across all platforms.
-
-### Where can I download Cash Rummy?
-
-The download link is not yet available. Once live, the Cash Rummy listing on YonoLink.co will carry the current download URL. Do not trust any pre-launch APK link.
-
-### Is Cash Rummy safe?
-
-Safety cannot be fully assessed before the app launches. Once the APK is available, this guide will be updated with package name, permissions, and signer certificate details.
-
-### What is Cash Rummy's welcome bonus?
-
-No welcome bonus has been confirmed. This guide will be updated with the actual figure once it's announced inside the app — treat any bonus amount you see elsewhere as unverified until then.
+| Game | Type |
+|------|------|
+| Rummy | Skill |
+| Poker | Skill |
+| Ludo | Skill and chance |
+| Crash | Chance |
+| Andar Bahar | Chance |
+| Wingo Lottery | Chance |
+| 7 Up Down | Chance |
+| Dragon & Tiger | Chance |
+| Jhandi Munda | Chance |
+| Roulette | Chance |
 
 ---
 
-*This guide will be updated with verified download link, promo code, bonus details, and a hands-on review once Cash Rummy launches on 5 November 2026. Bookmark this page or check [YonoLink.co](/) for the latest.*
+## Frequently Asked Questions
+
+### Is Cash Rummy's ₹50–500 welcome bonus guaranteed?
+
+No — a stated range, not a fixed amount. The operator's listing doesn't clarify what determines where an account lands.
+
+### What games does Cash Rummy actually include?
+
+Ten: Rummy, Ludo, Poker, Crash, Andar Bahar, Wingo Lottery, 7 Up Down, Dragon & Tiger, Jhandi Munda, Roulette.
+
+### Is Cash Rummy on the Play Store?
+
+Not confirmed — likely a direct APK download once the link is verified, consistent with most apps on this network.
+
+### Is Cash Rummy safe to play?
+
+No independent safety review completed. Confirm real bonus and promo terms in your own account first.
+
+---
+
+*This guide was updated on 5 November 2026 with the verified download link now that Cash Rummy has launched. Bookmark this page or check [YonoLink.co](/) for the latest.*

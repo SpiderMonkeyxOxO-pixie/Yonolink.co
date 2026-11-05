@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
 import GameCard from '../components/GameCard.astro';
-import UpcomingGameCountdown from '../components/UpcomingGameCountdown.astro';
 import { getCollection } from 'astro:content';
 import { isPublished } from '../lib/published';
 import { apps } from '../data/apps';
@@ -196,25 +195,66 @@ const itemListSchema = {
     </div>
   </section>
 
-  <!-- ── UPCOMING PLATFORM ─────────────────────────────────────────────────── -->
+  <!-- ── JUST LAUNCHED ─────────────────────────────────────────────────── -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12" aria-labelledby="upcoming-platform-heading">
     <div class="flex items-center justify-between mb-5">
-      <h2 id="upcoming-platform-heading" class="font-display font-black text-xl sm:text-2xl text-white">Upcoming Platform</h2>
+      <h2 id="upcoming-platform-heading" class="font-display font-black text-xl sm:text-2xl text-white">Just Launched</h2>
       <div class="flex items-center gap-2 text-sm text-gray-500">
-        <span class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-gray-300 text-xs">Coming Soon</span>
+        <span class="bg-green-500/15 border border-green-500/40 rounded-lg px-3 py-1 text-green-400 text-xs font-bold">Live</span>
       </div>
     </div>
 
-    <UpcomingGameCountdown
-      name="Cash Rummy"
-      image="/logos/cash-rummy.webp"
-      releaseIso="2026-11-05T08:00:00+05:30"
-      releaseLabel="5 Nov 2026, 8:00 AM IST"
-      heading="Cash Rummy is launching soon"
-      description="Cash Rummy is scheduled to join the Yono network on 5 November 2026 at 8:00 AM IST. No download link, welcome bonus, or promo code has been confirmed yet."
-      detailsHref="/blog/cash-rummy-guide/"
-    />
+    <!-- Cash Rummy — now live card -->
+    <div class="bg-gray-900/80 border border-green-500/30 rounded-2xl overflow-hidden">
 
+      <!-- Top bar: logo + Live badge -->
+      <div class="flex flex-col sm:flex-row items-center gap-5 p-5 border-b border-gray-800">
+        <div class="w-20 h-20 shrink-0 rounded-2xl overflow-hidden border border-gray-700 bg-gray-800">
+          <img src="/logos/cash-rummy.webp" alt="Cash Rummy logo" width="80" height="80" class="w-full h-full object-contain p-1" loading="eager" />
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
+            <span class="relative flex h-2.5 w-2.5 shrink-0">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
+            </span>
+            Now Live — Launched 5 November 2026
+          </div>
+          <p class="text-gray-500 text-xs pl-1">10-game platform</p>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="p-5">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-green-500/15 text-green-400 border border-green-500/30">Live</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">5 Nov 2026</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/60 text-gray-300 border border-gray-600/40">New</span>
+        </div>
+
+        <h3 class="text-lg sm:text-xl font-black text-white mb-2">Cash Rummy is now live on All Yono</h3>
+        <p class="text-gray-400 text-sm leading-relaxed mb-3">
+          Cash Rummy launched 5 November 2026 as a 10-game platform, not a single rummy app. The app's own listing states a ₹50–500 welcome bonus (range) and ₹100 minimum withdrawal — neither independently verified. Promo codes release up to 3x daily.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            href="https://www.cashrummy99.com/?code=RS9XV2AA&t=1793849345"
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white text-sm font-black transition-colors"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+            Download Cash Rummy
+          </a>
+          <a href="/blog/cash-rummy-guide" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-gray-800 border border-gray-700 text-white text-sm font-bold hover:bg-gray-700 transition-colors">
+            View Details
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5">
     <!-- Spin Rummy — now live card -->
     <div class="bg-gray-900/80 border border-green-500/30 rounded-2xl overflow-hidden">
 
@@ -263,6 +303,7 @@ const itemListSchema = {
           </a>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
