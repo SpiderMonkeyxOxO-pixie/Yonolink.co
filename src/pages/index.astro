@@ -10,7 +10,18 @@ import { apps } from '../data/apps';
 
 const allPosts  = await getCollection('blog', isPublished);
 
-const featuredPosts  = allPosts.filter(p => p.data.featured).slice(0, 3);
+const featuredPosts  = allPosts
+  .filter(p => p.data.featured)
+  .sort((a, b) => (a.data.pubDate < b.data.pubDate ? 1 : -1))
+  .slice(0, 3);
+
+// Newest posts regardless of the manually-curated `featured` flag, so every
+// new post gets a same-day homepage link instead of waiting on a human to
+// remember to flag it (most daily app-guide posts never get `featured: true`).
+const latestPosts = [...allPosts]
+  .sort((a, b) => (a.data.pubDate < b.data.pubDate ? 1 : -1))
+  .filter(p => !featuredPosts.some(f => f.slug === p.slug))
+  .slice(0, 3);
 
 // Featured game gallery — flagship apps shown with full card metadata
 const featuredGameSlugs = ['jaiho-play', 'jeet-spin', 'win-rummy', 'dhan-game', 'max-rummy'];
@@ -854,6 +865,20 @@ const itemListSchema = {
           </div>
         ) : (
           <p class="text-center text-gray-500 py-8">Guides coming soon — check back shortly.</p>
+        )}
+        {latestPosts.length > 0 && (
+          <>
+            <p class="text-center text-xs font-bold text-gray-500 uppercase tracking-wide mb-4">Latest from the blog</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
+              {latestPosts.map(post => (
+                <a href={`/blog/${post.slug}`} class="glow-card group glass border border-white/5 rounded-2xl p-5 hover:border-violet-500/20 transition-all">
+                  <span class="text-[10px] font-bold text-violet-400 bg-violet-500/12 border border-violet-500/20 px-2.5 py-0.5 rounded-full">{post.data.tags?.[0] ?? 'Guide'}</span>
+                  <h3 class="text-white font-black text-sm mt-3 mb-2 group-hover:text-gold transition-colors leading-snug line-clamp-2">{post.data.title}</h3>
+                  <p class="text-gray-500 text-xs leading-relaxed line-clamp-2">{post.data.description}</p>
+                </a>
+              ))}
+            </div>
+          </>
         )}
         <div class="text-center">
           <a href="/blog" class="btn-shimmer btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 text-gray-950 font-black px-8 py-3 rounded-xl">
