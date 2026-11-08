@@ -53,7 +53,7 @@ If you're comparing purely on the headline figure, ₹500 (Yono 777) sits at the
 
 ## What This Comparison Doesn't Cover
 
-This table is scoped to apps categorized here as Slots specifically — 14 of them. It doesn't include Rummy, Spin, Arcade, or VIP-category apps, even ones built around a similar reel-and-symbol mechanic. If Rummy is what you're actually comparing, [our Yono Rummy welcome bonuses comparison](/blog/yono-rummy-welcome-bonuses-compared) covers that category on its own terms.
+This table is scoped to apps categorized here as Slots specifically — 14 of them. It doesn't include Rummy, Spin, Arcade, or VIP-category apps, even ones built around a similar reel-and-symbol mechanic. If Rummy is what you're actually comparing, [our Yono Rummy welcome bonuses comparison](/blog/yono-rummy-welcome-bonuses-compared) covers that category on its own terms. If Spin is what you're after, [our Yono Spin comparison](/blog/yono-spin-apps-compared) does the same.
 
 It's also worth saying plainly: a welcome bonus is one factor among several, not the one to anchor a decision on by itself. Withdrawal speed, promo-code frequency, and how consistently an app has honored its stated terms over time matter at least as much as the headline number.
 

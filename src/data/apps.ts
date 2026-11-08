@@ -6,6 +6,8 @@ export interface AppData {
   features: string[]; downloadUrl: string; faqs: AppFaq[]; suggestedApps: string[];
   /** Slug of a deep-dive blog post (src/content/blog) that covers this app in detail. Optional. */
   relatedPost?: string;
+  /** Overrides the default "{name} Download APK — Bonus, Review & Guide 2026" page title. Optional. */
+  seoTitle?: string;
 }
 
 export const apps: AppData[] = [
@@ -157,6 +159,7 @@ export const apps: AppData[] = [
       { q: 'Can I play Yono Rummy for free?', a: 'Yes. Yono Rummy has free practice tables with virtual chips so you can learn the game without risking real money.' },
     ],
     suggestedApps: ['top-rummy', 'boss-rummy', 'ind-rummy'],
+    seoTitle: 'Yono Rummy APK: ₹200 Bonus + ₹1 Crore Daily Prizes (2026)',
   },
 
   {

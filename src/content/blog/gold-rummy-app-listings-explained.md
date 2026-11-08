@@ -104,6 +104,8 @@ India's online gaming framework separates online money games from permitted cate
 
 If a clear public record later ties the name to one owner or one identified product, this page gets updated to match it. Until then, the overlap is the finding.
 
+For Rummy apps in the Yono network that do have a confirmed welcome-bonus figure, see [our Yono Rummy welcome bonuses compared](/blog/yono-rummy-welcome-bonuses-compared) — Gold Rummy is listed there as one of the still-unconfirmed entries, consistent with the finding on this page.
+
 ---
 
 **About the Author — YonoLink Team**

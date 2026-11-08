@@ -10,7 +10,7 @@ export function getStaticPaths() {
 }
 
 const { app } = Astro.props;
-const { name, slug, logo, category, tagline, description, rating, downloads, size, minDeposit, bonus, features, downloadUrl, faqs, suggestedApps, relatedPost } = app;
+const { name, slug, logo, category, tagline, description, rating, downloads, size, minDeposit, bonus, features, downloadUrl, faqs, suggestedApps, relatedPost, seoTitle } = app;
 
 const stars = Math.round(rating);
 
@@ -23,6 +23,15 @@ const catColor: Record<string, { badge: string; glow: string }> = {
   VIP:    { badge: 'text-amber-400 bg-amber-400/10 border-amber-400/20',    glow: 'from-amber-500/20 to-transparent'  },
 };
 const cc = catColor[category] ?? catColor['Slots'];
+
+// Category comparison post — one per category, links every app page back to its category's bonus comparison
+const categoryComparisonPost: Record<string, { slug: string; label: string }> = {
+  Rummy:  { slug: 'yono-rummy-welcome-bonuses-compared', label: 'Rummy' },
+  Slots:  { slug: 'yono-slots-apps-compared',             label: 'Slots' },
+  Arcade: { slug: 'yono-arcade-apps-compared',             label: 'Arcade' },
+  Spin:   { slug: 'yono-spin-apps-compared',               label: 'Spin' },
+};
+const comparisonPost = categoryComparisonPost[category];
 
 // Similar games — suggested + same-category extras, up to 9
 const suggestedList = suggestedApps.map(s => appsBySlug[s]).filter(Boolean);
@@ -64,7 +73,7 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title={`${name} Download APK — Bonus, Review & Guide 2026`}
+  title={seoTitle ?? `${name} Download APK — Bonus, Review & Guide 2026`}
   description={`Download ${name} free on Android. ${tagline}. Claim ${bonus} on your first deposit. Min deposit ₹100.`}
   schema={[breadcrumbSchema, appSchema, faqSchema]}
 >
@@ -227,6 +236,18 @@ const faqSchema = {
               <Icon name="newspaper" class="w-4 h-4 text-yellow-400 shrink-0" />
               <span class="text-sm text-gray-300">
                 <span class="font-semibold text-yellow-400 group-hover:underline">Read the full {name} guide</span> — launch details, safety checks and FAQs in depth.
+              </span>
+              <Icon name="arrow-right" class="w-4 h-4 text-yellow-400 shrink-0 ml-auto" />
+            </a>
+          )}
+          {comparisonPost && (
+            <a
+              href={`/blog/${comparisonPost.slug}/`}
+              class="mt-3 flex items-center gap-3 bg-gray-800/60 border border-gray-700 rounded-xl p-3.5 hover:border-yellow-400/30 transition-colors group"
+            >
+              <Icon name="sparkles" class="w-4 h-4 text-yellow-400 shrink-0" />
+              <span class="text-sm text-gray-300">
+                See how {name}'s bonus compares — <span class="font-semibold text-white group-hover:text-yellow-400 transition-colors">all {comparisonPost.label} apps compared</span>
               </span>
               <Icon name="arrow-right" class="w-4 h-4 text-yellow-400 shrink-0 ml-auto" />
             </a>

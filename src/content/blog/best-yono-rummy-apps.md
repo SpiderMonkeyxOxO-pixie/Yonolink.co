@@ -174,7 +174,7 @@ To find active codes before depositing, check the [daily promo codes page](/prom
 ## Frequently Asked Questions
 
 **Which Yono Rummy app has the best welcome bonus?**
-Welcome bonus amounts vary by platform and change regularly. Check the [promo codes page](/promo-codes) for the latest offers across all Rummy apps.
+Welcome bonus amounts vary by platform and change regularly. See our [Yono Rummy welcome bonuses compared](/blog/yono-rummy-welcome-bonuses-compared) for every confirmed figure in one table, and check the [promo codes page](/promo-codes) for the latest offers.
 
 **Is Yono Rummy different from classic 13-card Rummy?**
 No. All Yono Rummy apps follow standard 13-card Indian Rummy rules. The differences between apps are in their interface, bonus structure, table stakes and withdrawal speed — not the rules of the game.
@@ -205,6 +205,7 @@ With 19 Rummy apps available in the Yono ecosystem, there is no shortage of opti
 
 Before committing to any platform, download the APK, register, and compare the welcome bonus and table options available to you.
 
+- [Compare every Yono Rummy app's welcome bonus](/blog/yono-rummy-welcome-bonuses-compared)
 - [Browse all 54 Yono apps](/games)
 - [Get today's Rummy promo codes](/promo-codes)
 - [Read the APK download guide](/blog/how-to-download-yono-game-apk)
