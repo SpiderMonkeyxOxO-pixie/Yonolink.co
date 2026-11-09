@@ -1,7 +1,7 @@
 ---
 title: "Yono Spin Apps Compared: Every Confirmed Welcome Bonus"
 description: "Minimum deposit is ₹100 across every Yono-network Spin app with a confirmed figure — welcome bonuses range from ₹30 to ₹175 across 7 confirmed listings. The full comparison, one table."
-pubDate: "2026-11-08"
+pubDate: "2026-11-09"
 author: "YonoLink Team"
 tags: ["yono spin bonus", "yono spin welcome bonus", "yono spin comparison", "yono spin minimum deposit"]
 image: "/blogs/yono-spin-apps-compared.webp"
