@@ -10,6 +10,13 @@ const legalLinks = [
   { label: 'Editorial Policy',    href: '/editorial-policy'     },
   { label: 'Gambling Awareness',  href: '/gambling-awareness'   },
 ];
+
+const browseLinks = [
+  { label: 'All Apps',       href: '/app'          },
+  { label: 'All Games',      href: '/games'         },
+  { label: 'Promo Codes',    href: '/promo-codes'   },
+  { label: 'Blog',           href: '/blog'          },
+];
 ---
 
 <!-- Main footer -->
@@ -17,7 +24,7 @@ const legalLinks = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
 
     <!-- Top grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
 
       <!-- Brand col -->
       <div class="lg:col-span-2">
@@ -63,6 +70,21 @@ const legalLinks = [
             />
           ))}
         </div>
+      </div>
+
+      <!-- Browse -->
+      <div>
+        <h3 class="text-white font-black text-xs uppercase tracking-widest mb-5 text-gold">Browse</h3>
+        <ul class="space-y-3">
+          {browseLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-gray-500 hover:text-white transition-colors text-sm flex items-center gap-2 group">
+                <span class="w-1 h-1 rounded-full bg-gray-700 group-hover:bg-yellow-400 transition-colors shrink-0"></span>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <!-- Legal & Info -->
