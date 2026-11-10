@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Icon from '../components/Icon.astro';
 import GameCard from '../components/GameCard.astro';
+import UpcomingGameCountdown from '../components/UpcomingGameCountdown.astro';
 import { getCollection } from 'astro:content';
 import { isPublished } from '../lib/published';
 import { apps } from '../data/apps';
@@ -204,6 +205,26 @@ const itemListSchema = {
         ))}
       </div>
     </div>
+  </section>
+
+  <!-- ── UPCOMING PLATFORM ─────────────────────────────────────────────────── -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12" aria-labelledby="upcoming-platform-123rummy-heading">
+    <div class="flex items-center justify-between mb-5">
+      <h2 id="upcoming-platform-123rummy-heading" class="font-display font-black text-xl sm:text-2xl text-white">Upcoming Platform</h2>
+      <div class="flex items-center gap-2 text-sm text-gray-500">
+        <span class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-1 text-gray-300 text-xs">Coming Soon</span>
+      </div>
+    </div>
+
+    <UpcomingGameCountdown
+      name="123Rummy"
+      image="/logos/123rummy.webp"
+      releaseIso="2026-11-16T08:00:00+05:30"
+      releaseLabel="16 Nov 2026, 8:00 AM IST"
+      heading="123Rummy is launching soon"
+      description="123Rummy is scheduled to join the Yono network on 16 November 2026 at 8:00 AM IST. No download link, welcome bonus, or promo code has been confirmed yet."
+      detailsHref="/blog/123rummy-guide/"
+    />
   </section>
 
   <!-- ── JUST LAUNCHED ─────────────────────────────────────────────────── -->

@@ -605,6 +605,24 @@ export const apps: AppData[] = [
     relatedPost: 'cash-rummy-guide',
   },
 
+  {
+    name: '123Rummy', slug: '123rummy', logo: '/logos/123rummy.webp', category: 'Rummy',
+    tagline: '123Rummy — launching 16 November 2026',
+    description: '123Rummy is a new real-money rummy platform scheduled to launch on 16 November 2026 at 8:00 AM IST. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-cash rummy gameplay',
+      'Launching 16 November 2026, 8:00 AM IST',
+    ],
+    downloadUrl: '',
+    faqs: [
+      { q: 'When does 123Rummy launch?', a: '123Rummy is scheduled to launch on 16 November 2026 at 8:00 AM IST. This listing will be updated with a download link once the app goes live.' },
+      { q: 'What is the welcome bonus on 123Rummy?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
+      { q: 'Where can I download 123Rummy?', a: 'The download link is not yet available. Once 123Rummy launches on 16 November 2026, the official download link will be added to this page.' },
+    ],
+    suggestedApps: ['cash-rummy', 'money-rummy', 'win-rummy'],
+  },
+
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
 
   {
