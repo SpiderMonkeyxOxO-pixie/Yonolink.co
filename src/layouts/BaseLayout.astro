@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/fonts.css';
 
 interface Props {
   title: string;
@@ -71,18 +72,11 @@ const websiteSchema = {
   <link rel="icon"             type="image/png" sizes="512x512" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
 
-  <!-- Fonts — non-render-blocking -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700;800;900&display=swap"
-    media="print" onload="this.media='all'" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" />
-  </noscript>
+  <!-- Fonts — self-hosted (see src/styles/fonts.css), eliminates the external
+       fonts.googleapis.com/fonts.gstatic.com DNS+connection round-trip that
+       a real mobile network pays even with font-display: swap. -->
+  <link rel="preload" href="/fonts/inter-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/syne-800-normal.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- Google Analytics -- the gtag.js library itself is loaded on
        idle/after-load so its scripting cost doesn't compete with the

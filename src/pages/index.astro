@@ -247,7 +247,7 @@ const itemListSchema = {
         <div class="flex flex-col gap-2">
           <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
             </span>
             Now Live — Launched 5 November 2026
@@ -298,7 +298,7 @@ const itemListSchema = {
         <div class="flex flex-col gap-2">
           <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
             </span>
             Now Live — Launched 30 October 2026
@@ -359,7 +359,7 @@ const itemListSchema = {
         <div class="flex flex-col gap-2">
           <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
             </span>
             Now Live — Launched 20 October 2026
@@ -410,7 +410,7 @@ const itemListSchema = {
         <div class="flex flex-col gap-2">
           <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
             <span class="relative flex h-2.5 w-2.5 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
             </span>
             Now Live — Launched 15 October 2026
@@ -462,7 +462,7 @@ const itemListSchema = {
           <div class="flex flex-col gap-2">
             <div class="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/40 text-green-400 text-sm font-black px-5 py-2.5 rounded-xl">
               <span class="relative flex h-2.5 w-2.5 shrink-0">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
               </span>
               Now Live — Launched 30 September 2026
@@ -571,11 +571,13 @@ const itemListSchema = {
       padding: 1.5px !important;
       opacity: 1 !important;
       animation: cat-glow-run 2.5s linear infinite !important;
+      animation-play-state: paused !important;
     }
     .cat-glow:hover {
       box-shadow: 0 0 28px rgba(250,204,21,0.22), 0 8px 40px rgba(0,0,0,0.6);
     }
     .cat-glow:hover::before {
+      animation-play-state: running !important;
       animation-duration: 1.4s !important;
     }
   </style>
@@ -1065,7 +1067,7 @@ const itemListSchema = {
           <!-- Live badge -->
           <div class="inline-flex items-center gap-2.5 glass-gold border border-yellow-400/20 text-yellow-400 text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-glow-gold">
             <span class="relative flex h-2 w-2 shrink-0">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
             </span>
             Live Network
@@ -1109,7 +1111,7 @@ const itemListSchema = {
           <div class="glow-card-static glass-gold border border-yellow-400/15 rounded-2xl p-6">
             <div class="flex items-center gap-2 mb-2">
               <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
               </span>
               <span class="text-gray-400 text-xs font-medium uppercase tracking-widest">Agent Network</span>
