@@ -607,20 +607,21 @@ export const apps: AppData[] = [
 
   {
     name: '123Rummy', slug: '123rummy', logo: '/logos/123rummy.webp', category: 'Rummy',
-    tagline: '123Rummy — launching 16 November 2026',
-    description: '123Rummy is a new real-money rummy platform scheduled to launch on 16 November 2026 at 8:00 AM IST. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
+    tagline: '123Rummy — now live',
+    description: '123Rummy launched on 16 November 2026 at 8:00 AM IST as the newest real-money rummy platform in the Yono network. As a newly launched app, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this listing will be updated as those details are verified.',
     rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
     features: [
       'Real-cash rummy gameplay',
-      'Launching 16 November 2026, 8:00 AM IST',
+      'Launched 16 November 2026, 8:00 AM IST',
     ],
-    downloadUrl: '',
+    downloadUrl: 'https://www.123rummy2.com/?code=HT9PS5WTMED&t=1794797556',
     faqs: [
-      { q: 'When does 123Rummy launch?', a: '123Rummy is scheduled to launch on 16 November 2026 at 8:00 AM IST. This listing will be updated with a download link once the app goes live.' },
-      { q: 'What is the welcome bonus on 123Rummy?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
-      { q: 'Where can I download 123Rummy?', a: 'The download link is not yet available. Once 123Rummy launches on 16 November 2026, the official download link will be added to this page.' },
+      { q: 'Is 123Rummy available to download now?', a: 'Yes — 123Rummy launched on 16 November 2026. Tap the Download button above to get the official app.' },
+      { q: 'What is the welcome bonus on 123Rummy?', a: 'No welcome bonus has been independently confirmed yet. Check back here as details are verified.' },
+      { q: 'Where can I download 123Rummy?', a: 'Download 123Rummy from the link above. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['cash-rummy', 'money-rummy', 'win-rummy'],
+    relatedPost: '123rummy-guide',
   },
 
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
