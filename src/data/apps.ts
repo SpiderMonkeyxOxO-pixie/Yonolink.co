@@ -517,6 +517,7 @@ export const apps: AppData[] = [
       '8x multiplier special tournament every 8th of the month',
     ],
     downloadUrl: 'https://rummy888vip31.com/?code=TPUK4VF51V9&t=1782456619',
+    relatedPost: 'rummy888-app-guide',
     faqs: [
       { q: 'What is the Rummy888 jackpot?', a: 'The 888 Jackpot Pool collects 0.5% of every hand\'s rake and pays it in full to any player who wins with a 13-card Pure Sequence. It can reach ₹10 lakh+ before triggering.' },
       { q: 'How do I qualify for the 8x multiplier tournament?', a: 'The 8x tournament runs on the 8th of every month. Entry is ₹88 and it features an 8x prize multiplier on the normal table win structure.' },
