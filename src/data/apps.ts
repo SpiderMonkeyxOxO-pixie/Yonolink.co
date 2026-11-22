@@ -625,6 +625,24 @@ export const apps: AppData[] = [
     relatedPost: '123rummy-guide',
   },
 
+  {
+    name: 'Rush Gala', slug: 'rush-gala', logo: '/logos/rush-gala.webp', category: 'Rummy',
+    tagline: 'Rush Gala — launching 23 November 2026',
+    description: 'Rush Gala is a new real-money rummy platform scheduled to launch on 23 November 2026 at 8:00 AM IST. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-cash rummy gameplay',
+      'Launching 23 November 2026, 8:00 AM IST',
+    ],
+    downloadUrl: '',
+    faqs: [
+      { q: 'When does Rush Gala launch?', a: 'Rush Gala is scheduled to launch on 23 November 2026 at 8:00 AM IST. This listing will be updated with a download link once the app goes live.' },
+      { q: 'What is the welcome bonus on Rush Gala?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
+      { q: 'Where can I download Rush Gala?', a: 'The download link is not yet available. Once Rush Gala launches on 23 November 2026, the official download link will be added to this page.' },
+    ],
+    suggestedApps: ['123rummy', 'cash-rummy', 'money-rummy'],
+  },
+
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
 
   {
