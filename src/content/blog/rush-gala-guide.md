@@ -4,7 +4,7 @@ description: "Complete Rush Gala guide for the 23 Nov 2026 launch. Download stat
 pubDate: "2026-11-22"
 author: "YonoLink Team"
 tags: ["rush gala", "rush gala guide", "rush gala download", "rush gala promo code", "rush gala app 2026", "rush gala launch"]
-image: "/logos/rush-gala.webp"
+image: "/blogs/rush-gala-guide.webp"
 featured: false
 ---
 
