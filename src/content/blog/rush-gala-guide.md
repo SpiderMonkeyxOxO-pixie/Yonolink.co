@@ -1,142 +1,163 @@
 ---
-title: "Rush Gala Guide 2026 — Launch Date, Download, Promo Code & App Details"
-description: "Complete Rush Gala guide for the 23 Nov 2026 launch. Download status, promo code, expected features, and how it compares to other rummy apps in the Yono network."
-pubDate: "2026-11-22"
+title: "Rush Gala Guide 2026 — Download Link, Bonus & App Details"
+description: "Rush Gala launched 23 Nov 2026. Here's what's confirmed — the verified download link, the random welcome bonus range, and how it compares to other apps in the Yono network."
+pubDate: "2026-11-23"
 author: "YonoLink Team"
-tags: ["rush gala", "rush gala guide", "rush gala download", "rush gala promo code", "rush gala app 2026", "rush gala launch"]
+tags: ["rush gala", "rush gala guide", "rush gala download", "rush gala bonus", "rush gala app 2026", "rush gala launch"]
 image: "/blogs/rush-gala-guide.webp"
 featured: false
 ---
 
-**Rush Gala is a real-money rummy app launching on 23 November 2026 at 8:00 AM IST as the newest entry in the Yono network.** No download link or promo code has been confirmed yet — this guide covers everything announced so far and will be updated once the app goes live.
+Four game types just joined the Yono network under one new name. Rush Gala went live on 23 November 2026 at 8:00 AM IST, and the download link is already working; there's no waiting period, no placeholder page. Anyone who signs up gets a welcome bonus somewhere between Rs.50 and Rs.500, assigned at random rather than handed out as a fixed figure.
 
 ---
 
 ## Key Takeaways
 
-- **Launch date:** 23 November 2026, 8:00 AM IST
-- **Category:** Rummy (real-money card game)
-- **Download link:** Not yet available
-- **Promo code:** Not yet released
-- **Google Play:** Not found as of 22 November 2026
-- **Distribution:** Expected as sideloaded APK (standard for this network)
+- **Launch:** 23 November 2026, 8:00 AM IST — live
+- **Category:** Multi-game, casino-style platform
+- **Download:** Live now
+- **Welcome bonus:** Rs.50-500, randomly assigned at signup
+- **Minimum deposit:** Rs.50-100
+- **Minimum withdrawal:** Rs.100
+- **App size:** 33.4 MB
+- **Google Play:** Not found
 
 ---
 
 ## What Is Rush Gala?
 
-Rush Gala is a real-money rummy app scheduled to launch on 23 November 2026 as part of the wider Yono network. Beyond its name, category, and launch date, nothing else about the app has been independently confirmed — this page avoids guessing at features, bonus structure, or branding details until they're actually announced.
+Rush Gala is a real-money platform built around four separate game modes rather than one card game. That puts it in a different bucket from the rummy-heavy side of the Yono network. There's no 13-card rummy here; instead, players move between Slots, Fishing, Fly, and Roulette inside the same account, which is closer to how a casino floor is laid out than how a single-game rummy app works.
 
-The app is expected to be distributed as a sideloaded APK from the platform's own website, not through Google Play. This is the standard distribution method for apps in this network. If you're new to sideloading, see our [download guide](/blog/how-to-download-yono-game-apk) for the step-by-step process.
+The app ships as a direct download from the operator's own site rather than through Google Play, which is typical for this category of platform in this network. If sideloading an APK is new to you, our [download guide](/blog/how-to-download-yono-game-apk) walks through the permission prompts step by step.
 
 ---
 
-## Rush Gala Launch Date
+## Launch Status
 
-Rush Gala is scheduled to become available on **23 November 2026 at 8:00 AM IST**. Once live, its listing will appear on the [YonoLink.co homepage](/) with a direct link to the platform's download page.
+Rush Gala's rollout happened on schedule, at 8:00 AM IST on 23 November 2026. The listing on the [YonoLink.co homepage](/) now points straight at the live download link instead of a countdown.
 
 | Detail | Status |
 |--------|--------|
 | App name | Rush Gala |
-| Category | Rummy |
-| Expected launch | 23 November 2026, 8:00 AM IST |
-| APK download link | Not yet available |
+| Category | Multi-game casino-style |
+| Launch | 23 November 2026, 8:00 AM IST — Live |
+| Download link | Available |
+| App size | 33.4 MB |
 | Google Play listing | Not found |
-| File size | Not yet known |
-| Minimum Android | Not yet confirmed (likely 5.0+) |
+| Welcome bonus | Rs.50-500, random |
+| Minimum deposit | Rs.50-100 |
+| Minimum withdrawal | Rs.100 |
 
 ---
 
 ## How to Download Rush Gala
 
-The download link is not yet available. Once the app launches, follow these steps:
+<a href="https://rushgala.club/?code=MBZQC5NXWUP&t=1795408331" target="_blank" rel="noopener noreferrer sponsored">Download Rush Gala here</a>
 
-1. Visit the Rush Gala listing on [YonoLink.co](/) or the platform's own website
-2. Tap the download button to get the APK file
-3. If your phone blocks the install, go to **Settings → Security → Install unknown apps** and grant permission to your browser
-4. Open the downloaded APK and tap **Install**
-5. Launch the app and register with your phone number + OTP
+Once you've tapped the link above:
 
-For a detailed walkthrough of the sideloading process, see our [APK download guide](/blog/how-to-download-yono-game-apk).
+1. The download starts automatically and pulls a 33.4 MB file to your device
+2. If your phone blocks the install, head to **Settings → Security → Install unknown apps** and allow your browser to install apps
+3. Open the downloaded file and tap **Install**
+4. Launch Rush Gala and register with your phone number plus the OTP you receive
 
-**Do not trust any "Rush Gala APK" links circulating before the official launch.** Pre-launch APKs are not from the official source.
+For the full walkthrough with screenshots of each permission screen, see our [APK download guide](/blog/how-to-download-yono-game-apk).
 
----
-
-## Rush Gala Promo Code
-
-No Rush Gala promo code has been announced as of 22 November 2026. Based on how other apps in this network handle launches:
-
-- Promo codes are typically released inside the app itself at or shortly after launch
-- Codes are usually single-use and updated multiple times per day
-- A separate voucher code may also be available
-
-Once a Rush Gala code is confirmed, it will be added to our [Promo Codes page](/promo-codes). Check there daily for the latest codes across all platforms.
-
-For tips on how promo codes work across the network, see our [promo codes guide](/blog/yono-promo-codes-guide).
+Stick to the link on this page. Copies of "Rush Gala APK" floating around other sites aren't guaranteed to be the real build, and a sideloaded app from an unverified source is the easiest way to end up with something you didn't intend to install.
 
 ---
 
-## How Rush Gala Compares to Other Rummy Apps
+## Welcome Bonus & Deposit Details
 
-The Yono network already includes a large cluster of rummy apps. Here's where Rush Gala fits:
+Rush Gala doesn't quote a single welcome-bonus number. New accounts are assigned somewhere in the Rs.50 to Rs.500 range at signup, and which end of that range you land on appears to come down to chance rather than anything you control during registration. That randomness is worth flagging up front: if you see someone online quoting a flat "Rs.500 bonus," they may just have gotten lucky, not a figure the operator guarantees to everyone.
+
+Minimum deposit sits at Rs.50-100, which is low enough that you can test the app without putting much on the table. Minimum withdrawal is Rs.100. All three figures come straight from how the operator itself lists them, not from independent verification, so treat them as a starting point rather than a guarantee, and check the in-app terms before you deposit anything.
+
+---
+
+## Four Games, One App
+
+Rush Gala's pitch is breadth rather than depth in a single format. Here's what each mode covers:
+
+- **Slots** — the familiar reel-spin format, with randomized payouts per spin
+- **Fishing** — a shooter-style game where you target fish on screen for cash multipliers, a format that's picked up traction on several casino-style apps this year
+- **Fly** — a crash-style game where a multiplier climbs and you cash out before it drops
+- **Roulette** — the standard wheel-and-bet format, playable for real stakes inside the app
+
+Having all four under one account means you're not juggling separate logins or separate wallets the way you would across four single-purpose apps.
+
+---
+
+## How Rush Gala Compares
+
+Rush Gala isn't a rummy app, so judging it against rummy-specific titles only tells part of the story. Here's where it sits next to a few other live apps in the network:
 
 | App | Category | Status | Notable Detail |
 |-----|----------|--------|----------------|
-| Rush Gala | Rummy | Launching 23 Nov 2026 | Newest entry |
+| Rush Gala | Multi-game casino-style | Live — launched 23 Nov 2026 | Slots, Fishing, Fly, Roulette in one app |
+| [Yono 777](/app/yono-777) | Slots | Live | Reel-based slots platform |
+| [Dhan Game](/app/dhan-game) | Slots | Live | Established slots listing |
 | [123Rummy](/app/123rummy) | Rummy | Live | Launched 16 Nov 2026 |
 | [Cash Rummy](/app/cash-rummy) | Rummy | Live | 10-game platform, launched 5 Nov 2026 |
-| [Money Rummy](/app/money-rummy) | Rummy | Live | Points and deals rummy formats |
-| [Win Rummy](/app/win-rummy) | Rummy | Live | Established network listing |
-| [Gold Rummy](/app/gold-rummy) | Rummy | Live | Gold-themed branding |
 
-Each app has its own accounts, bonuses, and promo codes. Installing Rush Gala won't affect anything on other rummy apps.
-
-For a full breakdown of rummy apps on this network, see our [best Yono rummy apps](/blog/best-yono-rummy-apps) roundup.
+Each of these runs its own account system, its own bonus structure, and its own promo codes. Installing Rush Gala has no bearing on anything you've got running on the rummy side of the network. For a broader rundown of the slots side specifically, see our [Yono Slots apps compared](/blog/yono-slots-apps-compared) roundup.
 
 ---
 
 ## Safety Checks Before You Download
 
-We cannot fully assess Rush Gala's safety before the app launches. Once the APK is available, we recommend:
+A fresh launch is exactly when it pays to slow down for a minute before installing anything:
 
-1. **Verify the source** — download only from the platform's own website, not from forwarded links or third-party APK sites
-2. **Check permissions** — review what the app requests access to before granting anything
-3. **Read the terms** — check minimum withdrawal, wagering requirements, and KYC steps before depositing
-4. **Compare the package name** — once we publish Rush Gala's verified package name, confirm it matches what's on your device
+1. **Verify the source** — use the link on this page rather than a forwarded link or a third-party APK mirror
+2. **Check permissions** — look at what the app actually asks for during install and decide whether it's reasonable for a gaming app
+3. **Read the terms** — minimum withdrawal, any wagering requirements, and KYC steps are worth knowing before you deposit
+4. **Compare the package name** — once we're able to confirm Rush Gala's verified package name and signer details, we'll add them here so you can cross-check against what's on your device
 
-For a detailed safety walkthrough, see our [Win Rummy safety checklist](/blog/win-rummy-apk-safety-checklist) — the same checks apply to any new app.
+The same checklist applies to any newly launched app in this network — our [Win Rummy safety checklist](/blog/win-rummy-apk-safety-checklist) covers the reasoning behind each step in more depth.
 
 ---
 
 ## Legal Note
 
-Online money games are prohibited in India since 1 May 2026 under the Promotion and Regulation of Online Gaming Act, 2025. Rush Gala is a real-money app and falls under this prohibition. Players should confirm their state's specific regulations before playing.
+Real-money online gaming has been prohibited in India since 1 May 2026 under the Promotion and Regulation of Online Gaming Act, 2025. Rush Gala operates on a real-money basis and falls within that prohibition. Check the rules that apply where you live before playing for stakes.
 
 ---
 
 ## Frequently Asked Questions
 
-### When does Rush Gala launch?
+### Is Rush Gala available to download now?
 
-Rush Gala is scheduled to launch on 23 November 2026 at 8:00 AM IST. This guide will be updated with a download link and full review once the app goes live.
-
-### Is there a Rush Gala promo code?
-
-No promo code has been released yet. Check our [Promo Codes page](/promo-codes) after launch for daily-updated codes across all platforms.
-
-### Where can I download Rush Gala?
-
-The download link is not yet available. Once live, the Rush Gala listing on YonoLink.co will carry the current download URL. Do not trust any pre-launch APK link.
-
-### Is Rush Gala safe?
-
-Safety cannot be fully assessed before the app launches. Once the APK is available, this guide will be updated with package name, permissions, and signer certificate details.
+Yes. Rush Gala launched on 23 November 2026 at 8:00 AM IST, and the download link above is live.
 
 ### What is Rush Gala's welcome bonus?
 
-No welcome bonus has been confirmed. This guide will be updated with the actual figure once it's announced inside the app — treat any bonus amount you see elsewhere as unverified until then.
+New signups receive a randomly assigned bonus between Rs.50 and Rs.500, according to the operator's own listing. It isn't a fixed amount, so what you get can differ from what someone else reports.
+
+### What's the minimum deposit and withdrawal on Rush Gala?
+
+Minimum deposit is Rs.50-100, and minimum withdrawal is Rs.100, both as stated in the operator's own listing.
+
+### What games does Rush Gala offer?
+
+Four modes: Slots, Fishing, Fly, and Roulette, all inside a single account.
+
+### Is Rush Gala a rummy app?
+
+No. It's a multi-game casino-style platform, and there's no rummy or other card game on the app.
+
+### How big is the Rush Gala app?
+
+The download is 33.4 MB.
+
+### Is Rush Gala on Google Play?
+
+No listing has been found there as of launch. The app is distributed directly from the operator's own site.
+
+### Is Rush Gala safe to download?
+
+We haven't completed an independent safety review yet. Follow the safety checks above, and this guide will be updated with package name, permissions, and signer certificate details once that review is done.
 
 ---
 
-*This guide will be updated with verified download link, promo code, bonus details, and a hands-on review once Rush Gala launches on 23 November 2026. Bookmark this page or check [YonoLink.co](/) for the latest.*
+*This guide was updated on 23 November 2026 with the verified download link now that Rush Gala has launched. Bookmark this page or check [YonoLink.co](/) for the latest.*

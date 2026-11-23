@@ -626,21 +626,22 @@ export const apps: AppData[] = [
   },
 
   {
-    name: 'Rush Gala', slug: 'rush-gala', logo: '/logos/rush-gala.webp', category: 'Rummy',
-    tagline: 'Rush Gala — launching 23 November 2026',
-    description: 'Rush Gala is a new real-money rummy platform scheduled to launch on 23 November 2026 at 8:00 AM IST. As a pre-launch listing, its full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
-    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    name: 'Rush Gala', slug: 'rush-gala', logo: '/logos/rush-gala.webp', category: 'Slots',
+    tagline: 'Rush Gala — now live',
+    description: 'Rush Gala launched on 23 November 2026 at 8:00 AM IST as a multi-game casino-style platform in the Yono network, covering Slots, Fishing, Fly and Roulette. As a newly launched app, its full feature set beyond the operator-stated bonus and deposit terms has not yet been independently confirmed — this listing will be updated as those details are verified.',
+    rating: 0, downloads: 'New', size: '33.4 MB', minDeposit: 'Rs.50-100', bonus: 'Rs.50-500 (random, per the operator\'s own listing)',
     features: [
-      'Real-cash rummy gameplay',
-      'Launching 23 November 2026, 8:00 AM IST',
+      'Four game types: Slots, Fishing, Fly, Roulette',
+      'Launched 23 November 2026, 8:00 AM IST',
     ],
-    downloadUrl: '',
+    downloadUrl: 'https://rushgala.club/?code=MBZQC5NXWUP&t=1795408331',
     faqs: [
-      { q: 'When does Rush Gala launch?', a: 'Rush Gala is scheduled to launch on 23 November 2026 at 8:00 AM IST. This listing will be updated with a download link once the app goes live.' },
-      { q: 'What is the welcome bonus on Rush Gala?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
-      { q: 'Where can I download Rush Gala?', a: 'The download link is not yet available. Once Rush Gala launches on 23 November 2026, the official download link will be added to this page.' },
+      { q: 'Is Rush Gala available to download now?', a: 'Yes — Rush Gala launched on 23 November 2026 at 8:00 AM IST. Tap the Download button above to get the official app.' },
+      { q: 'What is the welcome bonus on Rush Gala?', a: "Per the operator's own listing, new signups receive a random bonus between Rs.50 and Rs.500. This has not been independently verified." },
+      { q: 'Where can I download Rush Gala?', a: 'Download Rush Gala from the link above. Do not trust APK links from unofficial sources.' },
     ],
     suggestedApps: ['123rummy', 'cash-rummy', 'money-rummy'],
+    relatedPost: 'rush-gala-guide',
   },
 
   // ── SPIN / WHEEL (9) ─────────────────────────────────────────────────────────
