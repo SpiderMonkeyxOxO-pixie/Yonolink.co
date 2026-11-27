@@ -7,9 +7,11 @@ interface Props {
   heading: string;
   description: string;
   detailsHref: string;
+  /** Short label under the launch badge, e.g. "Rummy platform" or "Real-money app". Defaults to "Rummy platform". */
+  platformLabel?: string;
 }
 
-const { name, image, releaseIso, releaseLabel, heading, description, detailsHref } = Astro.props;
+const { name, image, releaseIso, releaseLabel, heading, description, detailsHref, platformLabel = 'Rummy platform' } = Astro.props;
 ---
 
 <div class="bg-gray-900/80 border border-purple-500/30 rounded-2xl overflow-hidden mb-6" data-countdown-card data-target={releaseIso}>
@@ -21,7 +23,7 @@ const { name, image, releaseIso, releaseLabel, heading, description, detailsHref
       <div class="inline-flex items-center gap-2 bg-purple-500/15 border border-purple-500/40 text-purple-300 text-sm font-black px-5 py-2.5 rounded-xl">
         Launching {releaseLabel}
       </div>
-      <p class="text-gray-500 text-xs pl-1">Rummy platform</p>
+      <p class="text-gray-500 text-xs pl-1">{platformLabel}</p>
     </div>
   </div>
 

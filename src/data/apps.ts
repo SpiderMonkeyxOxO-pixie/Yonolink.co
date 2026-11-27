@@ -204,6 +204,27 @@ export const apps: AppData[] = [
     suggestedApps: ['yono-games', 'yono-777', 'yono-slots'],
   },
 
+  // ── PRE-LAUNCH (1) ───────────────────────────────────────────────────────────
+
+  {
+    name: 'Spin Dost', slug: 'spin-dost', logo: '/logos/spin-dost.webp', category: 'Real Money',
+    tagline: 'Spin Dost — launching 1 December 2026',
+    description: 'Spin Dost is a new real-money app confirmed to launch on 1 December 2026 at 8:00 AM IST. As a pre-launch listing, its exact game type, full feature set, welcome bonus and promo-code schedule have not yet been independently confirmed — this page will be updated as those details are verified after launch.',
+    rating: 0, downloads: 'New', size: 'New', minDeposit: 'Not yet confirmed', bonus: 'Not yet announced',
+    features: [
+      'Real-money app gameplay',
+      'Launching 1 December 2026, 8:00 AM IST',
+    ],
+    downloadUrl: '',
+    faqs: [
+      { q: 'When does Spin Dost launch?', a: 'Spin Dost is confirmed to launch on 1 December 2026 at 8:00 AM IST. This listing will be updated with a download link once the app goes live.' },
+      { q: 'What is the welcome bonus on Spin Dost?', a: 'No welcome bonus has been announced yet. Check back here after launch for confirmed bonus details.' },
+      { q: 'Where can I download Spin Dost?', a: 'The download link is not yet available. Once Spin Dost launches on 1 December 2026, the official download link will be added to this page.' },
+    ],
+    suggestedApps: ['101z', '567-slots', '777game'],
+    relatedPost: 'spin-dost-guide',
+  },
+
   // ── RUMMY (16) ──────────────────────────────────────────────────────────────
 
   {
